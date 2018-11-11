@@ -15,8 +15,9 @@ public class FootballteamController {
 		return HOMESITE_JSP_NAME;
 	}
 
-	@RequestMapping("/first/view")
+	@RequestMapping("/login")
 	public String showFirstView(Model model) {
 		return FIRST_VIEW_JSP_NAME;
 	}
+	
 }
