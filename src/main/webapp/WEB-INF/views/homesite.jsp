@@ -5,7 +5,6 @@
 
 <div class="tile">
 <h1>WITAM NA STRONIE STARTOWEJ</h1>
-<a href="login">Zarejestruj się</a>
+<a href="login">Zaloguj się</a>
 <a href="register">Zarejestruj się</a>
-<a href="https://www.google.pl/search?q=google+recaptcha&oq=goo&aqs=chrome.0.69i59l2j69i60l2j0j69i65.853j0j7&sourceid=chrome&ie=UTF-8">Zarejestruj się w gogole</a>
 </div>
