@@ -18,10 +18,10 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class RecaptchaService {
 
-	@Value("${google.recaptcha.secret}")
+	@Value("$6LcLBnoUAAAAAO7aVsg3Bxu56BxQt7hUW0CwuAHe")
 	String recaptchaSecret;
 	private static final String GOOGLE_RECAPTCHA_VERIFY_URL = "https://www.google.com/recaptcha/api/siteverify";
-	@Autowired
+	/*@Autowired
 	RestTemplateBuilder restTemplateBuilder;
 
 	public String verifyRecaptcha(String ip, String recaptchaResponse) {
@@ -38,10 +38,11 @@ public class RecaptchaService {
 		boolean recaptchaSucess = (Boolean) responseBody.get("success");
 		if (!recaptchaSucess) {
 			List<String> errorCodes = (List) responseBody.get("error-codes");
-			return errorCodes.stream().map(s -> RecaptchaUtil.RECAPTCHA_ERROR_CODE.get(s))
+			String errorMessage = errorCodes.stream().map(s -> RecaptchaUtil.RECAPTCHA_ERROR_CODE.get(s))
 					.collect(Collectors.joining(", "));
+			return errorMessage;
 		} else {
 			return StringUtils.EMPTY;
 		}
-	}
+	}*/
 }
