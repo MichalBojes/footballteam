@@ -1,4 +1,4 @@
-package com.footballteam.recaptcha;
+package com.footballteam.recaptcha.service;
 
 import java.util.HashMap;
 import java.util.List;
@@ -6,12 +6,11 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import com.footballteam.recaptcha.RecaptchaUtil;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 public class RecaptchaService {
 
 	// @Value("$6LcLBnoUAAAAAO7aVsg3Bxu56BxQt7hUW0CwuAHe")
-	String recaptchaSecret = "$6LcLBnoUAAAAAO7aVsg3Bxu56BxQt7hUW0CwuAHe";
+	String recaptchaSecret = "6LcLBnoUAAAAAO7aVsg3Bxu56BxQt7hUW0CwuAHe";
 	private static final String GOOGLE_RECAPTCHA_VERIFY_URL = "https://www.google.com/recaptcha/api/siteverify";
 	RestTemplate restTemplate = new RestTemplate();
 
