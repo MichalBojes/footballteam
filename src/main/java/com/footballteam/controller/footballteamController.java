@@ -8,10 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class FootballteamController {
 
 	private static final String FIRST_VIEW_JSP_NAME = "first_view";
+	private static final String HOMESITE_JSP_NAME = "homesite";
+
+	@RequestMapping("/home")
+	public String showHomesiteView(Model model) {
+		return HOMESITE_JSP_NAME;
+	}
 
 	@RequestMapping("/first/view")
 	public String showFirstView(Model model) {
 		return FIRST_VIEW_JSP_NAME;
 	}
-
 }
