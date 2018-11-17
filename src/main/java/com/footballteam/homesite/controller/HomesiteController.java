@@ -1,14 +1,19 @@
-package com.footballteam.controller;
+package com.footballteam.homesite.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class FootballteamController {
+public class HomesiteController {
 
-	private static final String FIRST_VIEW_JSP_NAME = "first_view";
 	private static final String HOMESITE_JSP_NAME = "homesite";
+	private static final String LOGIN_VIEW_JSP_NAME = "login";
+
+	@RequestMapping("/")
+	public String showDefaultView(Model model) {
+		return "redirect:/home";
+	}
 
 	@RequestMapping("/home")
 	public String showHomesiteView(Model model) {
@@ -16,8 +21,7 @@ public class FootballteamController {
 	}
 
 	@RequestMapping("/login")
-	public String showFirstView(Model model) {
-		return FIRST_VIEW_JSP_NAME;
+	public String showLoginView(Model model) {
+		return LOGIN_VIEW_JSP_NAME;
 	}
-	
 }

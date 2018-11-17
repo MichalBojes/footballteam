@@ -11,8 +11,7 @@
 	 <mvc:annotation-driven />
 	<context:component-scan
 		base-package="com.footballteam" /> <!-- Automatically spring support at this packet -->
-	<context:annotation-config /> <!-- To na przyszłość, pozwoli nam korzystać z adnotacji także w klasach, 
-		które byśmy skonfigurowali ręcznie -->
+	<context:annotation-config /> 
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName"
@@ -26,7 +25,7 @@
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="packagesToScan"
-			value="com.footballteam.model" />
+			value="com.footballteam" />
 		<property name="jpaVendorAdapter">
 			<bean
 				class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
