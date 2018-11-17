@@ -44,7 +44,6 @@ public class HomesiteController {
 	@RequestMapping("/fans")
 	public String showFansView(Model model) {
 		return "fans";
-	}
 	
 	
 	
