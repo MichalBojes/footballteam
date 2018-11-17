@@ -19,9 +19,4 @@ public class HomesiteController {
 	public String showHomesiteView(Model model) {
 		return HOMESITE_JSP_NAME;
 	}
-
-	@RequestMapping("/login")
-	public String showLoginView(Model model) {
-		return LOGIN_VIEW_JSP_NAME;
-	}
 }
