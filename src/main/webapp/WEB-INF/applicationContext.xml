@@ -18,7 +18,7 @@
 			value="oracle.jdbc.OracleDriver" />
 		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />
 		<property name="username" value="homeuser" />
-		<property name="password" value="password2" />
+		<property name="password" value="password3" />
 	</bean>
 	<tx:annotation-driven />
 	<bean id="entityManagerFactory"
