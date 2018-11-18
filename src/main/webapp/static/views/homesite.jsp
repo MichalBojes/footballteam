@@ -8,7 +8,7 @@
 <head>
    <!--  link rel="stylesheet" href="style_arsenal.css" type="text/css"/>--> 
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-	<style><%@include file="/WEB-INF/css/style_arsenal.css"%></style>
+	<style><%@include file="/static/css/style_arsenal.css" %></style>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
@@ -20,7 +20,7 @@
 
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     
-    <script><%@include file="/WEB-INF/JS/timer.js"%></script>
+    <script><%@include file="/static/JS/timer.js"%></script>
 
 
 
@@ -28,13 +28,14 @@
 
 
 <body onload="start()">
+    <img src="/static/images/team3.jpg" width="230px" height=300px />
 
-    
-    <div id="container">
+
+<div id="container">
     <div id="pilkarze">
         <div id="pilkarz"></div>
         <div id="team">
-           <img src="../resources/team1.jpg"  width="230px" height=300px /> 
+           <img src="//team1.jpg" width="230px" height=300px />
         </div>
      
     </div>
@@ -60,7 +61,7 @@
 
         <div id="topbar">
             <div id="topbarL">
-                <img src="../resources/arsenal.png" width="130px" height="130px"/>
+                <img src="../../../../static/images/arsenal.png" width="130px" height="130px"/>
             </div>
 
             <div id="topbarR">
