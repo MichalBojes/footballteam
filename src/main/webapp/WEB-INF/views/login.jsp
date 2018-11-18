@@ -12,13 +12,13 @@
 <form:form id="login-user-form" action="login" modelAttribute="form"
 	method="post">
 		Nazwa Użytkownika: 
-		<form:input path="username" id="username"></form:input>
+		<form:input path="username" id="username" name="username"></form:input>
 	<c:if test="${pageContext.request.method=='POST'}">
 		<form:errors path="username" cssclass="error" />
 		<br />
 	</c:if>
 		Hasło: 
-		<form:input path="password" id="password" type="password"></form:input>
+		<form:input path="password" id="password" type="password" name="password"></form:input>
 	<c:if test="${pageContext.request.method=='POST'}">
 		<form:errors path="password" cssclass="error" />
 		<br />
