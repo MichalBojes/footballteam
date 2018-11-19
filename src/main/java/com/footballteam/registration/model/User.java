@@ -21,7 +21,9 @@ public class User {
 	@Size(max = 128)
 	private String username;
 
-	private char type;
+	@NotEmpty
+	@Size(max = 128)
+	private String role;
 
 	@NotEmpty
 	@Size(max = 128)

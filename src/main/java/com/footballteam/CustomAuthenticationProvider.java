@@ -1,5 +1,5 @@
 package com.footballteam;
-@Component
+/*@Component
 public class CustomAuthenticationProvider
   implements AuthenticationProvider {
  
@@ -26,4 +26,4 @@ public class CustomAuthenticationProvider
         return authentication.equals(
           UsernamePasswordAuthenticationToken.class);
     }
-}
+}*/
