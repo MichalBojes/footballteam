@@ -13,7 +13,7 @@ function odliczanie()
     var sekunda = dzisiaj.getSeconds();
     if (sekunda<10) sekunda="0"+sekunda;
 
-     document.getElementById("zegar").innerHTML = 
+     document.getElementById("timer").innerHTML = 
     dzien+"/"+miesiac+"/"+rok+" | "+godzina+":"+minuta+":"+sekunda;
 
     setTimeout("odliczanie()",1000);
@@ -31,7 +31,7 @@ var timer4 = 0;
 
 function schowaj1()
         {
-            $("#pilkarz").fadeOut(500);
+            $("#player").fadeOut(500);
         }
 function schowaj2()
         {
@@ -42,10 +42,10 @@ function zmienslajd1()
             numer1++; 
             if(numer1>5) numer1=1;
            
-            var plik = "<img src=\"../resources/player" + numer1 +".jpg\"  width=230px height=300px  />";
+            var plik = "<img src=\"/images/player" + numer1 +".jpg\"  width=230px height=300px  />";
 
-            document.getElementById("pilkarz").innerHTML = plik;
-            $("#pilkarz").fadeIn(500)
+            document.getElementById("player").innerHTML = plik;
+            $("#player").fadeIn(500)
 
           
 
@@ -59,7 +59,7 @@ function zmienslajd2()
             numer2++; 
             if(numer2>5) numer2=1;
 
-            var plik = "<img src=\"../resources/team" + numer2 +".jpg\" width=230px height=300px />";
+            var plik = "<img src=\"/images/team" + numer2 +".jpg\" width=230px height=300px />";
 
             document.getElementById("team").innerHTML = plik;
             $("#team").fadeIn(500)

@@ -13,7 +13,7 @@ body
     margin-right: auto;
 }
 
-#pilkarze
+#photos
 {
     float:left;
     width: 250px;
@@ -22,7 +22,7 @@ body
 }
 
 
-#pilkarz
+#player
 {
    
     width:230px; 
@@ -40,7 +40,7 @@ body
 
 }
 
-#główny
+#main
 {
     width:1000px;
     float:left;
@@ -146,7 +146,7 @@ height: 170px;
     text-align: center;
 
 }
-#zegar
+#timer
 {
     color:white;
     float:right;
