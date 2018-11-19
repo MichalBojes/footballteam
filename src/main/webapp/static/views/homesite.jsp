@@ -114,6 +114,8 @@
     <div id="reje">
         <a href="login">Zaloguj się</a>
 		<a href="register">Zarejestruj się</a>
+		<a href="logout">Wyloguj</a>
+		<a href="admin">Administracja</a>
     </div>
     <div id="czat">
         tu bedzie czat
