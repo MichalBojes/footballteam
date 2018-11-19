@@ -1,0 +1,216 @@
+body
+{
+    background-color:rgb(145, 136, 136);
+    font-family: 'Lato', sans-serif;
+    
+}
+
+#container
+{
+    
+    width: 1650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#photos
+{
+    float:left;
+    width: 250px;
+    margin-top:179px;
+    
+}
+
+
+#player
+{
+   
+    width:230px; 
+    height:300px ;
+    border: solid red;
+
+}
+
+#team
+{
+    border: solid red;
+    margin-top: 100px;
+    width: 230px;
+    height:300px ;
+
+}
+
+#main
+{
+    width:1000px;
+    float:left;
+}
+
+#reje
+{   
+    margin-top:20px;
+    float:left;
+    background-color: #464533;
+    margin-left: 20px;
+    margin-bottom:20px;
+    height:139px;
+}
+#czat
+{
+    width:230px;
+    height: 870px;
+    background-color: #c7c67f;
+    float: left;
+    margin-left: 20px;
+    
+}
+
+#logo
+{
+    background-color: rgb(163, 45, 45);
+    color:white;
+    margin-top: 20px;
+    font-size: 44px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+#menu
+{
+    background-color: #ce0f0f;
+    margin-top: 20px;
+    color:#ffffff;
+    padding: 10px;
+}
+
+#topbar
+{
+background-color: rgb(192, 76, 23);
+color: white;
+padding: 10px;
+margin-top: 20px;
+margin-bottom: 25px;
+height: 170px;
+
+}
+
+#topbarL
+{
+    float: left;
+    padding: 20px;
+    width: 138px;
+    text-align: center;
+    border-right: 2px dotted #cccccc 
+
+}
+
+#topbarR
+{
+    float: left;
+    padding: 20px;
+    width: 760px;
+    font-size: 16px;
+    text-align: justify; /* wyjustuj*/
+
+}
+#sidebar
+{
+    float: left;
+    width: 148px;
+    min-height:620px;
+    padding: 20px;
+    background-color: lightgray;
+    text-align: center;
+    font-size:18px;
+    border-right: 2px solid #666666
+
+
+}
+
+#content
+{
+    float:left;
+    padding: 40px;
+    width: 730px;
+    background-color: #dedede;
+    min-height: 580px;
+    text-align: justify;
+}
+
+#footer
+{
+    clear:both;
+    color: white;
+    padding:20px;
+    font-size: 18px;
+    text-align: center;
+
+}
+#timer
+{
+    color:white;
+    float:right;
+    padding: 10px;
+    border-left: 2px dotted yellow;
+    height: 25px;
+}
+
+.foto2
+{
+    border: solid red;
+    margin-top: 100px;
+    width: 230px;
+}
+
+.option
+{
+    float: left;
+    min-width: 50px;
+    height: 25px;
+    font-size:18px;
+    padding: 10px;
+    text-align: center;
+    border-right: 2px dotted yellow;    /* szerokosc, kropkowana(solid jesli ciagla), kolor)*/
+    opacity: 0.8; /* nieprzeźroczystość */
+
+}
+
+.option:hover   /* po najechaniu myszką */
+{
+    background-color:black;
+    cursor: pointer;
+
+}
+
+.optionL
+{
+font-size: 18px;
+height: 25px;
+padding: 10px;
+border-bottom: 2px dotted #444444;
+
+}
+
+.optionL:hover
+{
+    background-color: crimson;
+    color:white;
+    cursor: pointer;
+
+}
+
+.bigtitle
+{
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.dottedline
+{
+    height: 5px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border-bottom: 2px dotted #444444;
+}
+
