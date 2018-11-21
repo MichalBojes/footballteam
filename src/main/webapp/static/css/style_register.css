@@ -37,7 +37,7 @@ form#register-user-form {
 	padding: 5px 0;
 	display: flex;
 	justify-content: space-between;
-	
+	flex-wrap: wrap;
 }
 /*
 .part2
@@ -85,4 +85,10 @@ form#register-user-form {
 	padding: 5px;
 	margin: 10px;
 	font-size: 18px;
+}
+
+[cssclass="error"] {
+	width: 100%;
+	color: red;
+	text-align: left;
 }
