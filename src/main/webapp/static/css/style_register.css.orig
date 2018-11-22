@@ -1,7 +1,6 @@
 body
 {
-	/*background-color: rgb(185, 185, 240);*/
-	background-image: url("/images/background.png");
+	background-color: rgb(185, 185, 240);
 }
 
 
@@ -12,7 +11,7 @@ body
 	margin-right: auto;
 	width: 600px;
 	border: solid black;
-	background-color: rgb(240, 240, 240);
+	background-color: rgb(226, 222, 222);
 
 }
 
@@ -34,19 +33,31 @@ form#register-user-form {
 
 .part
 {
-	margin-bottom:10px;
 	font-size: 16px;
 	padding: 5px 0;
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	border-bottom: ridge rgba(0, 0, 0, 0.267);
-	
 }
+/*
+.part2
+{
+		
+	margin-bottom: 20px;
+	font-size:22px;
+	text-align:left;
+	width:300px;
+	float:left;
 
+}
+*/
 
-
-
+.part2
+{
+	margin-bottom: 20px;
+	width:300px;
+	float:left;
+}
 #register
 {
 	text-align:right;
@@ -73,21 +84,11 @@ form#register-user-form {
 #register-user-form input.submit-button {
 	padding: 5px;
 	margin: 10px;
-	font-size: 14px;
+	font-size: 18px;
 }
 
 [cssclass="error"] {
 	width: 100%;
 	color: red;
 	text-align: left;
-	font-size:15px;
-}
-
-
-.input-class{
-		background-color: rgb(240,240,240);
-		width: 100%;
-		padding: 8px;
-		display: block;
-		border: none;
 }

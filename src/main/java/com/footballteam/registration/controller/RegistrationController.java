@@ -51,7 +51,7 @@ public class RegistrationController {
 		User user = new User();
 		user.setUsername(form.getUsername());
 		user.setPassword(form.getPassword());
-		user.setType('U'); // K-kibic, Z-zawodnik, T-trener, A-admin MOŻE ENUM??
+		user.setRole("ROLE_ADMIN"); // K-kibic, Z-zawodnik, T-trener, A-admin MOŻE ENUM??
 		user.setName(form.getName());
 		user.setSurname(form.getSurname());
 		user.setAge(form.getAge());

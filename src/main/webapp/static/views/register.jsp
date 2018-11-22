@@ -17,33 +17,33 @@
 	<form:form id="register-user-form" action="register" modelAttribute="form" method="post">
 		<div class="part">
 			Nazwa Użytkownika: 
-			<form:input path="username" id="username"></form:input>
-			<c:if test="${pageContext.request.method=='POST'}"><form:errors path="username" cssclass="error" /> <br /></c:if>
+			<form:input class="input-class" path="username" id="username"></form:input>
+			<c:if test="${pageContext.request.method=='POST'}"><form:errors path="username" cssclass="error" /> </c:if>
 		</div>
 		<div class="part">
 			Imie:
-			<form:input path="name" id="name"></form:input>
-			<c:if test="${pageContext.request.method=='POST'}"><form:errors path="name" cssclass="error" /> <br /> </c:if>
+			<form:input class="input-class" path="name" id="name"></form:input>
+			<c:if test="${pageContext.request.method=='POST'}"><form:errors path="name" cssclass="error" />  </c:if>
 		</div>	
 		<div class="part">
 			Nazwisko:
-			<form:input path="surname" id="surname"></form:input>
-			<c:if test="${pageContext.request.method=='POST'}"><form:errors path="surname" cssclass="error" /> <br /></c:if>
+			<form:input class="input-class" path="surname" id="surname"></form:input>
+			<c:if test="${pageContext.request.method=='POST'}"><form:errors path="surname" cssclass="error" /> </c:if>
 		</div>
 		<div class="part">
 			Wiek:
-			<form:input path="age" id="age"></form:input>
-			<c:if test="${pageContext.request.method=='POST'}"><form:errors path="age" cssclass="error" /> <br /></c:if>
+			<form:input class="input-class" path="age" id="age"></form:input>
+			<c:if test="${pageContext.request.method=='POST'}"><form:errors path="age" cssclass="error" /> </c:if>
 		</div>
 		<div class="part">
 			Hasło: 
-			<form:input path="password" id="password" type="password"></form:input>
-			<c:if test="${pageContext.request.method=='POST'}"><form:errors path="password" cssclass="error" /> <br /></c:if>
+			<form:input class="input-class" path="password" id="password" type="password"></form:input>
+			<c:if test="${pageContext.request.method=='POST'}"><form:errors path="password" cssclass="error" /> </c:if>
 		</div>
 		<div class="part">
 			Powtórz hasło: 
-			<form:input path="passwordConfirm" id="passwordConfirm"></form:input>
-			<c:if test="${pageContext.request.method=='POST'}"><form:errors path="passwordConfirm" cssclass="error" /> <br /></c:if>
+			<form:input class="input-class" path="passwordConfirm" id="passwordConfirm"></form:input>
+			<c:if test="${pageContext.request.method=='POST'}"><form:errors path="passwordConfirm" cssclass="error" /> </c:if>
 		</div>
 		<div class="g-recaptcha" data-sitekey="6LcLBnoUAAAAAPzOYoxMTBLsS7cTVyAR5ECF50Iy">
  		</div>

@@ -112,8 +112,12 @@
         
     </div>
     <div id="reje">
-        <a href="login">Zaloguj się</a>
-		<a href="register">Zarejestruj się</a>
+        Panel użytkownika </br>
+        <a href="login"><input type="submit"  value="Logowanie"> </a>
+        <a href="register"><input type="submit"  value="Rejestracja"></br></a>
+        <a href="logout"><input type="submit"  value="Wyloguj"></a>
+        <a href="admin"><input type="submit"  value="Administracja"</br></a>
+       
     </div>
     <div id="czat">
         tu bedzie czat
