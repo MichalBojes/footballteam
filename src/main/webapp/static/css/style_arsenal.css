@@ -48,12 +48,16 @@ body
 
 #reje
 {   
+    width:230px;
     margin-top:20px;
     float:left;
-    background-color: #464533;
+    background-color: #ececec;
     margin-left: 20px;
     margin-bottom:20px;
     height:139px;
+    font-size: 20px;
+    color: #832f2f;
+    text-align: center;
 }
 #czat
 {

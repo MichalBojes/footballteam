@@ -5,29 +5,59 @@
 
 <title>Rejestracja</title>
 <script src='https://www.google.com/recaptcha/api.js'></script>
-<h1>Zarejestruj sie aby korzystać ze wszystkich możliwości strony</h1>
-	
-<form:form id="register-user-form" action="register" modelAttribute="form" method="post">
-		Nazwa Użytkownika: 
-		<form:input path="username" id="username"></form:input>
-		<c:if test="${pageContext.request.method=='POST'}"><form:errors path="username" cssclass="error" /> <br /></c:if>
-		Imie:
-		<form:input path="name" id="name"></form:input>
-		<c:if test="${pageContext.request.method=='POST'}"><form:errors path="name" cssclass="error" /> <br /> </c:if>
-		Nazwisko:
-		<form:input path="surname" id="surname"></form:input>
-		<c:if test="${pageContext.request.method=='POST'}"><form:errors path="surname" cssclass="error" /> <br /></c:if>
-		Wiek:
-		<form:input path="age" id="age"></form:input>
-		<c:if test="${pageContext.request.method=='POST'}"><form:errors path="age" cssclass="error" /> <br /></c:if>
-		Hasło: 
-		<form:input path="password" id="password" type="password"></form:input>
-		<c:if test="${pageContext.request.method=='POST'}"><form:errors path="password" cssclass="error" /> <br /></c:if>
-		Powtórz hasło: 
-		<form:input path="passwordConfirm" id="passwordConfirm"></form:input>
-		<c:if test="${pageContext.request.method=='POST'}"><form:errors path="passwordConfirm" cssclass="error" /> <br /></c:if>
+
+<link rel="stylesheet" href="/css/style_register.css" type="text/css"/> 
+
+<div id="container">
+		<div id="logo">
+			Rejestracja
+		</div>
+		
+
+	<form:form id="register-user-form" action="register" modelAttribute="form" method="post">
+		<div class="part">
+			Nazwa Użytkownika: 
+			<form:input class="input-class" path="username" id="username"></form:input>
+			<c:if test="${pageContext.request.method=='POST'}"><form:errors path="username" cssclass="error" /> </c:if>
+		</div>
+		<div class="part">
+			Imie:
+			<form:input class="input-class" path="name" id="name"></form:input>
+			<c:if test="${pageContext.request.method=='POST'}"><form:errors path="name" cssclass="error" />  </c:if>
+		</div>	
+		<div class="part">
+			Nazwisko:
+			<form:input class="input-class" path="surname" id="surname"></form:input>
+			<c:if test="${pageContext.request.method=='POST'}"><form:errors path="surname" cssclass="error" /> </c:if>
+		</div>
+		<div class="part">
+			Wiek:
+			<form:input class="input-class" path="age" id="age"></form:input>
+			<c:if test="${pageContext.request.method=='POST'}"><form:errors path="age" cssclass="error" /> </c:if>
+		</div>
+		<div class="part">
+			Hasło: 
+			<form:input class="input-class" path="password" id="password" type="password"></form:input>
+			<c:if test="${pageContext.request.method=='POST'}"><form:errors path="password" cssclass="error" /> </c:if>
+		</div>
+		<div class="part">
+			Powtórz hasło: 
+			<form:input class="input-class" path="passwordConfirm" id="passwordConfirm"></form:input>
+			<c:if test="${pageContext.request.method=='POST'}"><form:errors path="passwordConfirm" cssclass="error" /> </c:if>
+		</div>
 		<div class="g-recaptcha" data-sitekey="6LcLBnoUAAAAAPzOYoxMTBLsS7cTVyAR5ECF50Iy">
  		</div>
- 		<a href="home"> Anuluj </a>
-		<input type="submit" class="submit-button" value="Zarejestruj mnie" />
-</form:form>
+ 		
+		<div id="cancel">
+			<a href="home"> Anuluj </a>
+		</div>
+		<div id="register">
+				<input type="submit" class="submit-button" value="Zarejestruj mnie" />
+		</div>
+		<div style="clear:both;"></div>
+	</form:form>
+
+
+
+
+</div>
