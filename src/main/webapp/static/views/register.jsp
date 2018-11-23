@@ -5,6 +5,9 @@
 
 <title>Rejestracja</title>
 <script src='https://www.google.com/recaptcha/api.js'></script>
+<link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
 
 <link rel="stylesheet" href="/css/style_register.css" type="text/css"/> 
 
@@ -49,7 +52,8 @@
  		</div>
  		
 		<div id="cancel">
-			<a href="home"> Anuluj </a>
+			
+			<a href="home"><input type="button" class="submit-button"  value="Anuluj"></a>
 		</div>
 		<div id="register">
 				<input type="submit" class="submit-button" value="Zarejestruj mnie" />

@@ -42,7 +42,7 @@ function zmienslajd1()
             numer1++; 
             if(numer1>5) numer1=1;
            
-            var plik = "<img src=\"/images/player" + numer1 +".jpg\"  width=230px height=300px  />";
+            var plik = "<img src=\"/images/player" + numer1 +".jpg\"  width=250px height=300px  />";
 
             document.getElementById("player").innerHTML = plik;
             $("#player").fadeIn(500)
@@ -59,7 +59,7 @@ function zmienslajd2()
             numer2++; 
             if(numer2>5) numer2=1;
 
-            var plik = "<img src=\"/images/team" + numer2 +".jpg\" width=230px height=300px />";
+            var plik = "<img src=\"/images/team" + numer2 +".jpg\" width=250px height=300px />";
 
             document.getElementById("team").innerHTML = plik;
             $("#team").fadeIn(500)

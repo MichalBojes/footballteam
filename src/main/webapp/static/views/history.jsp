@@ -3,13 +3,10 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page session="false" isELIgnored="false" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 
+
 <%@ include file = "header.jsp" %>
-
-
-
 <body onload="start()">
 <div id="wrapper">  
-    
     <%@ include file = "menu.jsp" %>
 
     <div id="container">
@@ -29,18 +26,9 @@
 
         <div id="content">
             
-            <span class="bigtitle">Aktualności</span>
+            <span class="bigtitle">Historia</span>
             <div class="dottedline"></div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a mi odio. Cras molestie tellus interdum ullamcorper porttitor. 
-            Sed eu arcu diam. Morbi venenatis pharetra eros, at vehicula leo porttitor eu. Phasellus iaculis ac nisi ut vehicula. 
-            Morbi vulputate tortor eu odio scelerisque posuere. Pellentesque in consequat diam, ac bibendum ante. In sagittis,
-             erat at pulvinar egestas, sapien dui laoreet est, vel blandit lectus nisl ac lacus.
-
-             <br/>
-             Vestibulum posuere nibh vitae sem faucibus mattis. Donec rhoncus porttitor sagittis. Ut id tempus odio. 
-             Fusce sed nisl dignissim, pellentesque ligula vitae, rutrum est.
-              Phasellus sit amet velit ac dui facilisis malesuada. Nullam at congue velit. 
-              Integer bibendum consequat nisl, ut malesuada nulla rhoncus eget
+           Jedyny klub w Anglii, który nie spadł z Premier League!
         </div>
 
         <%@ include file = "footer.jsp" %>
@@ -53,7 +41,7 @@
 
     </div>
     
-   
+      
         <script>
         
         $(document).ready(function(){

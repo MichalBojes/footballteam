@@ -1,14 +1,68 @@
 body
 {
-    background-color:rgb(145, 136, 136);
+    background-image: url("/images/background-home.png");
     font-family: 'Lato', sans-serif;
+    margin:0px;
     
 }
 
+
+#wrapper
+{
+    width: 100%;
+}
+
+#logo
+{
+    margin-left:auto;
+    margin-right:auto;
+    padding:30px 0;
+    width:850px;
+    color:rgb(167, 50, 50);
+    font-size: 65px;
+    letter-spacing: 2px;
+    text-align: center;
+  
+}
+
+#menu
+{
+    background-color: #fa0b0b;
+    color:#ffffff;
+    padding: 2px;
+    border-bottom: 1px solid #751b1b;
+    border-top: 1px solid #751b1b;
+    text-align:center;
+}
+
+
+.option
+{
+	display:inline-block;
+
+    min-width: 60px;
+    height: 20px;
+    font-size:16px;
+    padding: 12px;
+    text-align: center;
+    border-right: 2px dotted yellow;    /* szerokosc, kropkowana(solid jesli ciagla), kolor)*/
+    opacity: 0.8; /* nieprzeÃƒâ€¦Ã‚ÂºroczystoÃƒâ€¦Ã¢â‚¬ÂºÃƒâ€žÃ¢â‚¬Â¡ */
+
+}
+
+.option:hover   /* po najechaniu myszkÃƒâ€žÃ¢â‚¬Â¦ */
+{
+    background-color:rgb(119, 18, 18);
+    cursor: pointer;
+
+}
+
+
+
 #container
 {
-    
-    width: 1650px;
+    margin-top:10px;
+    width: 1560px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -16,26 +70,29 @@ body
 #photos
 {
     float:left;
-    width: 250px;
-    margin-top:179px;
+    width: 270px;
+    margin-right:10px;
     
 }
 
 
 #player
 {
-   
-    width:230px; 
+   	margin-left:10px;
+   	margin-right:10px;
+    width:250px; 
     height:300px ;
-    border: solid red;
+    border: double red;
 
 }
 
 #team
 {
-    border: solid red;
+	margin-left:10px;
+   	margin-right:10px;
+    border: double red;
     margin-top: 100px;
-    width: 230px;
+    width: 250px;
     height:300px ;
 
 }
@@ -48,51 +105,58 @@ body
 
 #reje
 {   
-    width:230px;
-    margin-top:20px;
+    width:240px;
+    margin-left: 20px;
+    padding: 10px;
     float:left;
     background-color: #ececec;
-    margin-left: 20px;
-    margin-bottom:20px;
-    height:139px;
-    font-size: 20px;
+    margin-bottom: 25px;
+    height:170px;
+    font-size: 25px;
     color: #832f2f;
     text-align: center;
 }
+
+.submit-button {
+	padding: 10px;
+	margin: 10px;
+	font-size: 14px;
+	background-color: grey;
+	color:white;
+}
+
+
+
+.submit-button:hover
+{
+	background-color:white;
+	color:black;
+	cursor:pointer;
+	border: groove black;
+	border-width: 2px;
+
+}
+
 #czat
 {
-    width:230px;
-    height: 870px;
+	padding:10px;
+    width:240px;
+    height: 640px;
     background-color: #c7c67f;
     float: left;
     margin-left: 20px;
+    margin-bottom: 10px;
     
 }
 
-#logo
-{
-    background-color: rgb(163, 45, 45);
-    color:white;
-    margin-top: 20px;
-    font-size: 44px;
-    letter-spacing: 3px;
-    text-align: center;
-}
 
-#menu
-{
-    background-color: #ce0f0f;
-    margin-top: 20px;
-    color:#ffffff;
-    padding: 10px;
-}
+
 
 #topbar
 {
 background-color: rgb(192, 76, 23);
 color: white;
 padding: 10px;
-margin-top: 20px;
 margin-bottom: 25px;
 height: 170px;
 
@@ -101,8 +165,9 @@ height: 170px;
 #topbarL
 {
     float: left;
-    padding: 20px;
-    width: 138px;
+    padding:20px;
+    width: 150px;
+    height:130px;
     text-align: center;
     border-right: 2px dotted #cccccc 
 
@@ -110,11 +175,13 @@ height: 170px;
 
 #topbarR
 {
+	height:130px;
     float: left;
     padding: 20px;
-    width: 760px;
-    font-size: 16px;
+    width: 746px;
+    font-size: 20px;
     text-align: justify; /* wyjustuj*/
+    border-right: 2px dotted #cccccc 
 
 }
 #sidebar
@@ -159,32 +226,8 @@ height: 170px;
     height: 25px;
 }
 
-.foto2
-{
-    border: solid red;
-    margin-top: 100px;
-    width: 230px;
-}
 
-.option
-{
-    float: left;
-    min-width: 50px;
-    height: 25px;
-    font-size:18px;
-    padding: 10px;
-    text-align: center;
-    border-right: 2px dotted yellow;    /* szerokosc, kropkowana(solid jesli ciagla), kolor)*/
-    opacity: 0.8; /* nieprzeźroczystość */
 
-}
-
-.option:hover   /* po najechaniu myszką */
-{
-    background-color:black;
-    cursor: pointer;
-
-}
 
 .optionL
 {
@@ -218,3 +261,23 @@ border-bottom: 2px dotted #444444;
     border-bottom: 2px dotted #444444;
 }
 
+.sticky
+{
+    width: 100%;
+    position:fixed;
+    left:0;
+    top:0;
+    z-index: 100; 
+}
+
+a.titlelink1
+{
+    color:#ffffff;
+    text-decoration: none;
+}
+
+a.titlelink2
+{
+    color:black;
+    text-decoration: none;
+}

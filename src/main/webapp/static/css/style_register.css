@@ -2,6 +2,8 @@ body
 {
 	/*background-color: rgb(185, 185, 240);*/
 	background-image: url("/images/background.png");
+	
+	font-family: 'Comfortaa', cursive;
 }
 
 
@@ -28,7 +30,7 @@ body
 }
 
 form#register-user-form {
-	max-width: 350px;
+	max-width: 450px;
 	margin: 0 auto;
 }
 
@@ -49,19 +51,16 @@ form#register-user-form {
 
 #register
 {
-	text-align:right;
-	float:left;
-	width:460px;
+	float:right;
+	width:150px;
 	font-size: 30px;
 	margin-top:10px;
 }
 
 #cancel
 {
-
-	font-size: 15px;
-	
-	margin-left:20px;
+	margin-top:10px;
+	font-size: 30px;
 	width:100px;
 	float:left;
 }
@@ -71,16 +70,21 @@ form#register-user-form {
 }
 
 #register-user-form input.submit-button {
-	padding: 5px;
+	padding: 10px;
 	margin: 10px;
 	font-size: 14px;
+	background-color: grey;
+	color:white;
 }
 
-[cssclass="error"] {
-	width: 100%;
-	color: red;
-	text-align: left;
-	font-size:15px;
+#register-user-form input.submit-button:hover
+{
+	background-color:white;
+	color:black;
+	cursor:pointer;
+	border: groove black;
+	border-width: 2px;
+
 }
 
 
@@ -90,4 +94,13 @@ form#register-user-form {
 		padding: 8px;
 		display: block;
 		border: none;
+}
+
+[cssclass="error"] {
+	
+	font-family: 'Crete Round', serif;
+	width: 100%;
+	color: red;
+	text-align: left;
+	font-size:15px;
 }
