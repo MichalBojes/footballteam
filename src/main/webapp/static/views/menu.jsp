@@ -14,6 +14,20 @@ Arsenal <span style="color:white">Football</span> Club
     <div class="option"><a href="authorities" class="titlelink1">Władze klubu</a></div> 
     <div class="option"><a href="history" class="titlelink1">Historia</a></div> 
     <div class="option"><a href="fans" class="titlelink1">Fani</a></div> 
+    <!--  
+        
+        <c:choose>
+            <c:when test="${..}"> <div class="option">Trener</div> </c:when> 
+            <c:when test="${..}"> <div class="option">Kibic<</div> </c:when>
+            <c:when test="${..}"> <div class="option">Zawodnik</div> </c:when>
+            <c:otherwise></c:otherwise>   
+        </c:choose>
+        
+        
+             
+            
+             
+      -->
     <div id="timer">
     
     </div>
