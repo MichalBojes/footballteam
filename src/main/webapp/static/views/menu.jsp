@@ -10,7 +10,6 @@
     <div class="option"><a href="home" class="titlelink1">Strona główna</a></div>
     <div class="option"><a href="squad" class="titlelink1">Skład</a></div>
     <div class="option"><a href="fixtures" class="titlelink1">Terminarz</a></div>
-    <div class="option"><a href="authorities" class="titlelink1">Władze klubu</a></div>
     <div class="option"><a href="history" class="titlelink1">Historia</a></div>
     <div class="option"><a href="fans" class="titlelink1">Fani</a></div>
     <sec:authorize access="hasAuthority('ROLE_ADMIN')">

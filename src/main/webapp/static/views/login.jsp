@@ -4,14 +4,15 @@
 <%@ page session="false" isELIgnored="false"
     contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
     
-    
-  <link rel="stylesheet" href="/css/style_login.css" type="text/css"/>
+<link rel="stylesheet" href="/css/style_login.css" type="text/css"/>
 
 <title>Logowanie</title>
 
 <c:set var="loginUrl">
 	<c:url value="login" />
 </c:set>
+
+
 
 <div id="container">
 	<div id="logo">Logowanie</div>
@@ -30,5 +31,11 @@
         <div id="register">
             <input type="submit" class="submit-button" value="Zaloguj" />
         </div>
-	</form>
+        <div style="clear:both"></div>
+        <c:if test="${param.error != null}">
+            <div id="err">Nieprawidłowy login lub hasło.</div>
+        </c:if>
+    </form>
 </div>
+
+
