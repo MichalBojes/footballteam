@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class PlayersController {
 	@RequestMapping("/squad")
-	public String showSquadView(Model model) {
+	public String showAllPlayers(Model model) {
 		return "squad";
 	}
 }
