@@ -8,7 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -32,7 +31,7 @@ public class Fixture {
 	private Date date;
 
 	private int season;
-	
+
 	private int round;
 
 	@ManyToOne
@@ -46,7 +45,7 @@ public class Fixture {
 	@NotEmpty
 	@Size(max = 128)
 	private String league;
-	
+
 	@NotEmpty
 	@Size(max = 128)
 	private String referee;
