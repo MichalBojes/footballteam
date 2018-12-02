@@ -1,4 +1,4 @@
-package com.footballteam.registration.model;
+package com.footballteam.users.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
