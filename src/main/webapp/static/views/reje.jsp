@@ -1,5 +1,5 @@
 <%@ page session="false" isELIgnored="false" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+
 
 <div id="reje">
     Panel użytkownika </br>

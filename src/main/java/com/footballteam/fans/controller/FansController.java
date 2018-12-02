@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class FansController {
 
-	@RequestMapping("/fans")
-	public String showFansView(Model model) {
+	@RequestMapping("/fans_gallery")
+	public String showFansGalleryView(Model model) {
 		return "fans";
 	}
+
 }
