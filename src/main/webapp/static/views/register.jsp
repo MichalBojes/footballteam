@@ -45,7 +45,7 @@
 		</div>
 		<div class="part">
 			Powtórz hasło: 
-			<form:input class="input-class" path="passwordConfirm" id="passwordConfirm"  type="password"></form:input>
+			<form:input class="input-class" path="passwordConfirm" id="passwordConfirm" type="password"></form:input>
 			<c:if test="${pageContext.request.method=='POST'}"><form:errors path="passwordConfirm" cssclass="error" /> </c:if>
 		</div>
 		<div class="g-recaptcha" data-sitekey="6LcLBnoUAAAAAPzOYoxMTBLsS7cTVyAR5ECF50Iy">
