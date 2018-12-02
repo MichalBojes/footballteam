@@ -11,7 +11,7 @@
     <div class="option"><a href="squad" class="titlelink1">Skład</a></div>
     <div class="option"><a href="fixtures" class="titlelink1">Terminarz</a></div>
     <div class="option"><a href="history" class="titlelink1">Historia</a></div>
-    <div class="option"><a href="fans" class="titlelink1">Fani</a></div>
+    <div class="option"><a href="fans_gallery" class="titlelink1">Fani</a></div>
     <sec:authorize access="hasAuthority('ROLE_ADMIN')">
             <div class="option">Admin</div>
     </sec:authorize>
