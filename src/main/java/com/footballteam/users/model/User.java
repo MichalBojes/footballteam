@@ -22,7 +22,7 @@ public class User {
 	private String username;
 
 	@NotEmpty
-	@Size(max = 128)
+	@Size(max = 64)
 	private String role;
 
 	@NotEmpty

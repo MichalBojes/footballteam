@@ -6,7 +6,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
-import com.footballteam.registration.model.User;
+import com.footballteam.users.model.User;
 
 @Repository
 public class RegistrationDAO {

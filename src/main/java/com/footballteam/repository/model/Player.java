@@ -52,6 +52,6 @@ public class Player {
 
 	@ManyToOne
 	@JoinColumn(name = "unavailibityid")
-	private Unavailibity unavailibityid;
+	private Unavailability unavailibalityid;
 
 }
