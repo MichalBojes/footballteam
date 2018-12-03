@@ -2,6 +2,7 @@ package com.footballteam.repository.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,12 +29,14 @@ public class Message {
 	private int messageid;
 
 	@ManyToOne
-	@JoinColumn(name = "username")
+	@JoinColumn(name = "username", nullable = false)
 	private User username;
 
-	private Date date;
+	@Column(nullable = false)
+	private Date data;
 
 	@NotEmpty
+	@Column(nullable = false)
 	private String content;
 
 }

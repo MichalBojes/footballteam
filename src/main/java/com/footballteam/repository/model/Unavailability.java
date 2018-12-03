@@ -24,12 +24,13 @@ public class Unavailability {
 	private int unavailabilityid;
 
 	@NotEmpty
+	@Column(nullable = false)
 	private String reason;
 
-	@Column(name = "duration")
+	@Column(name = "duration", nullable = false)
 	private int durationInDays;
 
-	@Column(name = "ocure_date")
+	@Column(name = "ocure_date", nullable = false)
 	private Date occurreDate;
 
 }

@@ -28,26 +28,27 @@ public class Player {
 	private int playerid;
 
 	@ManyToOne
-	@JoinColumn(name = "username")
+	@JoinColumn(name = "username", nullable = false)
 	private User username;
 
 	@NotEmpty
 	@Size(max = 128)
+	@Column(nullable = false)
 	private String position;
 
-	@Column(name = "matches_played")
+	@Column(name = "matches_played", nullable = false)
 	private int matchesPlayed;
 
-	@Column(name = "goal_scored")
+	@Column(name = "goal_scored", nullable = false)
 	private int goalScored;
 
-	@Column(name = "prefered_foot_right")
+	@Column(name = "prefered_foot_right", nullable = false)
 	private boolean preferedFootRight;
 
-	@Column(name = "shirt_number")
+	@Column(name = "shirt_number", nullable = false)
 	private int shirtNumber;
 
-	@Column(name = "cards_received")
+	@Column(name = "cards_received", nullable = false)
 	private int cardsReceived;
 
 	@ManyToOne

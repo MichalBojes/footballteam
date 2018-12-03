@@ -2,6 +2,7 @@ package com.footballteam.repository.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,17 +28,19 @@ public class Training {
 	private int trainingid;
 
 	@ManyToOne
-	@JoinColumn(name = "stadiumid")
+	@JoinColumn(name = "stadiumid", nullable = false)
 	private Stadium stadium;
 
 	@ManyToOne
-	@JoinColumn(name = "playerid")
+	@JoinColumn(name = "playerid", nullable = false)
 	private Player plaryerid;
 
-	private Date date;
+	@Column(nullable = false)
+	private Date data;
 
 	@NotEmpty
 	@Size(max = 128)
+	@Column(nullable = false)
 	private String type;
 
 }

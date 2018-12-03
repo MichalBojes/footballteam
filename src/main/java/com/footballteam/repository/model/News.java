@@ -2,6 +2,7 @@ package com.footballteam.repository.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,8 +24,10 @@ public class News {
 	private int newsid;
 
 	@NotEmpty
+	@Column(nullable = false)
 	private String value;
 	
-	private Date date;
+	@Column(nullable = false)
+	private Date data;
 
 }

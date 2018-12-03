@@ -1,5 +1,6 @@
 package com.footballteam.repository.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,12 +25,15 @@ public class Stadium {
 
 	@NotEmpty
 	@Size(max = 128)
+	@Column(nullable = false)
 	private String name;
 
+	@Column(nullable = false)
 	private int capacity;
 
 	@NotEmpty
 	@Size(max = 128)
+	@Column(nullable = false)
 	private String address;
 
 }

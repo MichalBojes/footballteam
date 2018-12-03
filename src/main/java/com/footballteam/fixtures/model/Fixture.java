@@ -2,6 +2,7 @@ package com.footballteam.fixtures.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,26 +29,32 @@ public class Fixture {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int fixtureid;
 
-	private Date date;
+	@Column(nullable = false)
+	private Date data;
 
+	@Column(nullable = false)
 	private int season;
 
+	@Column(nullable = false)
 	private int round;
 
 	@ManyToOne
-	@JoinColumn(name = "stadiumid")
+	@JoinColumn(name = "stadiumid", nullable = false)
 	private Stadium stadiumid;
 
 	@NotEmpty
 	@Size(max = 128)
+	@Column(nullable = false)
 	private String opponent;
 
 	@NotEmpty
 	@Size(max = 128)
+	@Column(nullable = false)
 	private String league;
 
 	@NotEmpty
 	@Size(max = 128)
+	@Column(nullable = false)
 	private String referee;
 
 }
