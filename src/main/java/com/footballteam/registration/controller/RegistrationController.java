@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.footballteam.registration.dto.RegistrationFormDTO;
-import com.footballteam.registration.model.User;
-import com.footballteam.registration.service.RegistrationService;
+import com.footballteam.users.model.User;
+import com.footballteam.users.service.UsersService;
 import com.footballteam.recaptcha.service.RecaptchaService;
 import com.footballteam.registration.validator.RegistrationValidator;
 
@@ -26,7 +26,7 @@ public class RegistrationController {
 	RegistrationValidator validator;
 
 	@Autowired
-	RegistrationService service;
+	UsersService service;
 
 	private static final String REGISTER_VIEW_JSP_NAME = "register";
 

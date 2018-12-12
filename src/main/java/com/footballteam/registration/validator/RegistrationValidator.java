@@ -9,13 +9,13 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import com.footballteam.registration.dto.RegistrationFormDTO;
-import com.footballteam.registration.service.RegistrationService;
+import com.footballteam.users.service.UsersService;
 
 @Component
 public class RegistrationValidator implements Validator {
 
 	@Autowired
-	RegistrationService service;
+	UsersService service;
 
 	@Override
 	public boolean supports(Class<?> arg0) {
