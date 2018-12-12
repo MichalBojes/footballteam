@@ -1,4 +1,4 @@
-package com.footballteam.repository.model;
+package com.footballteam.history.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +17,7 @@ public class History {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int historyid;
-	
+
 	private String value;
 
 }
