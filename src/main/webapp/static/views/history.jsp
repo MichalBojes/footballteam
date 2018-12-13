@@ -26,7 +26,7 @@
             
             <span class="bigtitle">Historia</span>
             <div class="dottedline"></div>
-           Jedyny klub w Anglii, który nie spadł z Premier League!
+          ${history}
         </div>
 
         <%@ include file = "footer.jsp" %>
