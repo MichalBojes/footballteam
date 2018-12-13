@@ -31,16 +31,10 @@
             
             <span class="bigtitle">Aktualności</span>
             <div class="dottedline"></div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a mi odio. Cras molestie tellus interdum ullamcorper porttitor. 
-            Sed eu arcu diam. Morbi venenatis pharetra eros, at vehicula leo porttitor eu. Phasellus iaculis ac nisi ut vehicula. 
-            Morbi vulputate tortor eu odio scelerisque posuere. Pellentesque in consequat diam, ac bibendum ante. In sagittis,
-             erat at pulvinar egestas, sapien dui laoreet est, vel blandit lectus nisl ac lacus.
-
-             <br/>
-             Vestibulum posuere nibh vitae sem faucibus mattis. Donec rhoncus porttitor sagittis. Ut id tempus odio. 
-             Fusce sed nisl dignissim, pellentesque ligula vitae, rutrum est.
-              Phasellus sit amet velit ac dui facilisis malesuada. Nullam at congue velit. 
-              Integer bibendum consequat nisl, ut malesuada nulla rhoncus eget
+            <c:forEach items="${news}" var="news_value">
+			    ${news_value.value} ${news_value.data}<br>
+			</c:forEach>
+             
         </div>
 
         <%@ include file = "footer.jsp" %>
