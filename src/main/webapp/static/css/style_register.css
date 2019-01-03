@@ -1,0 +1,106 @@
+body
+{
+	/*background-color: rgb(185, 185, 240);*/
+	background-image: url("/images/background.png");
+	
+	font-family: 'Comfortaa', cursive;
+}
+
+
+
+#container
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+	border: solid black;
+	background-color: rgb(240, 240, 240);
+
+}
+
+
+#logo
+{
+	margin-left:50px;
+	margin-right:50px;
+	width: 500px;
+	font-size: 44px;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+form#register-user-form {
+	max-width: 450px;
+	margin: 0 auto;
+}
+
+.part
+{
+	margin-bottom:10px;
+	font-size: 16px;
+	padding: 5px 0;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	border-bottom: ridge rgba(0, 0, 0, 0.267);
+	
+}
+
+
+
+
+#register
+{
+	float:right;
+	width:150px;
+	font-size: 30px;
+	margin-top:10px;
+}
+
+#cancel
+{
+	margin-top:10px;
+	font-size: 30px;
+	width:100px;
+	float:left;
+}
+
+.g-recaptcha div{
+	margin: 0 auto;
+}
+
+#register-user-form input.submit-button {
+	padding: 10px;
+	margin: 10px;
+	font-size: 14px;
+	background-color: grey;
+	color:white;
+}
+
+#register-user-form input.submit-button:hover
+{
+	background-color:white;
+	color:black;
+	cursor:pointer;
+	border: groove black;
+	border-width: 2px;
+
+}
+
+
+.input-class{
+		background-color: rgb(240,240,240);
+		width: 100%;
+		padding: 8px;
+		display: block;
+		border: none;
+}
+
+[cssclass="error"] {
+	
+	font-family: 'Crete Round', serif;
+	width: 100%;
+	color: red;
+	text-align: left;
+	font-size:15px;
+}

@@ -9,13 +9,13 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import com.footballteam.registration.dto.RegistrationFormDTO;
-import com.footballteam.registration.service.RegistrationService;
+import com.footballteam.users.service.UsersService;
 
 @Component
 public class RegistrationValidator implements Validator {
 
 	@Autowired
-	RegistrationService service;
+	UsersService service;
 
 	@Override
 	public boolean supports(Class<?> arg0) {
@@ -55,14 +55,16 @@ public class RegistrationValidator implements Validator {
 
 		Pattern compiledPattern = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$");
 		Matcher matcher = compiledPattern.matcher(slownik.getPassword());
-		if (!matcher.matches()) {
-			errors.rejectValue("password", "Hasło musi zawierać dużą i małą literę, mieć minimum 8 znaków oraz zawierać znak specjalny",
-					"Hasło musi zawierać dużą literę i mieć minimum 6 znaków");
+		if ((slownik.getPassword() != null && slownik.getPassword() != "") && !matcher.matches()) {
+			errors.rejectValue("password",
+					"Hasło musi zawierać dużą i małą literę, mieć minimum 8 znaków oraz zawierać znak specjalny",
+					"Hasło musi zawierać dużą i małą literę, mieć minimum 8 znaków oraz zawierać znak specjalny");
 		}
 
 		org.springframework.validation.ValidationUtils.rejectIfEmpty(errors, "passwordConfirm",
 				"To pole nie może być puste", "To pole nie może być puste");
-		if ((slownik.getPassword()!=null||slownik.getPassword()!="")&&!slownik.getPassword().equals(slownik.getPasswordConfirm()))
+		if ((slownik.getPassword() != null && slownik.getPassword() != "")
+				&& !slownik.getPassword().equals(slownik.getPasswordConfirm()))
 			errors.rejectValue("passwordConfirm", "Pole \"Hasło\" i \"Powtórz hasło\" muszą mieć taką samą wartość",
 					"Pole hasło i powtórz hasło muszą mieć taką samą wartość");
 

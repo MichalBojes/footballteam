@@ -2,7 +2,7 @@ package com.footballteam.registration.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.footballteam.registration.repository.UserRepository;
+import com.footballteam.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.footballteam.registration.dto.RegistrationFormDTO;
-import com.footballteam.registration.model.User;
-import com.footballteam.registration.service.RegistrationService;
+import com.footballteam.users.model.User;
+import com.footballteam.users.service.UsersService;
 import com.footballteam.recaptcha.service.RecaptchaService;
 import com.footballteam.registration.validator.RegistrationValidator;
 
@@ -27,7 +27,7 @@ public class RegistrationController {
 	RegistrationValidator validator;
 
 	@Autowired
-	RegistrationService service;
+	UsersService service;
 
     @Autowired
     UserRepository userRepository;
@@ -62,7 +62,7 @@ public class RegistrationController {
 		User user = new User();
 		user.setUsername(form.getUsername());
 		user.setPassword(form.getPassword());
-		user.setType('U'); // K-kibic, Z-zawodnik, T-trener, A-admin MOŻE ENUM??
+		user.setRole("ROLE_ADMIN"); // ROLE_FAN-kibic, ROLE_PLAYER-zawodnik, ROLE_TRAINER-trener, ROLE_ADMIN-admin MOŻE ENUM??
 		user.setName(form.getName());
 		user.setSurname(form.getSurname());
 		user.setAge(form.getAge());
