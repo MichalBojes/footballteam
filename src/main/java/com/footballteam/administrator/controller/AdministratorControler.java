@@ -29,13 +29,13 @@ public class AdministratorControler {
 	@RequestMapping("/changeRole/{id}/{role}")
 	public String changeUserRole(Model model, @PathVariable("id") String username, @PathVariable("role") String role) {
 		String roleToSave = "ROLE_FAN";
-		if (role == "A")
+		if (role.equals("A"))
 			roleToSave = "ROLE_ADMIN";
-		else if (role == "T")
+		else if (role.equals("T"))
 			roleToSave = "ROLE_TRAINER";
-		else if (role == "P")
+		else if (role.equals("P"))
 			roleToSave = "ROLE_PLAYER";
-		else if (role == "F")
+		else if (role.equals("F"))
 			roleToSave = "ROLE_FAN";
 		service.changeRole(username, roleToSave);
 		return "redirect:/admin";
