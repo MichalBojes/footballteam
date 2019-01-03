@@ -2,6 +2,7 @@ package com.footballteam.registration.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.footballteam.registration.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,11 +29,21 @@ public class RegistrationController {
 	@Autowired
 	RegistrationService service;
 
+    @Autowired
+    UserRepository userRepository;
+
 	private static final String REGISTER_VIEW_JSP_NAME = "register";
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String showRegisterView(Model model) {
 		model.addAttribute("form", new RegistrationFormDTO());
+		return REGISTER_VIEW_JSP_NAME;
+	}
+
+	@RequestMapping(value = "/register2", method = RequestMethod.GET)
+	public String showAllUsers(Model model) {
+		System.out.println(userRepository.findAll());
+		System.out.println(userRepository.getAllByNameStartsWith("Lama"));
 		return REGISTER_VIEW_JSP_NAME;
 	}
 
