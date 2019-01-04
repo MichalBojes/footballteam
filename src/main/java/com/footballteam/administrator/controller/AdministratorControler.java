@@ -40,4 +40,10 @@ public class AdministratorControler {
 		service.changeRole(username, roleToSave);
 		return "redirect:/admin";
 	}
+
+	@RequestMapping("/deleteUser/{id}")
+	public String deleteUser(Model model, @PathVariable("id") String username) {
+		service.deleteUser(username);
+		return "redirect:/admin";
+	}
 }

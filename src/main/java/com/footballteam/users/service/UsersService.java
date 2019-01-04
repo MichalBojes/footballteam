@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.footballteam.homesite.model.News;
 import com.footballteam.users.dao.UsersDAO;
 import com.footballteam.users.model.User;
 
@@ -16,6 +15,10 @@ public class UsersService {
 
 	public void addUser(User user) {
 		dao.addUser(user);
+	}
+
+	public void deleteUser(String username) {
+		dao.deleteUser(username);
 	}
 
 	public void changeRole(String username, String role) {

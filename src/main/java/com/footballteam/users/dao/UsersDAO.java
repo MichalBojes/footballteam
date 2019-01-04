@@ -29,10 +29,14 @@ public class UsersDAO {
 		entityManager.merge(user);
 	}
 
+	@Transactional
+	public void deleteUser(String username) {
+		User user = entityManager.find(User.class, username);
+		entityManager.remove(user);
+	}
+
 	public boolean userExists(String username) {
-		if (entityManager.find(User.class, username) == null)
-			return false;
-		return true;
+		return entityManager.find(User.class, username) != null;
 	}
 
 	public List<User> getAllUsers() {
