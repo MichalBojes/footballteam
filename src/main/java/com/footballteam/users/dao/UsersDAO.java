@@ -1,7 +1,10 @@
 package com.footballteam.users.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -19,9 +22,26 @@ public class UsersDAO {
 		entityManager.merge(user);
 	}
 
+	@Transactional
+	public void changeRole(String username, String role) {
+		User user = entityManager.find(User.class, username);
+		user.setRole(role);
+		entityManager.merge(user);
+	}
+
+	@Transactional
+	public void deleteUser(String username) {
+		User user = entityManager.find(User.class, username);
+		entityManager.remove(user);
+	}
+
 	public boolean userExists(String username) {
-		if (entityManager.find(User.class, username) == null)
-			return false;
-		return true;
+		return entityManager.find(User.class, username) != null;
+	}
+
+	public List<User> getAllUsers() {
+		Query query = entityManager.createQuery("SELECT u FROM User u");
+		List<User> usersList = query.getResultList();
+		return usersList;
 	}
 }
