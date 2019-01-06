@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.footballteam.fixtures.dto.FixtureFormDTO;
 import com.footballteam.registration.dto.RegistrationFormDTO;
 
 @Controller
