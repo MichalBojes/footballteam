@@ -4,13 +4,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 import com.footballteam.fixtures.model.Fixture;
 import com.footballteam.repository.model.Match;
 import com.footballteam.users.model.User;
 
-@Service
+@Repository
 public class FansDAO {
 	@PersistenceContext
 	EntityManager entityManager;
