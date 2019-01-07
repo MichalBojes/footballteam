@@ -2,6 +2,8 @@ package com.footballteam.fixtures.dto;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,6 +11,7 @@ import lombok.Setter;
 @Setter
 public class FixtureFormDTO {
 
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date data;
 
 	private int season;

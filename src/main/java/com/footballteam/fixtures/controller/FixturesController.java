@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.footballteam.fixtures.dto.FixtureFormDTO;
+import com.footballteam.fixtures.model.Fixture;
 import com.footballteam.fixtures.service.FixturesService;
 import com.footballteam.repository.model.Stadium;
 
@@ -20,11 +21,12 @@ public class FixturesController {
 	@Autowired
 	FixturesService service;
 
-	private static final String ADD_FIXTURE_VIEW_JSP_NAME = "addFixture";
+	private static final String ADD_FIXTURE_VIEW_JSP_NAME = "new_fixture";
 
 	@RequestMapping("/fixtures")
 	public String showFixturesView(Model model) {
-		model.addAttribute("fixturesList", service.getAllFixtures());
+		List<Fixture> fixturesList = service.getAllFixtures();
+		model.addAttribute("fixturesList", fixturesList);
 		return "fixtures";
 	}
 

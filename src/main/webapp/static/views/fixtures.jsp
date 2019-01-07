@@ -27,6 +27,29 @@
             <span class="bigtitle">Terminarz</span>
             <div class="dottedline"></div>
           Terminarz na rok sezon 2018/2019
+          <a href="addFixture">Dodaj nowy Mecz</a>
+          <table>
+          <tr>
+          	<th>Data</th>
+          	<th>Sezon</th>
+          	<th>Runda</th>
+          	<th>Stadion</th>
+          	<th>Przeciwnik</th>
+          	<th>Liga</th>
+          	<th>Sędzia</th>
+          </tr>
+          <c:forEach items="${fixturesList}" var="fixture" >
+	          <tr>
+	          	<td>${fixture.data}</td>
+				<td>${fixture.season}</td>
+				<td>${fixture.round}</td>
+				<td>${fixture.stadiumid.name}</td>
+				<td>${fixture.opponent}</td>
+				<td>${fixture.league}</td>
+				<td>${fixture.referee}</td>
+	          </tr>
+          </c:forEach>
+          </table>
         </div>
 
         <%@ include file = "footer.jsp" %>

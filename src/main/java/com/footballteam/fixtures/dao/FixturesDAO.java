@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,7 @@ public class FixturesDAO {
 	@PersistenceContext
 	EntityManager entityManager;
 
+	@Transactional
 	public void addNewFixture(FixtureFormDTO form) {
 		Fixture fixture = new Fixture();
 		fixture.setData(form.getData());
@@ -27,6 +29,7 @@ public class FixturesDAO {
 		fixture.setSeason(form.getSeason());
 		Stadium stadium = entityManager.find(Stadium.class, form.getStadiumid());
 		fixture.setStadiumid(stadium);
+		entityManager.merge(fixture);
 	}
 	public List<Fixture> getAllFixtures() {
 		Query query = entityManager.createQuery("SELECT f FROM Fixture f where data > CURRENT_DATE ");
@@ -34,7 +37,7 @@ public class FixturesDAO {
 		return fixturesList;
 	}
 	public List<Stadium> getAllStadiums(){
-		Query query = entityManager.createQuery("SELECT s FROM Stadiun s");
+		Query query = entityManager.createQuery("SELECT s FROM Stadium s");
 		List<Stadium> stadiumList = query.getResultList();
 		return stadiumList;
 	}
