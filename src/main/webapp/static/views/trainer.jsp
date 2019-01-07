@@ -2,10 +2,14 @@
 <%@ page session="false" isELIgnored="false" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 
 
+
 <%@ include file = "header.jsp" %>
+
+
 
 <body onload="start()">
 <div id="wrapper">  
+    
     <%@ include file = "menu.jsp" %>
 
     <div id="container">
@@ -21,13 +25,16 @@
 
         <%@ include file = "topbar.jsp" %>
 
-        <%@ include file = "sidebar.jsp" %>
+        <%@ include file = "sidebar_trainer.jsp" %>
 
         <div id="content">
             
-            <span class="bigtitle">Galeria</span>
+            <span class="bigtitle">Panel Trenera</span>
             <div class="dottedline"></div>
-            Nasi fani są najlepsi :3
+            <c:forEach items="${news}" var="news_value">
+			    ${news_value.value} ${news_value.data}<br>
+			</c:forEach>
+             
         </div>
 
         <%@ include file = "footer.jsp" %>
@@ -40,7 +47,7 @@
 
     </div>
     
-        
+   
         <script>
         
         $(document).ready(function(){

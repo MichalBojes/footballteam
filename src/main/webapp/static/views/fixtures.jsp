@@ -24,34 +24,35 @@
 
         <div id="content">
             
-            <span class="bigtitle">Terminarz</span>
+            <span class="bigtitle">Terminarz na sezon 2019</span>
+            <a href="addFixture"><div id="admin-button" style="float:right; padding: 10px; font-size:21px; text-decoration: none;
+            background-color: rgb(143, 94, 94); color:white;"  >Dodaj nowy Mecz</div> </a> 
+             <div style="clear:both"></div>
             <div class="dottedline"></div>
-          Terminarz na rok sezon 2018/2019
-          <a href="addFixture">Dodaj nowy Mecz</a>
-          <table>
-          <tr>
-          	<th>Data</th>
-          	<th>Sezon</th>
-          	<th>Runda</th>
-          	<th>Stadion</th>
-          	<th>Przeciwnik</th>
-          	<th>Liga</th>
-          	<th>Sędzia</th>
+        
+    
+          	<div class="fixtures-title" style="width:95px;">Data</div>
+          	<div class="fixtures-title" style="width:55px;">Sezon</div>
+          	<div class="fixtures-title" style="width:55px;">Runda</div>
+          	<div class="fixtures-title" style="width:105px;">Stadion</div>
+          	<div class="fixtures-title" style="width:105px;">Przeciwnik</div>
+          	<div class="fixtures-title" style="width:105px;">Liga</div>
+            <div class="fixtures-title" style="width:105px;">Sędzia</div>
+            <div style="clear:both"></div>
+        
           	<th></th>
-          </tr>
           <c:forEach items="${fixturesList}" var="fixture" >
-	          <tr>
-	          	<td>${fixture.data}</td>
-				<td>${fixture.season}</td>
-				<td>${fixture.round}</td>
-				<td>${fixture.stadiumid.name}</td>
-				<td>${fixture.opponent}</td>
-				<td>${fixture.league}</td>
-				<td>${fixture.referee}</td>
+                <div class="fixtures-tables" style="width:99px; font-size:1px;">${fixture.data}</div>
+				<div class="fixtures-tables" style="width:59px; font-size:15px;">${fixture.season}</div>
+				<div class="fixtures-tables" style="width:59px;">${fixture.round}</div>
+				<div class="fixtures-tables" style="width:109px;">${fixture.stadiumid.name}</div>
+				<div class="fixtures-tables" style="width:109px;">${fixture.opponent}</div>
+				<div class="fixtures-tables" style="width:109px;">${fixture.league}</div>
+                <div class="fixtures-tables" style="width:109px;">${fixture.referee}</div>
+                <div style="clear:both"></div>
 				<td><a href = "<c:url value = '/match/{fixture.fixtureid}'/>">Wybierz skład</a></td>
-	          </tr>
           </c:forEach>
-          </table>
+          
         </div>
 
         <%@ include file = "footer.jsp" %>

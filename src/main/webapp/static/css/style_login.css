@@ -61,18 +61,28 @@ input.submit-button {
 	padding: 10px;
 	margin-left:50px;
 	font-size: 14px;
-	background-color: grey;
+	background-color: rgb(48, 189, 43);
 	color:white;
+
+	
 }
 
 input.submit-button:hover
 {
-	background-color:white;
-	color:black;
+	background-color:rgb(33, 141, 29);
+	color:white;
 	cursor:pointer;
 	border: groove black;
 	border-width: 2px;
 }
+
+.input-class:focus
+{
+	border: 2px solid rgb(169, 235, 169);
+	background-color: rgb(234, 252, 232);
+	color: rgb(28, 136, 28);
+}
+
 
 
 .input-class{
@@ -81,6 +91,7 @@ input.submit-button:hover
 		padding: 8px;
 		display: block;
 		border: none;
+		outline: none;
 }
 
 #err{

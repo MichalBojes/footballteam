@@ -1,30 +1,55 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    
-<%@ include file = "header.jsp" %>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
 
-STADIONY 
-<table>
-	<tr>
-		<th> Numer Stadionu</th>
-		<th> Nazwa</th>
-		<th> Pojemność</th>
-		<th> Lokalizacja</th>
-	</tr>
+<%@ page session="false" isELIgnored="false" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+
+
+
+<%@ include file = "header.jsp" %>
+
+
+
+<body onload="start()">
+<div id="wrapper">  
+    
+    <%@ include file = "menu.jsp" %>
+
+    <div id="container">
+        <div id="photos">
+            <div id="player"></div>
+            <div id="team">
+                <img src="/images/team1.jpg" width="250px" height=300px />
+            </div>
+     
+    </div>
+    <div id="main">
+        
+
+        <%@ include file = "topbar.jsp" %>
+
+        <%@ include file = "sidebar_trainer.jsp" %>
+
+        <div id="content">
+            
+            <span class="bigtitle">Dodawanie meczu</span>
+			<div class="dottedline"></div>
+			
+
+	<div id="stadium">STADIONY</div>
+
+	<div class="fixtures-title" style="width:160px"> Numer Stadionu </div>
+	<div class="fixtures-title" style="width:160px"> Nazwa </div>
+	<div class="fixtures-title" style="width:160px"> Pojemność </div>
+	<div class="fixtures-title" style="width:160px"> Lokalizacja </div>
+	<div style="clear:both"></div>
+		
 	<c:forEach items="${stadiums}" var="stadium" >
-		<tr>
-			<td>${stadium.stadiumid}</td>
-			<td>${stadium.name}</td>
-			<td>${stadium.capacity}</td>
-			<td>${stadium.address}</td>
-		</tr>
+		<div class="fixtures-tables" style="width:164px">${stadium.stadiumid}</div>
+		<div class="fixtures-tables" style="width:164px">${stadium.name}</div>
+		<div class="fixtures-tables" style="width:164px">${stadium.capacity}</div>
+		<div class="fixtures-tables" style="width:164px">${stadium.address}</div>
+		<div style="clear:both"></div>
 	</c:forEach>
-</table>
+
+	<div id="fixture-add">
 
 <form:form id="add-fixture-form" action="addFixture" modelAttribute="form" method="post">
 		<div class="part">
@@ -53,7 +78,6 @@ STADIONY
 		</div>
  		
 		<div id="cancel">
-			
 			<a href="fixtures"><input type="button" class="submit-button"  value="Anuluj"></a>
 		</div>
 		<div id="register">
@@ -61,5 +85,44 @@ STADIONY
 		</div>
 		<div style="clear:both;"></div>
 	</form:form>
+</div>    
+        </div>
 
+        <%@ include file = "footer.jsp" %>
+        
+    </div>
+
+    <%@ include file = "reje.jsp" %>
+
+    <%@ include file = "czat.jsp" %>
+
+    </div>
+    
+   
+        <script>
+        
+        $(document).ready(function(){
+            var NavY = $('#menu').offset().top;
+
+            var stickyNav = function(){
+            var Scrolly = $(window).scrollTop();
+
+            if(Scrolly>NavY) {
+                $('#menu').addClass('sticky');
+            }else{
+                $('#menu').removeClass('sticky');
+            }
+            };
+
+            stickyNav();
+
+            $(window).scroll(function(){
+                stickyNav();
+            });
+        });
+        
+        
+        </script>
+   
+</div>  
 </body>

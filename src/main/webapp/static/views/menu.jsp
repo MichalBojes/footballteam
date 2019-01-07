@@ -11,18 +11,18 @@
     <div class="option"><a href="squad" class="titlelink1">Skład</a></div>
     <div class="option"><a href="fixtures" class="titlelink1">Terminarz</a></div>
     <div class="option"><a href="history" class="titlelink1">Historia</a></div>
-    <div class="option"><a href="fans_gallery" class="titlelink1">Fani</a></div>
+    <div class="option"><a href="fans_gallery" class="titlelink1">Galeria</a></div>
     <sec:authorize access="hasAuthority('ROLE_ADMIN')">
-            <div class="option">Admin</div>
+            <div class="option"><a href="admin" class="titlelink1">Admin</a></div>
     </sec:authorize>
     <sec:authorize access="hasAuthority('ROLE_TRAINER')">
-            <div class="option">Trener</div>
+            <div class="option"><a href="trainer" class="titlelink1">Trener</a></div>
     </sec:authorize>
     <sec:authorize access="hasAuthority('ROLE_FAN')">
-            <div class="option">Kibic</div> 
+            <div class="option"><a href="fan" class="titlelink1">Kibic</a></div> 
     </sec:authorize>
     <sec:authorize access="hasAuthority('ROLE_PLAYER')">
-                    <div class="option">Zawodnik</div>
+                    <div class="option"><a href="player" class="titlelink1">Zawodnik</a></div>
         </sec:authorize>
 
     <div id="timer">
