@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.footballteam.repository.model.Stadium;
 
 import javax.validation.constraints.NotEmpty;
@@ -29,6 +31,7 @@ public class Fixture {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int fixtureid;
 
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	@Column(nullable = false)
 	private Date data;
 
