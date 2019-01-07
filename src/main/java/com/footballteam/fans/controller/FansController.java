@@ -39,7 +39,7 @@ public class FansController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String username = auth.getName();
 		fansService.declarePresence(fixtureId, username);
-		return "fans";
+		return "redirect:/fans/gallery";
 	}
 
 }
