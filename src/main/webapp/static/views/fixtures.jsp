@@ -37,6 +37,7 @@
           	<th>Przeciwnik</th>
           	<th>Liga</th>
           	<th>Sędzia</th>
+          	<th></th>
           </tr>
           <c:forEach items="${fixturesList}" var="fixture" >
 	          <tr>
@@ -47,6 +48,7 @@
 				<td>${fixture.opponent}</td>
 				<td>${fixture.league}</td>
 				<td>${fixture.referee}</td>
+				<td><a href = "<c:url value = '/match/{fixture.fixtureid}'/>">Wybierz skład</a></td>
 	          </tr>
           </c:forEach>
           </table>

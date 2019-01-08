@@ -1,4 +1,4 @@
-package com.footballteam.repository.model;
+package com.footballteam.players.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +9,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.footballteam.fixtures.model.Fixture;
-import com.footballteam.users.model.User;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,19 +16,19 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "match")
-public class Match {
+@Table(name = "playertraining")
+public class PlayerTraining {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int matchid;
+	private int playertrainingid;
 
 	@ManyToOne
-	@JoinColumn(name = "fixtureid", nullable = false)
-	private Fixture fixturesid;
+	@JoinColumn(name = "trainingid", nullable = false)
+	private Fixture trainingid;
 
 	@ManyToOne
-	@JoinColumn(name = "username", nullable = false)
-	private User username;
+	@JoinColumn(name = "playerid", nullable = false)
+	private Player plaryerid;
 
 }

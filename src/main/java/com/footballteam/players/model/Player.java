@@ -1,4 +1,4 @@
-package com.footballteam.repository.model;
+package com.footballteam.players.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import com.footballteam.repository.model.Unavailability;
 import com.footballteam.users.model.User;
 
 import javax.validation.constraints.NotEmpty;

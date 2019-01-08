@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
+import com.footballteam.players.model.Player;
 import com.footballteam.users.model.User;
 
 @Repository
@@ -27,6 +28,15 @@ public class UsersDAO {
 		User user = entityManager.find(User.class, username);
 		user.setRole(role);
 		entityManager.merge(user);
+		if (role.equals("ROLE_PLAYER")) {
+			Player player = (Player) entityManager.createQuery("Select p From Player p where p.username = :username1")
+					.setParameter("username1", username).getSingleResult();
+			if (player == null) {
+				player = new Player();
+				player.setUsername(user);
+				entityManager.merge(player);
+			}
+		}
 	}
 
 	@Transactional
