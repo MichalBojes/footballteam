@@ -7,7 +7,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import com.footballteam.fixtures.model.Fixture;
-import com.footballteam.repository.model.Match;
+import com.footballteam.players.model.Match;
 import com.footballteam.users.model.User;
 
 @Repository

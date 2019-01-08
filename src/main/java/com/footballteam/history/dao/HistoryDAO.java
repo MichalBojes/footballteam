@@ -15,7 +15,9 @@ public class HistoryDAO {
 	EntityManager entityManager;
 
 	@Transactional
-	public void editHistory(History history) {
+	public void editHistory(int id, String value) {
+		History history = getHistory(id);
+		history.setValue(value);
 		entityManager.merge(history);
 	}
 

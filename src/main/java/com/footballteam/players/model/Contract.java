@@ -1,4 +1,4 @@
-package com.footballteam.repository.model;
+package com.footballteam.players.model;
 
 import java.util.Date;
 

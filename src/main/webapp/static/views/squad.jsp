@@ -27,7 +27,24 @@
             
             <span class="bigtitle">Skład</span>
             <div class="dottedline"></div>
-            Informacje o składzie będą dostępne niedługo ;)
+            <table>
+	            <tr>
+	            	<th>Imię</th>
+	            	<th>Nazwisko</th>
+	            	<th></th>
+	            	<th></th>
+	            	<th></th>
+	            </tr>
+	            <c:forEach items = "${players}" var="player">
+		            <tr>
+			            <td>${player.username.name}</td> 
+			            <td>${player.username.surname}</td>
+			            <td><a href = "<c:url value = '/stats?id=${player.playerid}'/>">Wyświetl Statystyki</a></td>
+			            <td><a href = "<c:url value = '/editStats?id=${player.playerid}'/>">Edytuj dane</a></td>
+						<td><a href = "<c:url value = '/unavailability?username=${player.username.username}'/>">Zgłoś niedostępność</a></td>
+		            </tr>
+	            </c:forEach>
+            </table>
         </div>
 
         <%@ include file = "footer.jsp" %>

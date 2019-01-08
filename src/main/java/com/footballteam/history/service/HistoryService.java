@@ -16,9 +16,6 @@ public class HistoryService {
 	}
 
 	public void editHistory(int id, String value) {
-		History history = new History();
-		history.setHistoryid(id);
-		history.setValue(value);
-		dao.editHistory(history);
+		dao.editHistory(id, value);
 	}
 }
