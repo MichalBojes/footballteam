@@ -117,25 +117,7 @@ body
     text-align: center;
 }
 
-.submit-button {
-	padding: 10px;
-	margin: 10px;
-	font-size: 14px;
-	background-color: grey;
-	color:white;
-}
 
-
-
-.submit-button:hover
-{
-	background-color:white;
-	color:black;
-	cursor:pointer;
-	border: groove black;
-	border-width: 2px;
-
-}
 
 #czat
 {
@@ -231,10 +213,11 @@ height: 170px;
 
 .optionL
 {
-font-size: 18px;
+font-size: 16px;
 height: 25px;
 padding: 10px;
 border-bottom: 2px dotted #444444;
+text-align: center;
 
 }
 
@@ -280,4 +263,166 @@ a.titlelink2
 {
     color:black;
     text-decoration: none;
+}
+
+
+
+#admin-title
+{
+    float: left;
+    width: 196px;
+    font-size: 20px;
+    border: 2px solid black;
+    margin-right: 20px;
+    text-align: center;
+    background-color: rgb(26, 22, 22);
+    color:white;
+}
+
+
+#admin-username
+{
+    color:black;
+    background-color: rgb(190, 190, 190);
+    float:left;
+    margin-top:10px;
+    width: 188px;
+    text-align: center;
+    padding:5px;
+    border: 1px dashed black;
+    
+}
+
+
+#admin-button
+{
+    display:inline-block;
+    min-width: 60px;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-decoration: none;
+    color:white;
+    border: 1px solid rgb(116, 33, 33);
+    background-color: rgb(158, 106, 106);
+}
+
+#admin-button:hover
+{
+    background-color: rgb(124, 54, 54);
+}
+
+
+
+.fixtures-title
+{
+    margin-right:1px;
+    font-size: 15px;
+    padding:5px;
+    float:left;
+    border: 2px solid black;
+    text-align: center;
+    background-color: rgb(94, 84, 84);
+    color:white;
+}
+
+.fixtures-tables
+{
+    margin-top:5px;
+    font-size:15px;
+    padding:5px;
+    float:left;
+    background-color: #cf8256;
+    color:white;
+    text-align:center;
+    margin-right:1px;
+}
+
+#stadium
+{
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 10px;
+    margin-bottom:10px;
+    color:rgb(156, 147, 18);
+}
+
+#fixture-add
+{
+    margin-top:30px;
+    margin-left:auto;
+    margin-right:auto;
+    width:496px;
+    border: 2px ridge black ;
+    background-color: rgb(243, 242, 242);
+    color:black;
+}
+
+
+#register
+{
+	float:right;
+	width:150px;
+	font-size: 30px;
+	margin-top:10px;
+}
+
+#cancel
+{
+    margin-left:30px;
+	margin-top:10px;
+	font-size: 30px;
+	width:100px;
+	float:left;
+}
+
+
+.submit-button {
+	padding: 10px;
+	margin: 10px;
+	font-size: 14px;
+	background-color: rgb(48, 189, 43);
+	color:white;
+}
+
+.submit-button:hover
+{
+	background-color:rgb(33, 141, 29);
+	color:white;
+	cursor:pointer;
+	border: groove black;
+	border-width: 2px;
+
+}
+
+
+.input-class{
+        font-size:15px;
+        text-align: center;
+        margin-left:auto;
+        margin-right:auto;
+		background-color: rgb(240,240,240);
+		width: 60%;
+		padding: 8px;
+		display: block;
+	    border: ridge rgba(0, 0, 0, 0.267);
+}
+
+.input-class:focus
+{
+	border: 2px solid rgb(169, 235, 169);
+	background-color: rgb(234, 252, 232);
+	color: rgb(28, 136, 28);
+}
+
+.part
+{
+    margin-top:15px;
+    text-align:center;
+    font-size: 18px;
 }

@@ -22,9 +22,9 @@ public class FansController {
 	@Autowired
 	FansService fansService;
 
-	@RequestMapping("/fans/gallery")
+	@RequestMapping("/fans_gallery")
 	public String showFansGalleryView(Model model) {
-		return "fans";
+		return "fans_gallery";
 	}
 
 	@RequestMapping("/fans")
