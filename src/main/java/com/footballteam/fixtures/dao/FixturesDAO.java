@@ -32,6 +32,10 @@ public class FixturesDAO {
 		entityManager.merge(fixture);
 	}
 
+	public Stadium getStadium(Long id){
+		return entityManager.find(Stadium.class, id);
+	}
+
 	public List<Fixture> getAllFixtures() {
 		Query query = entityManager.createQuery("SELECT f FROM Fixture f where data > CURRENT_DATE ");
 		List<Fixture> fixturesList = query.getResultList();

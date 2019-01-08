@@ -45,21 +45,21 @@
 										<div id="admin-username">${user.username}</div>
 										<div id="admin-username" style="width:288px ; margin-left: 20px ">
 										<c:if test = "${user.role == 'ROLE_TRAINER' || user.role == 'ROLE_PLAYER' || user.role == 'ROLE_FAN'}">
-										<a href="<c:url value='/changeRole/${user.username}/A' />" > <div id="admin-button">Admin</div></a>
+										<a href="<c:url value='/changeRole/${user.username}/A' />" > <div class="admin-button">Admin</div></a>
 										</c:if>
 										<c:if test = "${user.role == 'ROLE_ADMIN' || user.role == 'ROLE_TRAINER' || user.role == 'ROLE_PLAYER'}">
-										<a href="<c:url value='/changeRole/${user.username}/F' />" > <div id="admin-button">Fan</div></a>
+										<a href="<c:url value='/changeRole/${user.username}/F' />" > <div class="admin-button">Fan</div></a>
 										</c:if>
 										<c:if test = "${user.role == 'ROLE_ADMIN' || user.role == 'ROLE_TRAINER' || user.role == 'ROLE_FAN'}">
-										<a href="<c:url value='/changeRole/${user.username}/P' />" > <div id="admin-button">Piłkarz</div></a>
+										<a href="<c:url value='/changeRole/${user.username}/P' />" > <div class="admin-button">Piłkarz</div></a>
 										</c:if>
 										<c:if test = "${user.role == 'ROLE_ADMIN' || user.role == 'ROLE_PLAYER' || user.role == 'ROLE_FAN'}">
-										<a href="<c:url value='/changeRole/${user.username}/T' />" > <div id="admin-button">Trener</div></a>
+										<a href="<c:url value='/changeRole/${user.username}/T' />" > <div class="admin-button">Trener</div></a>
 										</c:if>
 										</div>
 										
 										<div id="admin-username" style="width:168px ; margin-left: 20px">
-										<a href="<c:url value='/deleteUser/${user.username}' />" > <div id="admin-button">Usuń Użytkownika</div></a>
+										<a href="<c:url value='/deleteUser/${user.username}' />" > <div class="admin-button">Usuń Użytkownika</div></a>
 										
 										
 									</tr>

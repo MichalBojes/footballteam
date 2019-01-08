@@ -30,11 +30,27 @@
         <div id="content">
             
             <span class="bigtitle">Aktualności</span>
-            <a href="<c:url value='/addNews'/>">Dodaj nową</a>
+            <sec:authorize access="hasAuthority('ROLE_TRAINER')">
+                    <a href="<c:url value='/addNews'/>"><div class="admin-button" style="float:right; padding: 10px; font-size:21px; text-decoration: none;
+                     color:white;"  >Dodaj aktualność</div> </a> 
+                     <div style="clear:both"></div>
+            </sec:authorize>
+            <sec:authorize access="hasAuthority('ROLE_ADMIN')">
+                    <a href="<c:url value='/addNews'/>"><div class="admin-button" style="float:right; padding: 10px; font-size:21px; text-decoration: none;
+                     color:white;"  >Dodaj aktualność</div> </a> 
+                     <div style="clear:both"></div>
+            </sec:authorize>
+
             <div class="dottedline"></div>
-            <c:forEach items="${news}" var="news_value">
-			    ${news_value.data} <a href="<c:url value='/editNews?id=${news_value.newsid}'/>">Edytuj</a><br>
-			    ${news_value.value} <br>
+            <c:forEach items="${news}" var="news_value">			    
+            <a href="<c:url value='/editNews?id=${news_value.newsid}'/>">Edytuj</a><br>
+            <div id="news-data">
+                ${news_value.data}<br>
+            </div>
+            <div id="news">
+               
+                ${news_value.value} 
+            </div>
 			</c:forEach>
              
         </div>

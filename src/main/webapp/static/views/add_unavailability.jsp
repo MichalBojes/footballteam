@@ -9,10 +9,10 @@
 <body>
 <c:forEach items="${fixturesList}" var="fixture" >
 	<div class="fixtures-tables" style="width:99px; font-size:1px;">${fixture.fixtureid}</div>
-    <div class="fixtures-tables" style="width:99px; font-size:1px;">${fixture.data}</div>
+    <div class="fixtures-tables" style="width:99px; font-size:1px;">${fixture.dataFormated}</div>
 	<div class="fixtures-tables" style="width:59px; font-size:15px;">${fixture.season}</div>
 	<div class="fixtures-tables" style="width:59px;">${fixture.round}</div>
-	<div class="fixtures-tables" style="width:109px;">${fixture.stadiumid.name}</div>
+	<div class="fixtures-tables" style="width:109px;">${fixture.stadium.name}</div>
 	<div class="fixtures-tables" style="width:109px;">${fixture.opponent}</div>
 	<div class="fixtures-tables" style="width:109px;">${fixture.league}</div>
     <div class="fixtures-tables" style="width:109px;">${fixture.referee}</div>

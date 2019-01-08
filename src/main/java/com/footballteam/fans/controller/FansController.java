@@ -2,6 +2,7 @@ package com.footballteam.fans.controller;
 
 import java.util.List;
 
+import com.footballteam.fixtures.dto.FixtureDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -29,7 +30,7 @@ public class FansController {
 
 	@RequestMapping("/fans")
 	public String showFansView(Model model) {
-		List<Fixture> fixturesList = fixturesService.getAllFixtures();
+		List<FixtureDTO> fixturesList = fixturesService.getAllFixtures();
 		model.addAttribute("fixtures", fixturesList);
 		return "fansFixtures";
 	}

@@ -4,6 +4,8 @@
 
 <%@ include file = "header.jsp" %>
 <body onload="start()">
+
+
 <div id="wrapper">  
     <%@ include file = "menu.jsp" %>
 
@@ -25,34 +27,41 @@
         <div id="content">
             
             <span class="bigtitle">Terminarz na sezon 2019</span>
-            <a href="addFixture"><div id="admin-button" style="float:right; padding: 10px; font-size:21px; text-decoration: none;
-            background-color: rgb(143, 94, 94); color:white;"  >Dodaj nowy Mecz</div> </a> 
+            <sec:authorize access="hasAuthority('ROLE_TRAINER')">
+            <a href="addFixture"><div class="admin-button" style="float:right; padding: 10px; font-size:21px; text-decoration: none;
+             color:white;"  >Dodaj nowy Mecz</div> </a> 
              <div style="clear:both"></div>
+            </sec:authorize>
             <div class="dottedline"></div>
-        
-    
+
           	<div class="fixtures-title" style="width:95px;">Data</div>
-          	<div class="fixtures-title" style="width:55px;">Sezon</div>
-          	<div class="fixtures-title" style="width:55px;">Runda</div>
-          	<div class="fixtures-title" style="width:105px;">Stadion</div>
+          	<div class="fixtures-title" style="width:50px;">Sezon</div>
+          	<div class="fixtures-title" style="width:50px;">Runda</div>
+          	<div class="fixtures-title" style="width:55px;">Stadion</div>
           	<div class="fixtures-title" style="width:105px;">Przeciwnik</div>
-          	<div class="fixtures-title" style="width:105px;">Liga</div>
-            <div class="fixtures-title" style="width:105px;">Sędzia</div>
+          	<div class="fixtures-title" style="width:100px;">Liga</div>
+            <div class="fixtures-title" style="width:100px;">Sędzia</div>
+            <sec:authorize access="hasAuthority('ROLE_TRAINER')">
+            <div class="fixtures-title" style="width:55px;">Skład</div>
+            </sec:authorize>
             <div style="clear:both"></div>
         
-          	<th></th>
+         
           <c:forEach items="${fixturesList}" var="fixture" >
-                <div class="fixtures-tables" style="width:99px; font-size:1px;">${fixture.data}</div>
-				<div class="fixtures-tables" style="width:59px; font-size:15px;">${fixture.season}</div>
-				<div class="fixtures-tables" style="width:59px;">${fixture.round}</div>
-				<div class="fixtures-tables" style="width:109px;">${fixture.stadiumid.name}</div>
+                <div class="fixtures-tables" style="width:99px;">${fixture.dataFormated}</div>
+				<div class="fixtures-tables" style="width:54px; font-size:15px;">${fixture.season}</div>
+				<div class="fixtures-tables" style="width:54px;">${fixture.round}</div>
+				<div class="fixtures-tables" style="width:59px;">${fixture.stadium.name}</div>
 				<div class="fixtures-tables" style="width:109px;">${fixture.opponent}</div>
-				<div class="fixtures-tables" style="width:109px;">${fixture.league}</div>
-                <div class="fixtures-tables" style="width:109px;">${fixture.referee}</div>
+				<div class="fixtures-tables" style="width:104px;">${fixture.league}</div>
+                <div class="fixtures-tables" style="width:104px;">${fixture.referee}</div>
+                <sec:authorize access="hasAuthority('ROLE_TRAINER')">
+                <a href = "<c:url value = '/match/{fixture.fixtureid}'/>"><div class="fixtures-tables2" style="width:59px;">Edytuj</div></a>
+                </sec:authorize>
                 <div style="clear:both"></div>
-				<td><a href = "<c:url value = '/match/{fixture.fixtureid}'/>">Wybierz skład</a></td>
+				
           </c:forEach>
-          
+        
         </div>
 
         <%@ include file = "footer.jsp" %>
