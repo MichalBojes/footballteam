@@ -27,14 +27,14 @@ public class HistoryController {
 
 	@Secured(value = "ROLE_TRAINER")
 	@RequestMapping(value = "/editHistory", method = RequestMethod.GET)
-	public String addNewFixture(Model model) {
+	public String editHistory(Model model) {
 		History historia = service.getHistory(1);
 		model.addAttribute("history", historia);
 		return EDIT_HISTORY_VIEW_JSP_NAME;
 	}
 
 	@RequestMapping(value = "/editHistory/{id}", method = RequestMethod.POST)
-	public String confirmAddNewFixture(@ModelAttribute("history") History history,  @PathVariable("id") int id) {
+	public String confirmEditHistory(@ModelAttribute("history") History history,  @PathVariable("id") int id) {
 		service.editHistory(id, history.getValue());
 		return "redirect:/history";
 	}

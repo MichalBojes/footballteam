@@ -35,7 +35,7 @@ public class FansController {
 	}
 
 	@RequestMapping("/declarePresence/{id}")
-	public String showFansGalleryView(Model model, @PathVariable("id") int fixtureId) {
+	public String declarePersence(Model model, @PathVariable("id") int fixtureId) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String username = auth.getName();
 		fansService.declarePresence(fixtureId, username);

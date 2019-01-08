@@ -1,11 +1,10 @@
-
 <%@ page session="false" isELIgnored="false" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ include file = "header.jsp" %>
 
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Statystyki</title>
 </head>
 <body>
 	${player.username.name} ${player.username.surname}
@@ -23,12 +22,12 @@
 			<td>${player.matchesPlayed}</td>
 			<td>${player.goalScored}</td>
 			<td><c:if test = "${player.preferedFootRight == true}"> Prawa </c:if>
-			<c:if test = "${player.preferedFootLeft == true}"> Lewa </c:if>
+			<c:if test = "${player.preferedFootRight == false}"> Lewa </c:if>
 			</td>
 			<td>${player.shirtNumber}</td>
 			<td>${player.cardsReceived}</td>
 		</tr>
 	</table>
-	<a href = "<c:url value = 'editStats/${player.playerid}'/>">Edytuj dane</a>
-	<a href = "<c:url value = 'unavailability/${player.username.username}'/>">Zgłoś niedostępność</a>
+	<a href = "<c:url value = 'editStats?id=${player.playerid}'/>">Edytuj dane</a>
+	<a href = "<c:url value = 'unavailability/${player.username.username}'/>">Zgłoś niedostępność</a> 
 </body>
