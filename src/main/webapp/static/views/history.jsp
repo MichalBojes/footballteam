@@ -25,12 +25,12 @@
         <div id="content">
             
             <span class="bigtitle">Historia</span>
+             <sec:authorize access="hasAuthority('ROLE_TRAINER')">
+           		<a href ="<c:url value='/editHistory' />"> Edytuj historie</a> 
+          	 </sec:authorize>
             <div class="dottedline"></div>
           ${history.value}
-          <sec:authorize access="hasAuthority('ROLE_TRAINER')">
-           <a href ="<c:url value='/editHistory' />">
-           Edytuj historie</a> 
-           </sec:authorize>
+         
         </div>
 
         <%@ include file = "footer.jsp" %>

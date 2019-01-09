@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.footballteam.homesite.dto.NewsDTO;
 import com.footballteam.homesite.model.News;
 import com.footballteam.homesite.service.HomesiteService;
-import com.footballteam.players.dto.ContractDTO;
-import com.footballteam.players.model.Contract;
 
 @Controller
 public class HomesiteController {
@@ -37,23 +35,23 @@ public class HomesiteController {
 		model.addAttribute("news", newsList);
 		return HOMESITE_JSP_NAME;
 	}
-	
+
 	@Secured(value = "ROLE_TRAINER")
 	@RequestMapping("/editNews")
 	public String showEditNewsView(Model model, @RequestParam("id") int newsid) {
 		News news = service.getNewsById(newsid);
-		NewsDTO newsDTO=new NewsDTO();
+		NewsDTO newsDTO = new NewsDTO();
 		newsDTO.setNewsid(newsid);
 		newsDTO.setValue(news.getValue());
 		newsDTO.setData(news.getData());
 		model.addAttribute("newsDTO", newsDTO);
 		return "edit_news";
 	}
-	
+
 	@Secured(value = "ROLE_TRAINER")
 	@RequestMapping("/addNews")
-	public String showEditNewsView(Model model ) {
-		NewsDTO newsDTO=new NewsDTO();
+	public String showEditNewsView(Model model) {
+		NewsDTO newsDTO = new NewsDTO();
 		newsDTO.setNewsid(0);
 		newsDTO.setValue(" ");
 		newsDTO.setData(new Date());

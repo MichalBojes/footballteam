@@ -26,7 +26,7 @@ public class News {
 	private int newsid;
 
 	@NotEmpty
-	@Column(nullable = false)
+	@Column(nullable = false, length = 3064)
 	private String value;
 	
 	@DateTimeFormat(pattern = "dd-MM-yyyy")
