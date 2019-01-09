@@ -30,9 +30,11 @@
         <div id="content">
             
             <span class="bigtitle">Aktualności</span>
+            <a href="<c:url value='/addNews'/>">Dodaj nową</a>
             <div class="dottedline"></div>
             <c:forEach items="${news}" var="news_value">
-			    ${news_value.value} ${news_value.data}<br>
+			    ${news_value.data} <a href="<c:url value='/editNews?id=${news_value.newsid}'/>">Edytuj</a><br>
+			    ${news_value.value} <br>
 			</c:forEach>
              
         </div>

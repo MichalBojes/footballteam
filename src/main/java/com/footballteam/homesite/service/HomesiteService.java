@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.footballteam.homesite.dao.HomesiteDAO;
+import com.footballteam.homesite.dto.NewsDTO;
 import com.footballteam.homesite.model.News;
 
 @Service
@@ -13,19 +14,16 @@ public class HomesiteService {
 	@Autowired
 	HomesiteDAO dao;
 
-	public News getNews(int id) {
-		return dao.getNews(id);
-	}
-
-	public void editNews(int id, String value) {
-		News news = new News();
-		news.setNewsid(id);
-		news.setValue(value);
-		dao.editNews(news);
+	public News getNewsById(int id) {
+		return dao.getNewsById(id);
 	}
 	
 	public List<News> getAllNews(){
 		return dao.getAllNews();
+	}
+
+	public void editNews(NewsDTO newsDTO) {
+		dao.editNews(newsDTO);
 	}
 	
 }
