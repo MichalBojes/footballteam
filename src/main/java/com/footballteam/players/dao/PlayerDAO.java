@@ -8,10 +8,14 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
+import com.footballteam.fixtures.model.Fixture;
 import com.footballteam.players.dto.ContractDTO;
 import com.footballteam.players.dto.PlayerDTO;
+import com.footballteam.players.dto.UnavailabilityDTO;
 import com.footballteam.players.model.Contract;
+import com.footballteam.players.model.Match;
 import com.footballteam.players.model.Player;
+import com.footballteam.players.model.Unavailability;
 
 @Repository
 public class PlayerDAO {
@@ -55,5 +59,25 @@ public class PlayerDAO {
 		contract.setSalary(contractDTO.getSalary());
 		contract.setExtras(contractDTO.getExtras());
 		entityManager.merge(contract);
+	}
+
+	public List<Unavailability> getUnavailabilities(int id) {
+		List<Unavailability> unavailabilityList = entityManager
+				.createQuery("SELECT u FROM Unavailability u where u.player.playerid = :playerid1")
+				.setParameter("playerid1", id).getResultList();
+		return unavailabilityList;
+	}
+
+	@Transactional
+	public void addUnavailability(UnavailabilityDTO unavailabilityDTO) {
+		Unavailability unavailability = new Unavailability();
+		Player player = entityManager.find(Player.class, unavailabilityDTO.getPlayer().getPlayerid());
+		unavailability.setPlayer(player);
+		unavailability.setOccurreDate(unavailabilityDTO.getOccurreDate());
+		unavailability.setReason(unavailabilityDTO.getReason());
+		unavailability.setDurationInDays(unavailabilityDTO.getDurationInDays());
+		Fixture fixture = entityManager.find(Fixture.class, unavailabilityDTO.getFixture().getFixtureid());
+		unavailability.setFixture(fixture);
+		entityManager.merge(unavailability);
 	}
 }
