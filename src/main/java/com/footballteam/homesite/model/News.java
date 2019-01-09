@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -27,6 +29,7 @@ public class News {
 	@Column(nullable = false)
 	private String value;
 	
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	@Column(nullable = false)
 	private Date data;
 
