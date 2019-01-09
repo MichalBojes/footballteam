@@ -31,14 +31,20 @@ public class FixturesDAO {
 		fixture.setStadiumid(stadium);
 		entityManager.merge(fixture);
 	}
+
 	public List<Fixture> getAllFixtures() {
 		Query query = entityManager.createQuery("SELECT f FROM Fixture f where data > CURRENT_DATE ");
 		List<Fixture> fixturesList = query.getResultList();
 		return fixturesList;
 	}
-	public List<Stadium> getAllStadiums(){
+
+	public List<Stadium> getAllStadiums() {
 		Query query = entityManager.createQuery("SELECT s FROM Stadium s");
 		List<Stadium> stadiumList = query.getResultList();
 		return stadiumList;
+	}
+
+	public Fixture getFixtureById(int fixtureid) {
+		return entityManager.find(Fixture.class, fixtureid);
 	}
 }

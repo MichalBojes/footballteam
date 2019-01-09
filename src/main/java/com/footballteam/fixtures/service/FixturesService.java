@@ -27,4 +27,8 @@ public class FixturesService {
 		dao.addNewFixture(form);
 	}
 
+	public Fixture getFixtureById(int fixtureid) {
+		return dao.getFixtureById(fixtureid);
+	}
+
 }

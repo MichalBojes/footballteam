@@ -10,7 +10,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
-import com.footballteam.repository.model.Unavailability;
 import com.footballteam.users.model.User;
 
 import javax.validation.constraints.NotEmpty;
@@ -51,9 +50,5 @@ public class Player {
 
 	@Column(name = "cards_received", nullable = false)
 	private int cardsReceived;
-
-	@ManyToOne
-	@JoinColumn(name = "unavailibityid")
-	private Unavailability unavailibalityid;
 
 }

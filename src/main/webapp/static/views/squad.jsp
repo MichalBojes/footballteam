@@ -34,6 +34,7 @@
 	            	<th></th>
 	            	<th></th>
 	            	<th></th>
+	            	<th></th>
 	            </tr>
 	            <c:forEach items = "${players}" var="player">
 		            <tr>
@@ -41,7 +42,8 @@
 			            <td>${player.username.surname}</td>
 			            <td><a href = "<c:url value = '/stats?id=${player.playerid}'/>">Wyświetl Statystyki</a></td>
 			            <td><a href = "<c:url value = '/contract?id=${player.playerid}'/>">Wyświetl Kontrakt</a></td>
-						<td><a href = "<c:url value = '/unavailability?username=${player.username.username}'/>">Zgłoś niedostępność</a></td>
+						<td><a href = "<c:url value = '/unavailability?id=${player.playerid}'/>">Wyświetl niedostępności</a></td>
+						<td><a href = "<c:url value = '/addUnavailability?id=${player.playerid}'/>">Zadeklaruj niedostępność</a></td>
 		            </tr>
 	            </c:forEach>
             </table>

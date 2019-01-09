@@ -1,5 +1,6 @@
 package com.footballteam.fixtures.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.footballteam.fixtures.dto.FixtureFormDTO;
 import com.footballteam.fixtures.model.Fixture;
@@ -26,6 +28,15 @@ public class FixturesController {
 	@RequestMapping("/fixtures")
 	public String showFixturesView(Model model) {
 		List<Fixture> fixturesList = service.getAllFixtures();
+		model.addAttribute("fixturesList", fixturesList);
+		return "fixtures";
+	}
+	
+	@RequestMapping("/fixture")
+	public String showFixtureView(Model model, @RequestParam ("id") int fixtureid) {
+		List<Fixture> fixturesList = new ArrayList<Fixture>();
+		Fixture fixture = service.getFixtureById(fixtureid);
+		fixturesList.add(fixture);
 		model.addAttribute("fixturesList", fixturesList);
 		return "fixtures";
 	}
