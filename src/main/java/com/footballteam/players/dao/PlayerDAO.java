@@ -8,7 +8,9 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
+import com.footballteam.players.dto.ContractDTO;
 import com.footballteam.players.dto.PlayerDTO;
+import com.footballteam.players.model.Contract;
 import com.footballteam.players.model.Player;
 
 @Repository
@@ -29,7 +31,6 @@ public class PlayerDAO {
 
 	@Transactional
 	public void editStats(PlayerDTO playerDTO) {
-		System.out.println(playerDTO.toString());
 		Player player = entityManager.find(Player.class, playerDTO.getPlayerid());
 		player.setPosition(playerDTO.getPosition());
 		player.setMatchesPlayed(playerDTO.getMatchesPlayed());
@@ -38,5 +39,21 @@ public class PlayerDAO {
 		player.setShirtNumber(playerDTO.getShirtNumber());
 		player.setCardsReceived(playerDTO.getCardsReceived());
 		entityManager.merge(player);
+	}
+
+	public Contract getContractById(int playerid) {
+		Contract contract = entityManager.find(Contract.class, playerid);
+		return contract;
+	}
+
+	@Transactional
+	public void editContract(ContractDTO contractDTO) {
+		Contract contract = entityManager.find(Contract.class, contractDTO.getPlayerid());
+		contract.setValue(contractDTO.getValue());
+		contract.setStartDate(contractDTO.getStartDate());
+		contract.setDurationInMonths(contractDTO.getDurationInMonths());
+		contract.setSalary(contractDTO.getSalary());
+		contract.setExtras(contractDTO.getExtras());
+		entityManager.merge(contract);
 	}
 }

@@ -40,7 +40,7 @@
 			            <td>${player.username.name}</td> 
 			            <td>${player.username.surname}</td>
 			            <td><a href = "<c:url value = '/stats?id=${player.playerid}'/>">Wyświetl Statystyki</a></td>
-			            <td><a href = "<c:url value = '/editStats?id=${player.playerid}'/>">Edytuj dane</a></td>
+			            <td><a href = "<c:url value = '/contract?id=${player.playerid}'/>">Wyświetl Kontrakt</a></td>
 						<td><a href = "<c:url value = '/unavailability?username=${player.username.username}'/>">Zgłoś niedostępność</a></td>
 		            </tr>
 	            </c:forEach>

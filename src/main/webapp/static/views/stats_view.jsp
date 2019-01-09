@@ -28,6 +28,6 @@
 			<td>${player.cardsReceived}</td>
 		</tr>
 	</table>
-	<a href = "<c:url value = 'editStats?id=${player.playerid}'/>">Edytuj dane</a>
+	<a href = "<c:url value = 'editStats?id=${player.playerid}'/>">Edytuj Statystyki</a>
 	<a href = "<c:url value = 'unavailability/${player.username.username}'/>">Zgłoś niedostępność</a> 
 </body>

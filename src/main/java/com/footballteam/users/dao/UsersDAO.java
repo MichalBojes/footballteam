@@ -1,5 +1,6 @@
 package com.footballteam.users.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -11,6 +12,7 @@ import javax.transaction.Transactional;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Repository;
 
+import com.footballteam.players.model.Contract;
 import com.footballteam.players.model.Player;
 import com.footballteam.users.model.User;
 
@@ -33,18 +35,35 @@ public class UsersDAO {
 		if (role.equals("ROLE_PLAYER")) {
 			Player player;
 			try {
-			  player = (Player) entityManager.createQuery("Select p From Player p where p.username.username = :username1").setParameter("username1", username).getSingleResult();
-			}catch(Exception e) {
-			player = new Player();
-			player.setPosition("brak");
-			player.setMatchesPlayed(0);
-			player.setGoalScored(0);
-			player.setPreferedFootRight(true);
-			player.setShirtNumber(0);
-			player.setCardsReceived(0);
-			player.setUsername(user);
-			entityManager.merge(player);
-			 }
+				player = (Player) entityManager
+						.createQuery("Select p From Player p where p.username.username = :username1")
+						.setParameter("username1", username).getSingleResult();
+			} catch (Exception e) {
+				player = new Player();
+				player.setPosition("brak");
+				player.setMatchesPlayed(0);
+				player.setGoalScored(0);
+				player.setPreferedFootRight(true);
+				player.setShirtNumber(0);
+				player.setCardsReceived(0);
+				player.setUsername(user);
+				entityManager.merge(player);
+			}
+			player = (Player) entityManager.createQuery("Select p From Player p where p.username.username = :username1")
+					.setParameter("username1", username).getSingleResult();
+
+			Contract contract = entityManager.find(Contract.class, player.getPlayerid());
+			if (contract == null) {
+				contract = new Contract();
+				contract.setPlayerid(player.getPlayerid());
+				contract.setDurationInMonths(0);
+				contract.setExtras("brak");
+				contract.setSalary(0);
+				contract.setStartDate(new Date());
+				contract.setValue(0);
+
+				entityManager.merge(contract);
+			}
 		}
 	}
 
