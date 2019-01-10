@@ -1,10 +1,6 @@
 package com.footballteam.fixtures.controller;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import com.footballteam.fixtures.dto.FixtureDTO;
@@ -18,9 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.footballteam.fixtures.dto.FixtureFormDTO;
-import com.footballteam.fixtures.model.Fixture;
+import com.footballteam.fixtures.model.Stadium;
 import com.footballteam.fixtures.service.FixturesService;
-import com.footballteam.repository.model.Stadium;
 
 @Controller
 public class FixturesController {

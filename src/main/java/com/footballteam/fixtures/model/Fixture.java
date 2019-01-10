@@ -14,8 +14,6 @@ import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.footballteam.repository.model.Stadium;
-
 import javax.validation.constraints.NotEmpty;
 
 import lombok.Data;

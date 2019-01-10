@@ -9,7 +9,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.footballteam.repository.model.Stadium;
+import com.footballteam.fixtures.model.Stadium;
 import com.footballteam.training.dao.TrainingDAO;
 import com.footballteam.training.dto.TrainingDTO;
 

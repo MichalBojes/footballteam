@@ -1,10 +1,8 @@
 package com.footballteam.fixtures.dto;
 
-import com.footballteam.repository.model.Stadium;
+import com.footballteam.fixtures.model.Stadium;
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
 
-import java.util.Date;
 @Data
 public class FixtureDTO {
 	

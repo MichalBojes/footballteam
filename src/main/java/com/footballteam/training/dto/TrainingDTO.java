@@ -1,6 +1,6 @@
 package com.footballteam.training.dto;
 
-import com.footballteam.repository.model.Stadium;
+import com.footballteam.fixtures.model.Stadium;
 
 import lombok.Data;
 

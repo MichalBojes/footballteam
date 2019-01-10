@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.footballteam.repository.model.Stadium;
+import com.footballteam.fixtures.model.Stadium;
 import com.footballteam.training.dto.TrainingDTO;
 import com.footballteam.training.service.TrainingService;
 
