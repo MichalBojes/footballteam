@@ -33,8 +33,10 @@
             <a href="squad"><div class="admin-button" style="float:right; padding: 10px; font-size:15px; text-align:center; text-decoration: none;
                 color:white;"  >Powrót</div> </a> 
 
+            <sec:authorize access="hasAuthority('ROLE_TRAINER')">
             <a href="<c:url value = 'editContract?id=${contract.playerid}'/>"><div class="admin-button" style="float:right; padding: 10px; font-size:15px; text-decoration: none;
             color:white;"  >Edytuj kontrakt</div> </a> 
+            </sec:authorize>
             <div style="clear:both"></div>
 
             <div class="dottedline"></div>

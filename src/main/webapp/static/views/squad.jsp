@@ -26,6 +26,10 @@
         <div id="content">
             
             <span class="bigtitle">Skład</span>
+            <sec:authorize access="hasAuthority('ROLE_PLAYER')">
+            <a href="<c:url value = '/addUnavailability?id=${player.playerid}'/>"><div class="admin-button" style="float:right; padding: 10px; font-size:15px; text-decoration: none;
+            color:white;" >Zgłoś niedostępność</div> </a> 
+            </sec:authorize>
             <div class="dottedline"></div>
 
             <c:if test="${pageContext.request.userPrincipal.name == null}">
