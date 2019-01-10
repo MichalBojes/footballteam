@@ -25,9 +25,12 @@
         <div id="content">
             
             <span class="bigtitle">Historia</span>
-             <sec:authorize access="hasAuthority('ROLE_TRAINER')">
-           		<a href ="<c:url value='/editHistory' />"> Edytuj historie</a> 
-          	 </sec:authorize>
+            <sec:authorize access="hasAuthority('ROLE_ADMIN')">
+           <a href ="<c:url value='/editHistory' />"><div class="admin-button" style="float:right; padding: 10px; font-size:21px; text-decoration: none;
+                     color:white;"  > Edytuj historie</div> </a> 
+           <div style="clear:both"></div>
+           </sec:authorize>
+          
             <div class="dottedline"></div>
           ${history.value}
          

@@ -294,7 +294,7 @@ a.titlelink2
 }
 
 
-#admin-button
+.admin-button
 {
     display:inline-block;
     min-width: 60px;
@@ -308,9 +308,10 @@ a.titlelink2
     background-color: rgb(158, 106, 106);
 }
 
-#admin-button:hover
+.admin-button:hover
 {
-    background-color: rgb(124, 54, 54);
+    cursor: pointer;
+    background-color: rgb(100, 45, 45);
 }
 
 
@@ -318,7 +319,7 @@ a.titlelink2
 .fixtures-title
 {
     margin-right:1px;
-    font-size: 15px;
+    font-size: 17px;
     padding:5px;
     float:left;
     border: 2px solid black;
@@ -328,15 +329,42 @@ a.titlelink2
 }
 
 .fixtures-tables
-{
+{   
+    height: 20px;
     margin-top:5px;
-    font-size:15px;
+    font-size:17px;
     padding:5px;
     float:left;
     background-color: #cf8256;
     color:white;
     text-align:center;
     margin-right:1px;
+}
+
+.fixtures-tables2
+{
+    margin-top:5px;
+    font-size:17px;
+    padding:5px;
+    float:left;
+    background-color: #a0623e;
+    color:white;
+    text-align:center;
+    margin-right:1px;
+}
+
+.fixtures-tables2:hover
+{
+    
+    background-color: #805134;
+    color:rgb(255, 255, 255);
+    cursor:pointer;
+}
+
+#squad-container
+{
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #stadium
@@ -407,7 +435,7 @@ a.titlelink2
         margin-left:auto;
         margin-right:auto;
 		background-color: rgb(240,240,240);
-		width: 60%;
+		width: 80%;
 		padding: 8px;
 		display: block;
 	    border: ridge rgba(0, 0, 0, 0.267);
@@ -425,4 +453,43 @@ a.titlelink2
     margin-top:15px;
     text-align:center;
     font-size: 18px;
+}
+
+#squad-title
+{
+    width:100%;
+}
+
+#player-add
+{
+    margin-top:30px;
+    margin-left:auto;
+    margin-right:auto;
+    width:496px;
+    border: 2px ridge black ;
+    color:black;
+}
+
+
+#news-data
+{
+    width:700px;
+    background-color: rgb(94, 84, 84);
+    font-size: 15px;
+    border: 2px outset;
+    color:white;
+    padding:5px 10px;
+    
+   
+}
+
+#news
+{
+    width:700px;
+    background-color: #cf8256;
+    font-size: 22px;
+    border: 2px outset;
+    color:white;
+    margin-bottom: 20px;
+    padding:10px;
 }

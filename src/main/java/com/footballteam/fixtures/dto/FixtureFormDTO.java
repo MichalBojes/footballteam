@@ -14,6 +14,8 @@ public class FixtureFormDTO {
 	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date data;
 
+	private Date dataFormated;
+
 	private int season;
 
 	private int round;

@@ -10,6 +10,5 @@ import lombok.Data;
 public class NewsDTO {
 	private int newsid;
 	private String value;
-	@DateTimeFormat(pattern = "dd-MM-yyyy")
-	private Date data;
+	private String data;
 }

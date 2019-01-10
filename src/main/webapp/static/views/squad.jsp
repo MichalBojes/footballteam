@@ -27,26 +27,87 @@
             
             <span class="bigtitle">Skład</span>
             <div class="dottedline"></div>
-            <table>
-	            <tr>
-	            	<th>Imię</th>
-	            	<th>Nazwisko</th>
+
+            <c:if test="${pageContext.request.userPrincipal.name == null}">
+                <div id="squad-container" style="width:300px">
+            </c:if>
+            <sec:authorize access="hasAuthority('ROLE_ADMIN')"> 
+                    <div id="squad-container" style="width:590px">
+            </sec:authorize>
 	            	<th></th>
-	            	<th></th>
-	            	<th></th>
-	            	<th></th>
-	            </tr>
+            <sec:authorize access="hasAuthority('ROLE_PLAYER')"> 
+                    <div id="squad-container" style="width:600px">
+            </sec:authorize>
+
+            <sec:authorize access="hasAuthority('ROLE_FAN')"> 
+                    <div id="squad-container" style="width:380px">
+            </sec:authorize>
+           
+         
+	            	<div class="fixtures-title" style="width:105px;">Imię</div>
+                    <div class="fixtures-title" style="width:105px;">Nazwisko</div>
+
+                    <sec:authorize access="hasAuthority('ROLE_TRAINER')"> 
+                    <div class="fixtures-title" style="width:440px;">Działania</div>
+                    </sec:authorize>
+
+                    <sec:authorize access="hasAuthority('ROLE_ADMIN')"> 
+                    <div class="fixtures-title" style="width:318px;">Działania</div>
+                    </sec:authorize>
+
+                    <sec:authorize access="hasAuthority('ROLE_PLAYER')"> 
+                    <div class="fixtures-title" style="width:328px;">Działania</div>
+                    </sec:authorize>
+
+                    <sec:authorize access="hasAuthority('ROLE_FAN')"> 
+                    <div class="fixtures-title" style="width:96px;">Działania</div>
+                    </sec:authorize>
+
+                    <div style="clear:both"></div>
+
 	            <c:forEach items = "${players}" var="player">
-		            <tr>
-			            <td>${player.username.name}</td> 
-			            <td>${player.username.surname}</td>
-			            <td><a href = "<c:url value = '/stats?id=${player.playerid}'/>">Wyświetl Statystyki</a></td>
-			            <td><a href = "<c:url value = '/contract?id=${player.playerid}'/>">Wyświetl Kontrakt</a></td>
-						<td><a href = "<c:url value = '/unavailability?id=${player.playerid}'/>">Wyświetl niedostępności</a></td>
-						<td><a href = "<c:url value = '/addUnavailability?id=${player.playerid}'/>">Zadeklaruj niedostępność</a></td>
-		            </tr>
-	            </c:forEach>
-            </table>
+                        <div class="fixtures-tables" style="width:109px;">${player.username.name}</div> 
+                        <div class="fixtures-tables" style="width:109px;">${player.username.surname}</div>
+		            
+                        <sec:authorize access="hasAuthority('ROLE_TRAINER')"> 
+                         <a href = "<c:url value = '/stats?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:100px;">Statystyki</div></a>
+                         <a href = "<c:url value = '/editStats?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:100px;">Edytuj dane</div></a>
+			            <a href = "<c:url value = '/contract?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:100px;">Wyświetl Kontrakt</div></a>
+						<a href = "<c:url value = '/unavailability?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:110px;">Wyświetl niedostępności</div></a>
+                        <a href = "<c:url value = '/addUnavailability?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:110px;">Niedostępność</div></a>
+                        </sec:authorize>
+
+                        <sec:authorize access="hasAuthority('ROLE_ADMIN')"> 
+                                <a href = "<c:url value = '/stats?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:100px;">Statystyki</div></a>
+                                <a href = "<c:url value = '/editStats?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:100px;">Edytuj dane</div></a>
+                                <a href = "<c:url value = '/contract?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:100px;">Kontrakt</div></a>
+                        </sec:authorize>
+
+                        <sec:authorize access="hasAuthority('ROLE_PLAYER')"> 
+                                <a href = "<c:url value = '/stats?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:100px;">Statystyki</div></a>
+                                <a href = "<c:url value = '/contract?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:100px;">Kontrakt</div></a>
+                                <a href = "<c:url value = '/unavailability?username=${player.username.username}'/>"><div class="fixtures-tables2" style="width:110px;">Niedostępność</div></a>
+                        </sec:authorize>
+
+                        <sec:authorize access="hasAuthority('ROLE_FAN')"> 
+                                <a href = "<c:url value = '/stats?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:100px;">Statystyki</div></a>
+                        </sec:authorize>
+
+                        <div style="clear:both"></div>
+                </c:forEach>
+                <sec:authorize access="hasAuthority('ROLE_FAN')"> 
+                    </div>
+                </sec:authorize>
+                <sec:authorize access="hasAuthority('ROLE_PLAYER')"> 
+                    </div>
+                </sec:authorize>
+                <sec:authorize access="hasAuthority('ROLE_ADMIN')"> 
+                    </div>
+                </sec:authorize>
+                <c:if test="${pageContext.request.userPrincipal.name == null}">
+                    </div>
+                </c:if> 
+           
         </div>
 
         <%@ include file = "footer.jsp" %>

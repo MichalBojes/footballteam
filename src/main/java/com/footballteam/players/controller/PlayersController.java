@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.footballteam.fixtures.dto.FixtureDTO;
 import com.footballteam.fixtures.model.Fixture;
 import com.footballteam.fixtures.service.FixturesService;
 import com.footballteam.players.dto.ContractDTO;
@@ -45,7 +46,7 @@ public class PlayersController {
 		return "stats_view";
 	}
 
-	@Secured(value = "ROLE_TRAINER")
+	@Secured({"ROLE_TRAINER", "ROLE_ADMIN"})
 	@RequestMapping("/editStats")
 	public String showEditStatsView(Model model, @RequestParam("id") int playerid) {
 		Player player = service.getPlayerById(playerid);
@@ -62,13 +63,13 @@ public class PlayersController {
 		return "edit_stats";
 	}
 
-	@Secured(value = "ROLE_TRAINER")
+	@Secured({"ROLE_TRAINER", "ROLE_ADMIN"})
 	@RequestMapping(value = "/confirmEditStats", method = RequestMethod.POST)
 	public String confirmEditStats(@ModelAttribute("playerDTO") PlayerDTO playerDTO) {
 		service.editStats(playerDTO);
 		return "redirect:/squad";
 	}
-
+	
 	@RequestMapping("/contract")
 	public String showPlayerContract(Model model, @RequestParam("id") int playerid) {
 		Contract contract = service.getContractById(playerid);
@@ -76,11 +77,11 @@ public class PlayersController {
 		return "contract_view";
 	}
 
-	@Secured(value = "ROLE_TRAINER")
+	@Secured({"ROLE_TRAINER", "ROLE_ADMIN"})
 	@RequestMapping("/editContract")
 	public String showEditContractView(Model model, @RequestParam("id") int playerid) {
 		Contract contract = service.getContractById(playerid);
-		ContractDTO contractDTO = new ContractDTO();
+		ContractDTO contractDTO=new ContractDTO();
 		contractDTO.setPlayerid(playerid);
 		contractDTO.setValue(contract.getValue());
 		contractDTO.setStartDate(contract.getStartDate());
@@ -91,12 +92,13 @@ public class PlayersController {
 		return "edit_contract";
 	}
 
-	@Secured(value = "ROLE_TRAINER")
+	@Secured({"ROLE_TRAINER", "ROLE_ADMIN"})
 	@RequestMapping(value = "/confirmEditContract", method = RequestMethod.POST)
 	public String confirmEditContract(@ModelAttribute("contractDTO") ContractDTO contractDTO) {
 		service.editContract(contractDTO);
 		return "redirect:/squad";
 	}
+
 
 	@Secured({ "ROLE_PLAYER", "ROLE_TRAINER" })
 	@RequestMapping(value = "/unavailability")
@@ -131,7 +133,7 @@ public class PlayersController {
 		UnavailabilityDTO unavailabilityDTO = new UnavailabilityDTO();
 		unavailabilityDTO.setPlayer(player);
 		unavailabilityDTO.setOccurreDate(new Date());
-		List<Fixture> fixturesList = fixturesService.getAllFixtures();
+		List<FixtureDTO> fixturesList = fixturesService.getAllFixtures();
 		model.addAttribute("fixturesList", fixturesList);
 		model.addAttribute("unavailabilityDTO", unavailabilityDTO);
 		return "add_unavailability";

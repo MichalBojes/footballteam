@@ -1,8 +1,13 @@
 package com.footballteam.fixtures.controller;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+import com.footballteam.fixtures.dto.FixtureDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
@@ -27,15 +32,15 @@ public class FixturesController {
 
 	@RequestMapping("/fixtures")
 	public String showFixturesView(Model model) {
-		List<Fixture> fixturesList = service.getAllFixtures();
+		List<FixtureDTO> fixturesList = service.getAllFixtures();
 		model.addAttribute("fixturesList", fixturesList);
 		return "fixtures";
 	}
-	
+
 	@RequestMapping("/fixture")
-	public String showFixtureView(Model model, @RequestParam ("id") int fixtureid) {
-		List<Fixture> fixturesList = new ArrayList<Fixture>();
-		Fixture fixture = service.getFixtureById(fixtureid);
+	public String showFixtureView(Model model, @RequestParam("id") int fixtureid) {
+		List<FixtureDTO> fixturesList = new ArrayList<FixtureDTO>();
+		FixtureDTO fixture = service.getFixtureById(fixtureid);
 		fixturesList.add(fixture);
 		model.addAttribute("fixturesList", fixturesList);
 		return "fixtures";
