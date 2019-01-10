@@ -40,11 +40,12 @@
 
 			<div class="dottedline"></div>
 			<div id="player-add">
-            ostatnio aktualizowany: ${newsDTO.data}
+           
 		<form:form id="edit-news-form" action="confirmEditNews" modelAttribute="newsDTO" method="post">
 		<form:input type="hidden" path="newsid" id="newsid"></form:input>
 		<form:input type="hidden" path="data" id="data"></form:input>
 		<div class="part">
+            Ostatnio aktualizowany: ${newsDTO.data}
 			<form:input class="input-class" path="value" id="value"></form:input>
 		</div>
 		

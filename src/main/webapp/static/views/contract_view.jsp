@@ -29,26 +29,33 @@
 
         <div id="content">
             
-            <span class="bigtitle">Aktualności</span>
-           
+            <span class="bigtitle">Kontrakt - ${player.username.name} ${player.username.surname}</span>
+            <a href="squad"><div class="admin-button" style="float:right; padding: 10px; font-size:15px; text-align:center; text-decoration: none;
+                color:white;"  >Powrót</div> </a> 
+
+            <a href="<c:url value = 'editContract?id=${contract.playerid}'/>"><div class="admin-button" style="float:right; padding: 10px; font-size:15px; text-decoration: none;
+            color:white;"  >Edytuj kontrakt</div> </a> 
+            <div style="clear:both"></div>
 
             <div class="dottedline"></div>
-			<tr>
-					<th>P</th>
-					<th>R</th>
-					<th>Z</th>
-					<th>P</th>
-					<th>N</th>
-				</tr>
-				<tr>
-					<td>${contract.value}</td>
-					<td>${contract.startDate}</td>
-					<td>${contract.durationInMonths}</td>
-					<td>${contract.salary}</td>
-					<td>${contract.extras}</td>
-				</tr>
-			</table>
-			<a href = "<c:url value = 'editContract?id=${contract.playerid}'/>">Edytuj kontrakt</a>
+            
+            <div id="squad-container" style="width:650px">
+            <div class="fixtures-title" style="width:105px;">Wartość</div>
+            <div class="fixtures-title" style="width:115px;">Data zawarcia</div>
+            <div class="fixtures-title" style="width:105px;">Czas trwania</div>
+            <div class="fixtures-title" style="width:105px;">Pensja</div>
+            <div class="fixtures-title" style="width:105px;">Premie</div>
+            <div style="clear:both"></div>
+				
+            <div class="fixtures-tables" style="width:109px;">${contract.value}</div> 
+            <div class="fixtures-tables" style="width:119px;">${contract.startDate}</div> 
+            <div class="fixtures-tables" style="width:109px;">${contract.durationInMonths}</div> 
+            <div class="fixtures-tables" style="width:109px;">${contract.salary}</div> 
+            <div class="fixtures-tables" style="width:109px;">${contract.extras}</div> 
+            <div style="clear:both"></div>
+					
+             </div>
+					
              
         </div>
 

@@ -73,13 +73,16 @@ public class PlayersController {
 	@RequestMapping("/contract")
 	public String showPlayerContract(Model model, @RequestParam("id") int playerid) {
 		Contract contract = service.getContractById(playerid);
+		Player player = service.getPlayerById(playerid);
 		model.addAttribute("contract", contract);
+		model.addAttribute("player", player);
 		return "contract_view";
 	}
 
 	@Secured({"ROLE_TRAINER", "ROLE_ADMIN"})
 	@RequestMapping("/editContract")
 	public String showEditContractView(Model model, @RequestParam("id") int playerid) {
+		Player player = service.getPlayerById(playerid);
 		Contract contract = service.getContractById(playerid);
 		ContractDTO contractDTO=new ContractDTO();
 		contractDTO.setPlayerid(playerid);
@@ -89,6 +92,7 @@ public class PlayersController {
 		contractDTO.setSalary(contract.getSalary());
 		contractDTO.setExtras(contract.getExtras());
 		model.addAttribute("contractDTO", contractDTO);
+		model.addAttribute("player", player);
 		return "edit_contract";
 	}
 

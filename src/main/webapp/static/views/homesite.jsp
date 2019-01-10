@@ -30,20 +30,22 @@
         <div id="content">
             
             <span class="bigtitle">Aktualności</span>
-            <sec:authorize access="hasAuthority('ROLE_TRAINER')">
+            <sec:authorize access="hasAnyAuthority('ROLE_TRAINER', 'ROLE_ADMIN')">
                     <a href="<c:url value='/addNews'/>"><div class="admin-button" style="float:right; padding: 10px; font-size:21px; text-decoration: none;
                      color:white;"  >Dodaj aktualność</div> </a> 
                      <div style="clear:both"></div>
             </sec:authorize>
-            <sec:authorize access="hasAuthority('ROLE_ADMIN')">
-                    <a href="<c:url value='/addNews'/>"><div class="admin-button" style="float:right; padding: 10px; font-size:21px; text-decoration: none;
-                     color:white;"  >Dodaj aktualność</div> </a> 
-                     <div style="clear:both"></div>
+          
+            <div class="dottedline"></div>
+
+            
+            <c:forEach items="${news}" var="news_value">	
+            <sec:authorize access="hasAnyAuthority('ROLE_TRAINER', 'ROLE_ADMIN')">		    
+            <a href="<c:url value='/editNews?id=${news_value.newsid}'/>"><div class="admin-button" style="float:right; padding: 5px; font-size:15px; text-align: center; text-decoration: none;
+            color:white;"  >Edytuj</div> </a> <br>
+            <div style="clear:both"></div>
             </sec:authorize>
 
-            <div class="dottedline"></div>
-            <c:forEach items="${news}" var="news_value">			    
-            <a href="<c:url value='/editNews?id=${news_value.newsid}'/>">Edytuj</a><br>
             <div id="news-data">
                 ${news_value.data}<br>
             </div>
