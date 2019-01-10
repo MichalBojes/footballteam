@@ -319,7 +319,7 @@ a.titlelink2
 .fixtures-title
 {
     margin-right:1px;
-    font-size: 17px;
+    font-size: 15px;
     padding:5px;
     float:left;
     border: 2px solid black;
@@ -332,7 +332,7 @@ a.titlelink2
 {   
     height: 20px;
     margin-top:5px;
-    font-size:17px;
+    font-size:15px;
     padding:5px;
     float:left;
     background-color: #cf8256;
@@ -343,8 +343,9 @@ a.titlelink2
 
 .fixtures-tables2
 {
+    height: 20px;
     margin-top:5px;
-    font-size:17px;
+    font-size:15px;
     padding:5px;
     float:left;
     background-color: #a0623e;

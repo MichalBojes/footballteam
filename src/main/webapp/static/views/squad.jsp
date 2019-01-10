@@ -36,7 +36,7 @@
             </sec:authorize>
 	            	<th></th>
             <sec:authorize access="hasAuthority('ROLE_PLAYER')"> 
-                    <div id="squad-container" style="width:600px">
+                    <div id="squad-container" style="width:650px">
             </sec:authorize>
 
             <sec:authorize access="hasAuthority('ROLE_FAN')"> 
@@ -48,7 +48,8 @@
                     <div class="fixtures-title" style="width:105px;">Nazwisko</div>
 
                     <sec:authorize access="hasAuthority('ROLE_TRAINER')"> 
-                    <div class="fixtures-title" style="width:440px;">Działania</div>
+                    <div class="fixtures-title" style="width:300px;">Działania</div>
+                    <div class="fixtures-title" style="width:130px;">Niedostępność</div>
                     </sec:authorize>
 
                     <sec:authorize access="hasAuthority('ROLE_ADMIN')"> 
@@ -56,7 +57,8 @@
                     </sec:authorize>
 
                     <sec:authorize access="hasAuthority('ROLE_PLAYER')"> 
-                    <div class="fixtures-title" style="width:328px;">Działania</div>
+                    <div class="fixtures-title" style="width:208px;">Działania</div>
+                    <div class="fixtures-title" style="width:130px;">Niedostępność</div>
                     </sec:authorize>
 
                     <sec:authorize access="hasAuthority('ROLE_FAN')"> 
@@ -72,9 +74,10 @@
                         <sec:authorize access="hasAuthority('ROLE_TRAINER')"> 
                          <a href = "<c:url value = '/stats?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:100px;">Statystyki</div></a>
                          <a href = "<c:url value = '/editStats?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:100px;">Edytuj dane</div></a>
-			            <a href = "<c:url value = '/contract?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:100px;">Wyświetl Kontrakt</div></a>
-						<a href = "<c:url value = '/unavailability?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:110px;">Wyświetl niedostępności</div></a>
-                        <a href = "<c:url value = '/addUnavailability?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:110px;">Niedostępność</div></a>
+                        <a href = "<c:url value = '/contract?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:82px;">Kontrakt</div></a>
+                        
+						<a href = "<c:url value = '/unavailability?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:73px;">Wyświetl</div></a>
+                        <a href = "<c:url value = '/addUnavailability?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:50px;">Zgłoś</div></a>
                         </sec:authorize>
 
                         <sec:authorize access="hasAuthority('ROLE_ADMIN')"> 
@@ -86,7 +89,9 @@
                         <sec:authorize access="hasAuthority('ROLE_PLAYER')"> 
                                 <a href = "<c:url value = '/stats?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:100px;">Statystyki</div></a>
                                 <a href = "<c:url value = '/contract?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:100px;">Kontrakt</div></a>
-                                <a href = "<c:url value = '/unavailability?username=${player.username.username}'/>"><div class="fixtures-tables2" style="width:110px;">Niedostępność</div></a>
+                                <a href = "<c:url value = '/unavailability?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:73px;">Wyświetl</div></a>
+                                <a href = "<c:url value = '/addUnavailability?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:50px;">Zgłoś</div></a>
+                                
                         </sec:authorize>
 
                         <sec:authorize access="hasAuthority('ROLE_FAN')"> 
