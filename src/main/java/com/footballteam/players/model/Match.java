@@ -26,7 +26,7 @@ public class Match {
 
 	@ManyToOne
 	@JoinColumn(name = "fixtureid", nullable = false)
-	private Fixture fixturesid;
+	private Fixture fixtureid;
 
 	@ManyToOne
 	@JoinColumn(name = "username", nullable = false)

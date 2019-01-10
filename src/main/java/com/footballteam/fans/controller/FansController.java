@@ -10,10 +10,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.footballteam.fans.service.FansService;
 import com.footballteam.fixtures.model.Fixture;
 import com.footballteam.fixtures.service.FixturesService;
+import com.footballteam.players.model.Match;
 
 @Controller
 public class FansController {
@@ -28,19 +30,21 @@ public class FansController {
 		return "fans_gallery";
 	}
 
-	@RequestMapping("/fans")
-	public String showFansView(Model model) {
-		List<FixtureDTO> fixturesList = fixturesService.getAllFixtures();
-		model.addAttribute("fixtures", fixturesList);
-		return "fansFixtures";
+	@RequestMapping("/persenceFans")
+	public String showFansView(Model model, @RequestParam("id") int fixtureid) {
+		FixtureDTO fixture = fixturesService.getFixtureById(fixtureid);
+		List <String> matches = fansService.getMatchesByFixture(fixtureid);
+		model.addAttribute("fixture", fixture);
+		model.addAttribute("matches", matches);
+		return "persence_fans_view";
 	}
 
-	@RequestMapping("/declarePresence/{id}")
-	public String declarePersence(Model model, @PathVariable("id") int fixtureId) {
+	@RequestMapping("/declarePresence")
+	public String declarePersence(Model model, @RequestParam("id") int fixtureId) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String username = auth.getName();
 		fansService.declarePresence(fixtureId, username);
-		return "redirect:/fans/gallery";
+		return "redirect:/persenceFans?id="+fixtureId;
 	}
 
 }
