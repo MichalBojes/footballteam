@@ -1,9 +1,7 @@
 package com.footballteam.training.controller;
 
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,9 +12,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.footballteam.repository.model.Stadium;
+import com.footballteam.training.dto.TrainingDTO;
+import com.footballteam.training.service.TrainingService;
 
 @Controller
 public class TrainingController {
@@ -28,16 +27,19 @@ public class TrainingController {
 
 	@RequestMapping("/trainings")
 	public String showTrainingsView(Model model) {
-		List<TrainingDTO> training = service.getAllTrainings();
-		model.addAttribute("fixturesList", trainingsList);
-		return "fixtures";
+		List<TrainingDTO> trainingsList = service.getAllTrainings();
+		model.addAttribute("trainingsList", trainingsList);
+		return "trainings_view";
 	}
 
 	@Secured(value = "ROLE_TRAINER")
 	@RequestMapping(value = "/addTraining", method = RequestMethod.GET)
 	public String addNewTraining(Model model) {
 		List<Stadium> stadiumsList = service.getAllStadiums();
-		model.addAttribute("form", new TrainingDTO());
+		TrainingDTO form = new TrainingDTO();
+		DateFormat outputFormatter = new SimpleDateFormat("dd-MM-yyyy");
+		form.setData(outputFormatter.format(new Date()));
+		model.addAttribute("form", form);
 		model.addAttribute("stadiums", stadiumsList);
 		return ADD_TRAINING_VIEW_JSP_NAME;
 	}
