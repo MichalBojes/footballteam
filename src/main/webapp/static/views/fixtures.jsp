@@ -56,7 +56,10 @@
 				<div class="fixtures-tables" style="width:104px;">${fixture.league}</div>
                 <div class="fixtures-tables" style="width:104px;">${fixture.referee}</div>
                 <sec:authorize access="hasAuthority('ROLE_TRAINER')">
-                <a href = "<c:url value = '/match/{fixture.fixtureid}'/>"><div class="fixtures-tables2" style="width:59px;">Edytuj</div></a>
+                <a href = "<c:url value = '/match?id=${fixture.fixtureid}'/>"><div class="fixtures-tables2" style="width:59px;">Ustal skład</div></a>
+                </sec:authorize>
+                <sec:authorize access="hasAuthority('ROLE_FAN')">
+                <a href = "<c:url value = '/declarePresence?id=${fixture.fixtureid}'/>"><div class="fixtures-tables2" style="width:59px;">Deklaruj obecność</div></a>
                 </sec:authorize>
                 <div style="clear:both"></div>
 				
