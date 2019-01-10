@@ -25,7 +25,7 @@
 
         <div id="content">
             
-            <span class="bigtitle">${playerDTO.username.name} ${playerDTO.username.surname}</span>
+            <span class="bigtitle">Edycja statystyk zawodnika -${playerDTO.username.name} ${playerDTO.username.surname}</span>
             <div class="dottedline"></div>
          
 			<div id="player-add">
