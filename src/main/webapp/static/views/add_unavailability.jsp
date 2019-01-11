@@ -30,7 +30,7 @@
         <div id="content">
             
 			<span class="bigtitle">Zgłaszanie niedostępności </span>
-			<a href="squad"><div class="admin-button" style="float:right; padding: 5px; font-size:15px; text-align:center; text-decoration: none;
+			<a href="squad"><div class="admin-button" style="float:right; padding: 5px; font-size:20px; text-align:center; text-decoration: none;
 				color:white;"  >Powrót</div> </a> 
 				<div style="clear:both"></div>
          

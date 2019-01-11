@@ -26,10 +26,7 @@
         <div id="content">
             
             <span class="bigtitle">Skład</span>
-            <sec:authorize access="hasAuthority('ROLE_PLAYER')">
-            <a href="<c:url value = '/addUnavailability?id=${player.playerid}'/>"><div class="admin-button" style="float:right; padding: 10px; font-size:15px; text-decoration: none;
-            color:white;" >Zgłoś niedostępność</div> </a> 
-            </sec:authorize>
+           
             <div class="dottedline"></div>
 
             <c:if test="${pageContext.request.userPrincipal.name == null}">
@@ -93,9 +90,15 @@
                         <sec:authorize access="hasAuthority('ROLE_PLAYER')"> 
                                 <a href = "<c:url value = '/stats?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:100px;">Statystyki</div></a>
                                 <a href = "<c:url value = '/contract?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:100px;">Kontrakt</div></a>
-                                <a href = "<c:url value = '/unavailability?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:73px;">Wyświetl</div></a>
-                                <a href = "<c:url value = '/addUnavailability?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:50px;">Zgłoś</div></a>
-                                
+                                <c:choose>
+                                <c:when test="${username == player.username.username}">
+                                	<a href = "<c:url value = '/unavailability?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:73px;">Wyświetl</div></a>
+                                	<a href = "<c:url value = '/addUnavailability?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:50px;">Zgłoś</div></a>
+                                </c:when>
+                                <c:otherwise>
+                                <a href = "<c:url value = '/unavailability?id=${player.playerid}'/>"><div class="fixtures-tables2" style="width:135px;">Wyświetl</div></a>
+                                </c:otherwise>
+                                </c:choose>
                         </sec:authorize>
 
                         <sec:authorize access="hasAuthority('ROLE_FAN')"> 

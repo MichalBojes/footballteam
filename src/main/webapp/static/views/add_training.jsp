@@ -25,7 +25,7 @@
 
         <%@ include file = "topbar.jsp" %>
 
-        <%@ include file = "sidebar_trainer.jsp" %>
+        <%@ include file = "sidebar.jsp" %>
 
         <div id="content">
             
