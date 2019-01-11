@@ -82,4 +82,8 @@ public class UsersDAO {
 		List<User> usersList = query.getResultList();
 		return usersList;
 	}
+
+	public User getUserByUsername(String username) {
+		return entityManager.find(User.class, username);
+	}
 }

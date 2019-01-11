@@ -32,4 +32,8 @@ public class UsersService {
 	public List<User> getAllUsers() {
 		return dao.getAllUsers();
 	}
+
+	public User getUserByUsername(String username) {
+		return dao.getUserByUsername(username);
+	}
 }
