@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import com.footballteam.fixtures.dao.FixturesDAO;
 import com.footballteam.fixtures.dto.FixtureFormDTO;
 import com.footballteam.fixtures.model.Fixture;
-import com.footballteam.repository.model.Stadium;
+import com.footballteam.fixtures.model.Stadium;
 
 @Service
 public class FixturesService {

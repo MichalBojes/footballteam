@@ -1,17 +1,12 @@
-package com.footballteam.repository.model;
-
-import java.util.Date;
+package com.footballteam.fixtures.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import com.footballteam.users.model.User;
+import javax.validation.constraints.Size;
 
 import javax.validation.constraints.NotEmpty;
 
@@ -21,22 +16,24 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "Message")
-public class Message {
+@Table(name = "stadium")
+public class Stadium {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int messageid;
-
-	@ManyToOne
-	@JoinColumn(name = "username", nullable = false)
-	private User username;
-
-	@Column(nullable = false)
-	private Date data;
+	private int stadiumid;
 
 	@NotEmpty
+	@Size(max = 128)
 	@Column(nullable = false)
-	private String content;
+	private String name;
+
+	@Column(nullable = false)
+	private int capacity;
+
+	@NotEmpty
+	@Size(max = 128)
+	@Column(nullable = false)
+	private String address;
 
 }

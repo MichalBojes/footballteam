@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.footballteam.fixtures.dto.FixtureFormDTO;
 import com.footballteam.fixtures.model.Fixture;
-import com.footballteam.repository.model.Stadium;
+import com.footballteam.fixtures.model.Stadium;
 
 @Service
 public class FixturesDAO {
@@ -32,7 +32,7 @@ public class FixturesDAO {
 		entityManager.merge(fixture);
 	}
 
-	public Stadium getStadium(Long id){
+	public Stadium getStadium(Long id) {
 		return entityManager.find(Stadium.class, id);
 	}
 

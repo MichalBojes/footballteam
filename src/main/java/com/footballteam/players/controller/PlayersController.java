@@ -1,5 +1,7 @@
 package com.footballteam.players.controller;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -46,7 +48,7 @@ public class PlayersController {
 		return "stats_view";
 	}
 
-	@Secured({"ROLE_TRAINER", "ROLE_ADMIN"})
+	@Secured({ "ROLE_TRAINER", "ROLE_ADMIN" })
 	@RequestMapping("/editStats")
 	public String showEditStatsView(Model model, @RequestParam("id") int playerid) {
 		Player player = service.getPlayerById(playerid);
@@ -63,31 +65,42 @@ public class PlayersController {
 		return "edit_stats";
 	}
 
-	@Secured({"ROLE_TRAINER", "ROLE_ADMIN"})
+	@Secured({ "ROLE_TRAINER", "ROLE_ADMIN" })
 	@RequestMapping(value = "/confirmEditStats", method = RequestMethod.POST)
 	public String confirmEditStats(@ModelAttribute("playerDTO") PlayerDTO playerDTO) {
 		service.editStats(playerDTO);
 		return "redirect:/squad";
 	}
-	
+
 	@RequestMapping("/contract")
 	public String showPlayerContract(Model model, @RequestParam("id") int playerid) {
 		Contract contract = service.getContractById(playerid);
+		ContractDTO contractDTO = new ContractDTO();
+		contractDTO.setPlayerid(playerid);
+		contractDTO.setValue(contract.getValue());
+		Date date = contract.getStartDate();
+		DateFormat outputFormatter = new SimpleDateFormat("dd-MM-yyyy");
+		contractDTO.setStartDate(outputFormatter.format(date));
+		contractDTO.setDurationInMonths(contract.getDurationInMonths());
+		contractDTO.setSalary(contract.getSalary());
+		contractDTO.setExtras(contract.getExtras());
 		Player player = service.getPlayerById(playerid);
-		model.addAttribute("contract", contract);
+		model.addAttribute("contract", contractDTO);
 		model.addAttribute("player", player);
 		return "contract_view";
 	}
 
-	@Secured({"ROLE_TRAINER", "ROLE_ADMIN"})
+	@Secured({ "ROLE_TRAINER", "ROLE_ADMIN" })
 	@RequestMapping("/editContract")
 	public String showEditContractView(Model model, @RequestParam("id") int playerid) {
 		Player player = service.getPlayerById(playerid);
 		Contract contract = service.getContractById(playerid);
-		ContractDTO contractDTO=new ContractDTO();
+		ContractDTO contractDTO = new ContractDTO();
 		contractDTO.setPlayerid(playerid);
 		contractDTO.setValue(contract.getValue());
-		contractDTO.setStartDate(contract.getStartDate());
+		Date date = contract.getStartDate();
+		DateFormat outputFormatter = new SimpleDateFormat("dd-MM-yyyy");
+		contractDTO.setStartDate(outputFormatter.format(date));
 		contractDTO.setDurationInMonths(contract.getDurationInMonths());
 		contractDTO.setSalary(contract.getSalary());
 		contractDTO.setExtras(contract.getExtras());
@@ -96,13 +109,12 @@ public class PlayersController {
 		return "edit_contract";
 	}
 
-	@Secured({"ROLE_TRAINER", "ROLE_ADMIN"})
+	@Secured({ "ROLE_TRAINER", "ROLE_ADMIN" })
 	@RequestMapping(value = "/confirmEditContract", method = RequestMethod.POST)
 	public String confirmEditContract(@ModelAttribute("contractDTO") ContractDTO contractDTO) {
 		service.editContract(contractDTO);
 		return "redirect:/squad";
 	}
-
 
 	@Secured({ "ROLE_PLAYER", "ROLE_TRAINER" })
 	@RequestMapping(value = "/unavailability")
@@ -119,7 +131,9 @@ public class PlayersController {
 				unavailabilityDTO = new UnavailabilityDTO();
 				unavailabilityDTO.setUnavailabilityid(unavailability.getUnavailabilityid());
 				unavailabilityDTO.setPlayer(player);
-				unavailabilityDTO.setOccurreDate(unavailability.getOccurreDate());
+				Date date = unavailability.getOccurreDate();
+				DateFormat outputFormatter = new SimpleDateFormat("dd-MM-yyyy");
+				unavailabilityDTO.setOccurreDate(outputFormatter.format(date));
 				unavailabilityDTO.setReason(unavailability.getReason());
 				unavailabilityDTO.setDurationInDays(unavailability.getDurationInDays());
 				unavailabilityDTO.setFixture(unavailability.getFixture());
@@ -136,7 +150,8 @@ public class PlayersController {
 		Player player = service.getPlayerById(playerid);
 		UnavailabilityDTO unavailabilityDTO = new UnavailabilityDTO();
 		unavailabilityDTO.setPlayer(player);
-		unavailabilityDTO.setOccurreDate(new Date());
+		DateFormat outputFormatter = new SimpleDateFormat("dd-MM-yyyy");
+		unavailabilityDTO.setOccurreDate(outputFormatter.format(new Date()));
 		List<FixtureDTO> fixturesList = fixturesService.getAllFixtures();
 		model.addAttribute("fixturesList", fixturesList);
 		model.addAttribute("unavailabilityDTO", unavailabilityDTO);
