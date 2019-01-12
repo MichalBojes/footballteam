@@ -37,7 +37,7 @@
 							${message.user.username} 
 						</div>
 						<div class="chat-date">
-							[${message.data}] : 
+							[${message.time}] : 
 						</div>
 						<div class="chat-value">
 							${message.content}

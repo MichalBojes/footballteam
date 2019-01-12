@@ -21,7 +21,7 @@ public class ChatDAO {
 		Query queryTotal = entityManager.createQuery("Select count(m.messageid) from Message m");
 		int lastResult = ((Long) queryTotal.getSingleResult()).intValue();
 		Query query = entityManager.createQuery("From Message");
-		int pageSize = 20;
+		int pageSize = 11;
 		int firstResult = lastResult - (pageNumber * pageSize);
 		if (firstResult < 0)
 			firstResult = 0;
