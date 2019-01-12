@@ -26,7 +26,7 @@
         <div id="content">
             
             <span class="bigtitle">Statystyki zawodnika - ${player.username.name} ${player.username.surname} </span>
-            <a href="squad"><div class="admin-button" style="float:right; padding: 10px; font-size:20px; text-align:center; text-decoration: none;
+            <a href="fixtures"><div class="admin-button" style="float:right; padding: 10px; font-size:20px; text-align:center; text-decoration: none;
                 color:white;"  >Powrót</div> </a> 
                 <div style="clear:both"></div>
 			<div class="dottedline"></div>
