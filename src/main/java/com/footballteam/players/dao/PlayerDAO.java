@@ -16,7 +16,6 @@ import com.footballteam.players.dto.ContractDTO;
 import com.footballteam.players.dto.PlayerDTO;
 import com.footballteam.players.dto.UnavailabilityDTO;
 import com.footballteam.players.model.Contract;
-import com.footballteam.players.model.Match;
 import com.footballteam.players.model.Player;
 import com.footballteam.players.model.Unavailability;
 

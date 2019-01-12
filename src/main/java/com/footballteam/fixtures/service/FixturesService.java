@@ -1,6 +1,7 @@
 package com.footballteam.fixtures.service;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -12,8 +13,12 @@ import org.springframework.stereotype.Service;
 
 import com.footballteam.fixtures.dao.FixturesDAO;
 import com.footballteam.fixtures.dto.FixtureFormDTO;
+import com.footballteam.fixtures.dto.MatchDTO;
 import com.footballteam.fixtures.model.Fixture;
+import com.footballteam.fixtures.model.Match;
 import com.footballteam.fixtures.model.Stadium;
+import com.footballteam.players.dto.PlayerDTO;
+import com.footballteam.players.model.Player;
 
 @Service
 public class FixturesService {
@@ -42,6 +47,10 @@ public class FixturesService {
 		return fixtureDTOS;
 	}
 
+	public Stadium getStadium(int id) {
+		return dao.getStadium(id);
+	}
+
 	public List<Stadium> getAllStadiums() {
 		return dao.getAllStadiums();
 	}
@@ -64,6 +73,24 @@ public class FixturesService {
 		fixtureDTO.setSeason(fixture.getSeason());
 		fixtureDTO.setStadium(fixture.getStadiumid());
 		return fixtureDTO;
+	}
+
+	public void addPlayerToMatch(MatchDTO matchDTO) {
+		Match match = new Match();
+		Fixture fixture = dao.getFixtureById(matchDTO.getFixtureid());
+		match.setFixtureid(fixture);
+		match.setUsername(matchDTO.getUser());
+		match.setPosition(matchDTO.getPosition());
+
+		dao.addPlayerToMatch(match);
+	}
+
+	public List<Match> getSelectedPlayers(int fixtureid) {
+		return dao.getSelectedPlayers(fixtureid);
+	}
+
+	public List<Player> getAvaliablePlayers(int fixtureid) {
+		return dao.getAvaliablePlayers(fixtureid);
 	}
 
 }
