@@ -12,6 +12,8 @@ import com.footballteam.players.model.Player;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Data
@@ -24,10 +26,12 @@ public class PlayerTraining {
 	private int playertrainingid;
 
 	@ManyToOne
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JoinColumn(name = "trainingid", nullable = false)
 	private Training training;
 
 	@ManyToOne
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JoinColumn(name = "playerid", nullable = false)
 	private Player player;
 
