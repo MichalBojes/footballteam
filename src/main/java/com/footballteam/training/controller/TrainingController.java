@@ -12,16 +12,33 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.footballteam.fixtures.dto.FixtureDTO;
+import com.footballteam.fixtures.dto.MatchDTO;
+import com.footballteam.fixtures.model.Match;
 import com.footballteam.fixtures.model.Stadium;
+import com.footballteam.fixtures.service.FixturesService;
+import com.footballteam.players.model.Player;
+import com.footballteam.players.service.PlayerService;
+import com.footballteam.training.dto.PlayerTrainingDTO;
 import com.footballteam.training.dto.TrainingDTO;
+import com.footballteam.training.model.PlayerTraining;
 import com.footballteam.training.service.TrainingService;
+import com.footballteam.users.model.User;
+import com.footballteam.users.service.UsersService;
 
 @Controller
 public class TrainingController {
 
 	@Autowired
 	TrainingService service;
+
+	@Autowired
+	PlayerService playerService;
+
+	@Autowired
+	FixturesService fixturesService;
 
 	private static final String ADD_TRAINING_VIEW_JSP_NAME = "add_training";
 
@@ -50,4 +67,29 @@ public class TrainingController {
 		service.addNewTraining(form);
 		return "redirect:/trainings";
 	}
+
+	@Secured(value = "ROLE_TRAINER")
+	@RequestMapping(value = "/training", method = RequestMethod.GET)
+	public String setSquadForMatch(Model model, @RequestParam("id") int trainingid) {
+		TrainingDTO training = service.getTrainingById(trainingid);
+		PlayerTrainingDTO trainingDTO = new PlayerTrainingDTO();
+		training.setTrainingid(trainingid);
+		List<PlayerTraining> selectedPlayers = service.getSelectedPlayers(trainingid);
+		List<Player> avaliablePlayers = service.getAvaliablePlayers(trainingid);
+		model.addAttribute("trainingDTO", trainingDTO);
+		model.addAttribute("selectedPlayers", selectedPlayers);
+		model.addAttribute("avaliablePlayers", avaliablePlayers);
+		model.addAttribute("training", training);
+		return "training_view";
+	}
+
+	@Secured(value = "ROLE_TRAINER")
+	@RequestMapping(value = "/addPlayerToTraining", method = RequestMethod.POST)
+	public String confirmAddPlayerToMatch(@ModelAttribute("trainingDTO") PlayerTrainingDTO training) {
+		Player player = playerService.getPlayerById(training.getPlayerid());
+		training.setPlayer(player);
+		service.addPlayerToTraining(training);
+		return "redirect:/training?id=" + training.getTrainingid();
+	}
+
 }
