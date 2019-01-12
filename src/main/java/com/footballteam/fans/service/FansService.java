@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.footballteam.fans.dao.FansDAO;
-import com.footballteam.players.model.Match;
 
 @Service
 public class FansService {

@@ -9,8 +9,8 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import com.footballteam.fixtures.model.Fixture;
-import com.footballteam.players.model.Match;
-import com.footballteam.players.model.Player;
+import com.footballteam.fixtures.model.Match;
+
 import com.footballteam.users.model.User;
 
 @Repository
@@ -25,6 +25,7 @@ public class FansDAO {
 		Match match = new Match();
 		match.setFixtureid(fixture);
 		match.setUsername(user);
+		match.setPosition("KIBIC");
 		entityManager.merge(match);
 	}
 

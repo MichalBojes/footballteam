@@ -1,5 +1,6 @@
-package com.footballteam.players.model;
+package com.footballteam.fixtures.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -31,5 +32,8 @@ public class Match {
 	@ManyToOne
 	@JoinColumn(name = "username", nullable = false)
 	private User username;
+	
+	@Column(name = "position", nullable = false)
+	private String position;
 
 }
