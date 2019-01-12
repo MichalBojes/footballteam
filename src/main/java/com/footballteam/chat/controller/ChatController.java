@@ -29,7 +29,6 @@ public class ChatController {
 		List<MessageDTO> messages = service.getMessages(pageNumber);
 		int lastPageNumber = service.getLastPageNumber();
 		MessageDTO newMessage = new MessageDTO();
-
 		model.addAttribute("messagesList", messages);
 		model.addAttribute("newMessage", newMessage);
 		model.addAttribute("pageNumber", pageNumber);
@@ -40,13 +39,14 @@ public class ChatController {
 	}
 
 	@RequestMapping("/addMessage")
-	public String addNewMessage(@ModelAttribute("newMessage") MessageDTO message, @RequestParam("page") int pageNumber) {
+	public String addNewMessage(@ModelAttribute("newMessage") MessageDTO message,
+			@RequestParam("page") int pageNumber) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String username = auth.getName();
 		User user = userService.getUserByUsername(username);
 		message.setData(new Date());
 		message.setUser(user);
 		service.addMessage(message);
-		return "redirect:/chat?page="+pageNumber;
+		return "redirect:/chat?page=" + pageNumber;
 	}
 }

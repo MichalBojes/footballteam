@@ -13,4 +13,5 @@ public class MessageDTO {
 	private User user;
 	private Date data;
 	private String content;
+	private String time;
 }

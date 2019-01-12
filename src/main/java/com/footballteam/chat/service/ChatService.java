@@ -1,5 +1,7 @@
 package com.footballteam.chat.service;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +28,9 @@ public class ChatService {
 			messageDTO.setContent(message.getContent());
 			messageDTO.setData(message.getData());
 			messageDTO.setUser(message.getUsername());
+			DateFormat outputFormatter = new SimpleDateFormat("HH:mm");
+			messageDTO.setTime(outputFormatter.format(message.getData()));
+
 			messagesDTO.add(messageDTO);
 		}
 		return messagesDTO;
