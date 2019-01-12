@@ -17,6 +17,8 @@ import javax.validation.constraints.NotEmpty;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Data
@@ -29,6 +31,7 @@ public class Player {
 	private int playerid;
 
 	@ManyToOne
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JoinColumn(name = "username", nullable = false)
 	private User username;
 
@@ -53,6 +56,7 @@ public class Player {
 	private int cardsReceived;
 
 	@ManyToOne
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JoinColumn(name = "unavailibityid")
 	private Unavailability unavailibalityid;
 

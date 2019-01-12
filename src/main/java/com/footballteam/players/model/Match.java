@@ -13,6 +13,8 @@ import com.footballteam.users.model.User;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Data
@@ -25,10 +27,12 @@ public class Match {
 	private int matchid;
 
 	@ManyToOne
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JoinColumn(name = "fixtureid", nullable = false)
 	private Fixture fixturesid;
 
 	@ManyToOne
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JoinColumn(name = "username", nullable = false)
 	private User username;
 
