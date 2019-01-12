@@ -1,4 +1,4 @@
-package com.footballteam.players.model;
+package com.footballteam.training.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.footballteam.fixtures.model.Fixture;
+import com.footballteam.players.model.Player;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,10 +25,10 @@ public class PlayerTraining {
 
 	@ManyToOne
 	@JoinColumn(name = "trainingid", nullable = false)
-	private Fixture trainingid;
+	private Training training;
 
 	@ManyToOne
 	@JoinColumn(name = "playerid", nullable = false)
-	private Player plaryerid;
+	private Player player;
 
 }
