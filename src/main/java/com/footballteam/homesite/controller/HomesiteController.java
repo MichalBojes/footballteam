@@ -1,6 +1,9 @@
 package com.footballteam.homesite.controller;
 
 import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,35 +36,38 @@ public class HomesiteController {
 
 	@RequestMapping("/home")
 	public String showHomesiteView(Model model) {
-		List<News> newsList = service.getAllNews();
+		List<NewsDTO> newsList = service.getAllNews();
 		model.addAttribute("news", newsList);
 		return HOMESITE_JSP_NAME;
 	}
 	
-	@Secured(value = "ROLE_TRAINER")
+	@Secured({"ROLE_TRAINER", "ROLE_ADMIN"})
 	@RequestMapping("/editNews")
 	public String showEditNewsView(Model model, @RequestParam("id") int newsid) {
 		News news = service.getNewsById(newsid);
-		NewsDTO newsDTO=new NewsDTO();
+		NewsDTO newsDTO = new NewsDTO();
 		newsDTO.setNewsid(newsid);
 		newsDTO.setValue(news.getValue());
-		newsDTO.setData(news.getData());
-		model.addAttribute("newsDTO", newsDTO);
-		return "edit_news";
-	}
-	
-	@Secured(value = "ROLE_TRAINER")
-	@RequestMapping("/addNews")
-	public String showEditNewsView(Model model ) {
-		NewsDTO newsDTO=new NewsDTO();
-		newsDTO.setNewsid(0);
-		newsDTO.setValue(" ");
-		newsDTO.setData(new Date());
+		Date date = news.getData();
+		DateFormat outputFormatter = new SimpleDateFormat("dd-MM-yyyy");
+		newsDTO.setData(outputFormatter.format(date));
 		model.addAttribute("newsDTO", newsDTO);
 		return "edit_news";
 	}
 
-	@Secured(value = "ROLE_TRAINER")
+	@Secured({"ROLE_TRAINER", "ROLE_ADMIN"})
+	@RequestMapping("/addNews")
+	public String showEditNewsView(Model model) {
+		NewsDTO newsDTO = new NewsDTO();
+		newsDTO.setNewsid(0);
+		newsDTO.setValue(" ");
+		DateFormat outputFormatter = new SimpleDateFormat("dd-MM-yyyy");
+		newsDTO.setData(outputFormatter.format(new Date()));
+		model.addAttribute("newsDTO", newsDTO);
+		return "edit_news";
+	}
+
+	@Secured({"ROLE_TRAINER", "ROLE_ADMIN"})
 	@RequestMapping(value = "/confirmEditNews", method = RequestMethod.POST)
 	public String confirmEditContract(@ModelAttribute("newsDTO") NewsDTO newsDTO) {
 		service.editNews(newsDTO);

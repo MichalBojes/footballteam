@@ -25,7 +25,7 @@ public class HistoryController {
 		return "history";
 	}
 
-	@Secured(value = "ROLE_TRAINER")
+	@Secured(value = "ROLE_ADMIN")
 	@RequestMapping(value = "/editHistory", method = RequestMethod.GET)
 	public String editHistory(Model model) {
 		History historia = service.getHistory(1);

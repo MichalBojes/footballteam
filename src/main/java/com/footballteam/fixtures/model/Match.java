@@ -1,6 +1,4 @@
-package com.footballteam.repository.model;
-
-import java.util.Date;
+package com.footballteam.fixtures.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,9 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.footballteam.fixtures.model.Fixture;
 import com.footballteam.users.model.User;
-
-import javax.validation.constraints.NotEmpty;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,23 +20,24 @@ import org.hibernate.annotations.OnDeleteAction;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "Message")
-public class Message {
+@Table(name = "match")
+public class Match {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int messageid;
+	private int matchid;
+
+	@ManyToOne
+	@OnDelete(action = OnDeleteAction.CASCADE)
+	@JoinColumn(name = "fixtureid", nullable = false)
+	private Fixture fixtureid;
 
 	@ManyToOne
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JoinColumn(name = "username", nullable = false)
 	private User username;
-
-	@Column(nullable = false)
-	private Date data;
-
-	@NotEmpty
-	@Column(nullable = false)
-	private String content;
+	
+	@Column(name = "position", nullable = false)
+	private String position;
 
 }

@@ -16,8 +16,6 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.footballteam.repository.model.Stadium;
-
 import javax.validation.constraints.NotEmpty;
 
 import lombok.Data;

@@ -1,5 +1,7 @@
 package com.footballteam.fans.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,5 +14,9 @@ public class FansService {
 
 	public void declarePresence(int fixtureId, String username) {
 		dao.declarePresence(fixtureId, username);
+	}
+
+	public List<String> getMatchesByFixture(int fixtureid) {
+		return dao.getMatchesByFixture(fixtureid);
 	}
 }

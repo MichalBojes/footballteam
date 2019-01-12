@@ -1,4 +1,4 @@
-package com.footballteam.players.model;
+package com.footballteam.training.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,8 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.footballteam.fixtures.model.Fixture;
-import com.footballteam.users.model.User;
+import com.footballteam.players.model.Player;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,21 +18,21 @@ import org.hibernate.annotations.OnDeleteAction;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "match")
-public class Match {
+@Table(name = "playertraining")
+public class PlayerTraining {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int matchid;
+	private int playertrainingid;
 
 	@ManyToOne
 	@OnDelete(action = OnDeleteAction.CASCADE)
-	@JoinColumn(name = "fixtureid", nullable = false)
-	private Fixture fixturesid;
+	@JoinColumn(name = "trainingid", nullable = false)
+	private Training training;
 
 	@ManyToOne
 	@OnDelete(action = OnDeleteAction.CASCADE)
-	@JoinColumn(name = "username", nullable = false)
-	private User username;
+	@JoinColumn(name = "playerid", nullable = false)
+	private Player player;
 
 }

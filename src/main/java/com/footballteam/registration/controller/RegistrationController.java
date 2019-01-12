@@ -3,6 +3,7 @@ package com.footballteam.registration.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,6 +18,7 @@ import com.footballteam.users.service.UsersService;
 import com.footballteam.recaptcha.service.RecaptchaService;
 import com.footballteam.registration.validator.RegistrationValidator;
 
+@EnableJpaRepositories
 @Controller
 public class RegistrationController {
 	@Autowired
@@ -51,7 +53,7 @@ public class RegistrationController {
 		User user = new User();
 		user.setUsername(form.getUsername());
 		user.setPassword(form.getPassword());
-		user.setRole("ROLE_ADMIN"); // ROLE_FAN-kibic, ROLE_PLAYER-zawodnik, ROLE_TRAINER-trener, ROLE_ADMIN-admin MOŻE ENUM??
+		user.setRole("ROLE_FAN"); // ROLE_FAN-kibic, ROLE_PLAYER-zawodnik, ROLE_TRAINER-trener, ROLE_ADMIN-admin MOŻE ENUM??
 		user.setName(form.getName());
 		user.setSurname(form.getSurname());
 		user.setAge(form.getAge());

@@ -294,7 +294,7 @@ a.titlelink2
 }
 
 
-#admin-button
+.admin-button
 {
     display:inline-block;
     min-width: 60px;
@@ -304,13 +304,15 @@ a.titlelink2
     margin-left: 10px;
     text-decoration: none;
     color:white;
-    border: 1px solid rgb(116, 33, 33);
-    background-color: rgb(158, 106, 106);
+    border: 1px solid rgb(65, 18, 18);
+    background-color: rgb(116, 34, 34);
+    
 }
 
-#admin-button:hover
+.admin-button:hover
 {
-    background-color: rgb(124, 54, 54);
+    cursor: pointer;
+    background-color: rgb(56, 18, 18);
 }
 
 
@@ -328,7 +330,8 @@ a.titlelink2
 }
 
 .fixtures-tables
-{
+{   
+    height: 20px;
     margin-top:5px;
     font-size:15px;
     padding:5px;
@@ -337,6 +340,33 @@ a.titlelink2
     color:white;
     text-align:center;
     margin-right:1px;
+}
+
+.fixtures-tables2
+{
+    height: 20px;
+    margin-top:5px;
+    font-size:15px;
+    padding:5px;
+    float:left;
+    background-color: #a0623e;
+    color:white;
+    text-align:center;
+    margin-right:1px;
+}
+
+.fixtures-tables2:hover
+{
+    
+    background-color: #805134;
+    color:rgb(255, 255, 255);
+    cursor:pointer;
+}
+
+#squad-container
+{
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #stadium
@@ -381,8 +411,14 @@ a.titlelink2
 	float:left;
 }
 
+#button-middle
+{
+    width:100%;
+    margin-bottom: 20px;
+}
 
 .submit-button {
+    text-align: center;
 	padding: 10px;
 	margin: 10px;
 	font-size: 14px;
@@ -407,7 +443,7 @@ a.titlelink2
         margin-left:auto;
         margin-right:auto;
 		background-color: rgb(240,240,240);
-		width: 60%;
+		width: 80%;
 		padding: 8px;
 		display: block;
 	    border: ridge rgba(0, 0, 0, 0.267);
@@ -425,4 +461,96 @@ a.titlelink2
     margin-top:15px;
     text-align:center;
     font-size: 18px;
+}
+
+#squad-title
+{
+    width:100%;
+}
+
+#player-add
+{
+    margin-top:30px;
+    margin-left:auto;
+    margin-right:auto;
+    width:496px;
+    border: 2px ridge black ;
+    color:black;
+}
+
+
+#news-data
+{
+    width:700px;
+    background-color: rgb(94, 84, 84);
+    font-size: 15px;
+    border: 2px outset;
+    color:white;
+    padding:5px 10px;
+    
+   
+}
+
+#news
+{
+    width:700px;
+    background-color: #cf8256;
+    font-size: 22px;
+    border: 2px outset;
+    color:white;
+    margin-bottom: 20px;
+    padding:10px;
+}
+
+#chat
+{
+    margin-left: auto;
+    margin-right:auto;
+    width: 700px;
+    font-size:15px;
+    border: 2px rgb(0, 0, 0) ridge;
+    background-color: rgb(63, 63, 63);
+}
+
+#chat-input
+{
+    height: 30px;
+    width: 300px;
+}   
+
+.chat-message
+{
+    width: 700px;
+    border-bottom: 1px dotted rgb(180, 178, 178);
+    min-height: 40px;
+    margin-top: 10px;
+}
+
+.chat-username
+{
+    color: yellow;
+    font: bold;
+    margin-right:5px;
+    float: left;
+    margin-left: 5px;
+    font-size: 20px;
+    height: 30px;
+}
+.chat-date
+{
+    color: yellow;
+    margin-right:5px;
+    float: left;
+    margin-left: 5px;
+    font-size: 20px;
+    height: 30px;
+}
+.chat-value
+{
+    color: white;
+    margin-left: 5px;
+    float: left;
+    font-size: 20px;
+    min-height: 30px;
+    
 }

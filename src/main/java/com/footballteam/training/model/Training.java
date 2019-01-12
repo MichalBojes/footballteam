@@ -1,4 +1,4 @@
-package com.footballteam.repository.model;
+package com.footballteam.training.model;
 
 import java.util.Date;
 
@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
+
+import com.footballteam.fixtures.model.Stadium;
 
 import javax.validation.constraints.NotEmpty;
 

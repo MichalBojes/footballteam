@@ -33,39 +33,44 @@
 						<span class="bigtitle">Panel administratora</span>
 						<div class="dottedline"></div>
 
-						<table>
-								<tr>
+						
+								
 									<div id="admin-title">Nazwa użytkownika</div>
 									<div id="admin-title" style="width:296px;">Nadaj rolę</div>
 									<div id="admin-title" style="width:176px; margin-right:0px;">Usuń</div>
 									<div style="clear:both"></div>
-								</tr>
+								
+								
 								<c:forEach items="${users}" var="user">
-									<tr>
+										
 										<div id="admin-username">${user.username}</div>
 										<div id="admin-username" style="width:288px ; margin-left: 20px ">
 										<c:if test = "${user.role == 'ROLE_TRAINER' || user.role == 'ROLE_PLAYER' || user.role == 'ROLE_FAN'}">
-										<a href="<c:url value='/changeRole/${user.username}/A' />" > <div id="admin-button">Admin</div></a>
+										<a href="<c:url value='/changeRole/${user.username}/A' />" > <div class="admin-button">Admin</div></a>
 										</c:if>
 										<c:if test = "${user.role == 'ROLE_ADMIN' || user.role == 'ROLE_TRAINER' || user.role == 'ROLE_PLAYER'}">
-										<a href="<c:url value='/changeRole/${user.username}/F' />" > <div id="admin-button">Fan</div></a>
+										<a href="<c:url value='/changeRole/${user.username}/F' />" > <div class="admin-button">Fan</div></a>
 										</c:if>
 										<c:if test = "${user.role == 'ROLE_ADMIN' || user.role == 'ROLE_TRAINER' || user.role == 'ROLE_FAN'}">
-										<a href="<c:url value='/changeRole/${user.username}/P' />" > <div id="admin-button">Piłkarz</div></a>
+										<a href="<c:url value='/changeRole/${user.username}/P' />" > <div class="admin-button">Piłkarz</div></a>
 										</c:if>
 										<c:if test = "${user.role == 'ROLE_ADMIN' || user.role == 'ROLE_PLAYER' || user.role == 'ROLE_FAN'}">
-										<a href="<c:url value='/changeRole/${user.username}/T' />" > <div id="admin-button">Trener</div></a>
+										<a href="<c:url value='/changeRole/${user.username}/T' />" > <div class="admin-button">Trener</div></a>
 										</c:if>
 										</div>
-										
 										<div id="admin-username" style="width:168px ; margin-left: 20px">
-										<a href="<c:url value='/deleteUser/${user.username}' />" > <div id="admin-button">Usuń Użytkownika</div></a>
-										
-										
-									</tr>
+										<c:choose>
+										<c:when  test = "${user.role == 'ROLE_TRAINER' || user.role == 'ROLE_PLAYER' || user.role == 'ROLE_FAN'}">
+										<a href="<c:url value='/deleteUser/${user.username}' />" > <div class="admin-button">Usuń Użytkownika</div></a>
+										</c:when>	
+										<c:otherwise>
+										<div class="admin-button">Nie można usunąć</div>
+										</c:otherwise>
+									</c:choose>
+								</div>
 									<div style="clear:both"></div>
 									</c:forEach>
-							</table>
+							
 
 						</div>
 			

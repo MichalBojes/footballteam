@@ -55,9 +55,4 @@ public class Player {
 	@Column(name = "cards_received", nullable = false)
 	private int cardsReceived;
 
-	@ManyToOne
-	@OnDelete(action = OnDeleteAction.CASCADE)
-	@JoinColumn(name = "unavailibityid")
-	private Unavailability unavailibalityid;
-
 }

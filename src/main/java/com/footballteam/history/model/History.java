@@ -1,5 +1,6 @@
 package com.footballteam.history.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,6 +19,7 @@ public class History {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int historyid;
 
+	@Column(length=3064)
 	private String value;
 
 }
