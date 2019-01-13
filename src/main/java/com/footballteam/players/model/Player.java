@@ -30,7 +30,7 @@ public class Player {
 	private int playerid;
 
 	@ManyToOne
-	@OnDelete(action = OnDeleteAction.CASCADE)
+	
 	@JoinColumn(name = "username", nullable = false)
 	private User username;
 

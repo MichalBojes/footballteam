@@ -58,11 +58,11 @@
 		</div>
 		<div class="part">
 			Runda:
-			<form:input class="input-class" path="season" id="season"></form:input>
+			<form:input class="input-class" type="number"  path="season" id="season"></form:input>
 		</div>	
 		<div class="part">
 			Numer Stadionu:
-			<form:input class="input-class" path="stadiumid" id="stadiumid"></form:input>
+			<form:input class="input-class" type="number" path="stadiumid" id="stadiumid"></form:input>
 		</div>
 		<div class="part">
 			Przeciwnik:

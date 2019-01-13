@@ -32,7 +32,7 @@ public class Training {
 	private int trainingid;
 
 	@ManyToOne
-	@OnDelete(action = OnDeleteAction.CASCADE)
+	
 	@JoinColumn(name = "stadiumid", nullable = false)
 	private Stadium stadium;
 

@@ -2,9 +2,7 @@
 <%@ page session="false" isELIgnored="false" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 
 
-
 <%@ include file = "header.jsp" %>
-
 
 
 <body onload="start()">
@@ -64,7 +62,7 @@
 		<form:input type="hidden" path="player.playerid" id="player.playerid"></form:input>
 		<div class="part">
 			ID meczu:
-			<form:input class="input-class" path="fixture.fixtureid" id="fixture.fixtureid"></form:input>
+			<form:input class="input-class" path="fixture.fixtureid" type="number" id="fixture.fixtureid"></form:input>
 		</div>
 		<div class="part">
 			Data wystąpienia:
@@ -72,7 +70,7 @@
 		</div>
 		<div class="part">
 			Długość trwania:
-			<form:input class="input-class" path="durationInDays" id="durationInDays"></form:input>
+			<form:input class="input-class" path="durationInDays" type="number" id="durationInDays"></form:input>
 		</div>
 		<div class="part">
 			Powód:

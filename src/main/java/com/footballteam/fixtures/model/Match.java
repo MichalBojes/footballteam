@@ -28,12 +28,12 @@ public class Match {
 	private int matchid;
 
 	@ManyToOne
-	@OnDelete(action = OnDeleteAction.CASCADE)
+	
 	@JoinColumn(name = "fixtureid", nullable = false)
 	private Fixture fixtureid;
 
 	@ManyToOne
-	@OnDelete(action = OnDeleteAction.CASCADE)
+	
 	@JoinColumn(name = "username", nullable = false)
 	private User username;
 	

@@ -31,7 +31,7 @@ public class Message {
 	private int messageid;
 
 	@ManyToOne
-	@OnDelete(action = OnDeleteAction.CASCADE)
+	
 	@JoinColumn(name = "username", nullable = false)
 	private User username;
 
