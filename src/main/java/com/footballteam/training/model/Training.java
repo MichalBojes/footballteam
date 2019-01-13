@@ -18,6 +18,8 @@ import javax.validation.constraints.NotEmpty;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Data
@@ -30,6 +32,7 @@ public class Training {
 	private int trainingid;
 
 	@ManyToOne
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JoinColumn(name = "stadiumid", nullable = false)
 	private Stadium stadium;
 
