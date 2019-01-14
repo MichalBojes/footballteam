@@ -13,11 +13,18 @@
 
 <div id="container">
 		<div id="logo">
+		<c:choose>
+			<c:when test = "${type=='edituser'}">
+			Edycja danych
+			</c:when>
+			<c:otherwise>
 			Rejestracja
+			</c:otherwise>
+		</c:choose>
 		</div>
 		
 
-	<form:form id="register-user-form" action="register" modelAttribute="form" method="post">
+	<form:form id="register-user-form" action="register?type=${type}" modelAttribute="form" method="post">
 		<div class="part">
 			Nazwa Użytkownika: 
 			<form:input class="input-class" path="username" id="username"></form:input>
@@ -56,7 +63,7 @@
 			<a href="home"><input type="button" class="submit-button"  value="Anuluj"></a>
 		</div>
 		<div id="register">
-				<input type="submit" class="submit-button" value="Zarejestruj mnie" />
+				<input type="submit" class="submit-button" value="<c:choose><c:when test = "${type=='edituser'}">Zedytuj</c:when><c:otherwise>Zarejestruj</c:otherwise></c:choose>" />
 		</div>
 		<div style="clear:both;"></div>
 	</form:form>

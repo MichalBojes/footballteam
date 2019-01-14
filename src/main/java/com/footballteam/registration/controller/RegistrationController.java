@@ -4,6 +4,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -34,31 +37,63 @@ public class RegistrationController {
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String showRegisterView(Model model) {
-		model.addAttribute("form", new RegistrationFormDTO());
+		RegistrationFormDTO registrationFormDTO = new RegistrationFormDTO();
+		registrationFormDTO.setRole("ROLE_FAN");
+		model.addAttribute("form", registrationFormDTO);
+		model.addAttribute("type", "registration");
+		return REGISTER_VIEW_JSP_NAME;
+	}
+
+	@Secured({ "ROLE_FAN", "ROLE_TRAINER", "ROLE_ADMIN" })
+	@RequestMapping(value = "/editUser", method = RequestMethod.GET)
+	public String showEditUserView(Model model) {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String username = auth.getName();
+		User user = service.getUserByUsername(username);
+		RegistrationFormDTO form = new RegistrationFormDTO();
+		form.setUsername(user.getUsername());
+		form.setPassword(user.getPassword());
+		form.setPasswordConfirm(user.getPassword());
+		form.setRole(user.getRole()); // ROLE_FAN-kibic, ROLE_PLAYER-zawodnik, ROLE_TRAINER-trener, ROLE_ADMIN-admin
+		form.setName(user.getName());
+		form.setSurname(user.getSurname());
+		form.setAge(user.getAge());
+		model.addAttribute("form", form);
+		model.addAttribute("type", "edituser");
 		return REGISTER_VIEW_JSP_NAME;
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String confirmRegistration(@ModelAttribute("form") RegistrationFormDTO form, BindingResult result,
-			@RequestParam(name = "g-recaptcha-response") String recaptchaResponse, HttpServletRequest request) {
+			@RequestParam(name = "g-recaptcha-response") String recaptchaResponse, HttpServletRequest request,
+			@RequestParam(name = "type") String type) {
 		String ip = request.getRemoteAddr();
 		String captchaVerifyMessage = captchaService.verifyRecaptcha(ip, recaptchaResponse);
-		validator.validate(form, result);
-		if (result.hasErrors()) {
-			return REGISTER_VIEW_JSP_NAME;
+		User user;
+		if (type.equals("registration")) {
+			validator.validate(form, result);
+			user = new User();
+			user.setUsername(form.getUsername());
+			if (result.hasErrors()) {
+				return REGISTER_VIEW_JSP_NAME;
+			}
+		} else {
+			user = service.getUserByUsername(form.getUsername());
 		}
 		if (!captchaVerifyMessage.isEmpty()) {
 			return REGISTER_VIEW_JSP_NAME;
 		}
-		User user = new User();
-		user.setUsername(form.getUsername());
+
 		user.setPassword(form.getPassword());
-		user.setRole("ROLE_FAN"); // ROLE_FAN-kibic, ROLE_PLAYER-zawodnik, ROLE_TRAINER-trener, ROLE_ADMIN-admin MOŻE ENUM??
+		user.setRole("ROLE_FAN"); // ROLE_FAN-kibic, ROLE_PLAYER-zawodnik, ROLE_TRAINER-trener, ROLE_ADMIN-admin
 		user.setName(form.getName());
 		user.setSurname(form.getSurname());
 		user.setAge(form.getAge());
 		service.addUser(user);
-		return "redirect:/login";
+		if (type.equals("registration")) {
+		return "redirect:/login";}else {
+			return "redirect:/home"
+		}
 
 	}
 
