@@ -26,7 +26,7 @@
         <div id="content">
             
             <span class="bigtitle">Statystyki zawodnika - ${player.username.name} ${player.username.surname} </span>
-            <a href="fixtures"><div class="admin-button" style="float:right; padding: 10px; font-size:20px; text-align:center; text-decoration: none;
+            <a href="squad"><div class="admin-button" style="float:right; padding: 10px; font-size:20px; text-align:center; text-decoration: none;
                 color:white;"  >Powrót</div> </a> 
                 <div style="clear:both"></div>
 			<div class="dottedline"></div>
@@ -55,8 +55,8 @@
 				<div id="squad-title">
 						<a href = "<c:url value = 'editStats?id=${player.playerid}'/>">
 						<div class="admin-button" style="padding: 10px; font-size:21px; text-decoration: none; margin-top: 20px; float:left;">Edytuj dane</div></a>
-						<a href = "<c:url value = 'unavailability/${player.username.username}'/>">
-						<div class="admin-button" style="padding: 10px; font-size:21px; text-decoration: none; margin-top: 20px; float:right;">Zgłoś niedostępność</div></a> 
+						<a href = "<c:url value = 'unavailability?id=${player.playerid}'/>">
+						<div class="admin-button" style="padding: 10px; font-size:21px; text-decoration: none; margin-top: 20px; float:right;">Wyświetl niedostępność</div></a> 
 						<div style="clear:both"></div>
                 </div>
                 </sec:authorize>

@@ -118,7 +118,7 @@ public class PlayersController {
 	@RequestMapping(value = "/confirmEditContract", method = RequestMethod.POST)
 	public String confirmEditContract(@ModelAttribute("contractDTO") ContractDTO contractDTO) {
 		service.editContract(contractDTO);
-		return "redirect:/squad";
+		return "redirect:/contract?id="+contractDTO.getPlayerid();
 	}
 
 	@Secured({ "ROLE_PLAYER", "ROLE_TRAINER" })

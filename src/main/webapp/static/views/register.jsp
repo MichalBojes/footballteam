@@ -27,8 +27,15 @@
 
 	<form:form id="register-user-form" action="register?type=${type}" modelAttribute="form" method="post">
 		<div class="part">
-			Nazwa Użytkownika: 
-			<form:input class="input-class" path="username" id="username"></form:input>
+			<c:choose>
+				<c:when test = "${type=='edituser'}">
+					<form:input type="hidden" path="username" id="username" ></form:input>
+				</c:when>
+				<c:otherwise>
+				Nazwa Użytkownika:
+					<form:input class="input-class" path="username" id="username"></form:input>
+				</c:otherwise>
+			</c:choose>
 			<c:if test="${pageContext.request.method=='POST'}"><form:errors path="username" cssclass="error" /> </c:if>
 		</div>
 		<div class="part">
@@ -43,7 +50,7 @@
 		</div>
 		<div class="part">
 			Wiek:
-			<form:input class="input-class" path="age" id="age"></form:input>
+			<form:input class="input-class"  type="number" path="age" id="age"></form:input>
 			<c:if test="${pageContext.request.method=='POST'}"><form:errors path="age" cssclass="error" /> </c:if>
 		</div>
 		<div class="part">
@@ -64,7 +71,7 @@
 			<a href="home"><input type="button" class="submit-button"  value="Anuluj"></a>
 		</div>
 		<div id="register">
-				<input type="submit" class="submit-button" value="<c:choose><c:when test = "${type=='edituser'}">Zedytuj</c:when><c:otherwise>Zarejestruj</c:otherwise></c:choose>" />
+				<input type="submit" style="float: right;" class="submit-button" value="<c:choose><c:when test = "${type=='edituser'}">Zedytuj</c:when><c:otherwise>Zarejestruj</c:otherwise></c:choose>" />
 		</div>
 		<div style="clear:both;"></div>
 	</form:form>

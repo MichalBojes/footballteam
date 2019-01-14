@@ -51,10 +51,13 @@
 			<div class="fixtures-tables" style="width:104px;">${fixture.referee}</div>
 			<div style="clear:both"></div>
 
-			<p style="font-size:20px; margin-right: auto; margin-left: auto;">W tym meczu wezmą udział następujący użytkownicy:.</p>
+			<p style="font-size:20px; margin-right: auto; margin-left: auto;">W tym meczu wezmą udział następujący użytkownicy:</p>
 			
 			<c:forEach items="${matches}" var = "match">
-				${match} <br>
+				<div class="fixtures-tables" style="width:99px;">   
+				${match} 
+				</div>
+				<div style="clear:both"></div>
 			</c:forEach>
              
         </div>

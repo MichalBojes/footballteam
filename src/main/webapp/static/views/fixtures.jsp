@@ -26,7 +26,7 @@
 
         <div id="content" style="padding-right:none">
             
-            <span class="bigtitle">Terminarz na sezon 2019</span>
+            <span class="bigtitle">Mecze w sezonie 2019</span>
             <sec:authorize access="hasAuthority('ROLE_TRAINER')">
             <a href="addFixture"><div class="admin-button" style="float:right; padding: 10px; font-size:21px; text-decoration: none;
              color:white;"  >Dodaj nowy Mecz</div> </a> 
@@ -34,7 +34,7 @@
             </sec:authorize>
             <div class="dottedline"></div>
 
-            <div id="squad-container" style="width:720px">
+            <div id="squad-container" style="width:730px">
 
           	<div class="fixtures-title" style="width:90px;">Data</div>
           	<div class="fixtures-title" style="width:45px;">Sezon</div>
