@@ -42,7 +42,7 @@ public class Fixture {
 	private int round;
 
 	@ManyToOne
-	@OnDelete(action = OnDeleteAction.CASCADE)
+	
 	@JoinColumn(name = "stadiumid", nullable = false)
 	private Stadium stadiumid;
 

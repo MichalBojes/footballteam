@@ -58,7 +58,7 @@
 			</div>
 			<div class="part">
 			Numer Stadionu:
-			<form:input class="input-class" path="stadium.stadiumid" id="stadium.stadiumid"></form:input>
+			<form:input class="input-class" type="number" path="stadium.stadiumid" id="stadium.stadiumid"></form:input>
 			</div>
 			<div class="part">
 			Typ:

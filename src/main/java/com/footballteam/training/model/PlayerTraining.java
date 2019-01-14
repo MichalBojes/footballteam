@@ -26,12 +26,12 @@ public class PlayerTraining {
 	private int playertrainingid;
 
 	@ManyToOne
-	@OnDelete(action = OnDeleteAction.CASCADE)
+	
 	@JoinColumn(name = "trainingid", nullable = false)
 	private Training training;
 
 	@ManyToOne
-	@OnDelete(action = OnDeleteAction.CASCADE)
+	
 	@JoinColumn(name = "playerid", nullable = false)
 	private Player player;
 
