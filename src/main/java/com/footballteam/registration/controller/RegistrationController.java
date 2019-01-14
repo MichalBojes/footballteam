@@ -91,7 +91,8 @@ public class RegistrationController {
 		user.setAge(form.getAge());
 		service.addUser(user);
 		if (type.equals("registration")) {
-		return "redirect:/login";}else {
+			return "redirect:/login";
+		} else {
 			return "redirect:/home";
 		}
 

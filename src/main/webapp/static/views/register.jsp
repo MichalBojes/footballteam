@@ -19,6 +19,7 @@
 			</c:when>
 			<c:otherwise>
 			Rejestracja
+			 <c:set value = "registration" var="type" />
 			</c:otherwise>
 		</c:choose>
 		</div>
