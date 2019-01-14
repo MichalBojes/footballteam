@@ -92,7 +92,7 @@ public class RegistrationController {
 		service.addUser(user);
 		if (type.equals("registration")) {
 		return "redirect:/login";}else {
-			return "redirect:/home"
+			return "redirect:/home";
 		}
 
 	}
