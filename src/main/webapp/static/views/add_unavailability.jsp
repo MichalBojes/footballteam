@@ -35,7 +35,7 @@
 			<div class="dottedline"></div>
 			
 			<div class="fixtures-title" style="width:45px;">ID</div>
-			<div class="fixtures-title" style="width:95px;">Data</div>
+			<div class="fixtures-title" style="width:85px;">Data</div>
 			<div class="fixtures-title" style="width:45px;">Sezon</div>
 			<div class="fixtures-title" style="width:55px;">Runda</div>
 			<div class="fixtures-title" style="width:85px;">Stadion</div>
@@ -46,7 +46,7 @@
 
 			<c:forEach items="${fixturesList}" var="fixture" >
 	<div class="fixtures-tables" style="width:49px;">${fixture.fixtureid}</div>
-    <div class="fixtures-tables" style="width:99px;">${fixture.dataFormated}</div>
+    <div class="fixtures-tables" style="width:89px;">${fixture.dataFormated}</div>
 	<div class="fixtures-tables" style="width:49px;">${fixture.season}</div>
 	<div class="fixtures-tables" style="width:59px;">${fixture.round}</div>
 	<div class="fixtures-tables" style="width:89px;">${fixture.stadium.name}</div>

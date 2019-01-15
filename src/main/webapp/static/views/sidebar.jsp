@@ -3,8 +3,8 @@
 <div id="sidebar">
     
     <div class="optionL"><a href="home" class="titlelink2">Strona główna</a></div> 
-    <div class="optionL"><a href="squad" class="titlelink2">Skład</a></div>
-    <div class="optionL"><a href="fixtures" class="titlelink2">Terminarz</a></div> 
+    <div class="optionL"><a href="squad" class="titlelink2">Zawodnicy</a></div>
+    <div class="optionL"><a href="fixtures" class="titlelink2">Mecze</a></div> 
     <sec:authorize access="hasAnyAuthority('ROLE_TRAINER','ROLE_PLAYER')">
     <div class="optionL"><a href="trainings" class="titlelink2">Treningi</a></div>
     </sec:authorize>

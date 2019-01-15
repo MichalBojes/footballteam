@@ -40,7 +40,7 @@
 
 			<div class="fixtures-title" style="width:90px;">Imię</div>
 			<div class="fixtures-title" style="width:90px;">Nazwisko</div>
-			<div class="fixtures-title" style="width:125px;">Data zdarzenia</div>
+			<div class="fixtures-title" style="width:115px;">Data zdarzenia</div>
 			<div class="fixtures-title" style="width:105px;">Dlugość(dni)</div>
 			<div class="fixtures-title" style="width:155px;">Powód</div>
 			<div class="fixtures-title" style="width:75px;">ID meczu</div>
@@ -49,7 +49,7 @@
 					<c:forEach items="${unavailabiltiesDTO}" var = "unavailabilty">
 							<div class="fixtures-tables" style="width:94px;">${unavailabilty.player.username.name}</div>
 							<div class="fixtures-tables" style="width:94px;">${unavailabilty.player.username.surname}</div>
-							<div class="fixtures-tables" style="width:129px;">${unavailabilty.occurreDate}</div>
+							<div class="fixtures-tables" style="width:119px;">${unavailabilty.occurreDate}</div>
 							<div class="fixtures-tables" style="width:109px;">${unavailabilty.durationInDays}</div>
 							<div class="fixtures-tables" style="width:159px;">${unavailabilty.reason}</div>
 							<a href ="<c:url value ='fixture?id=${unavailabilty.fixture.fixtureid}'/>">

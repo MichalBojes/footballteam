@@ -44,7 +44,7 @@ public class RegistrationController {
 		return REGISTER_VIEW_JSP_NAME;
 	}
 
-	@Secured({ "ROLE_FAN", "ROLE_TRAINER", "ROLE_ADMIN" })
+	@Secured({ "ROLE_FAN", "ROLE_TRAINER", "ROLE_ADMIN", "ROLE_PLAYER" })
 	@RequestMapping(value = "/editUser", method = RequestMethod.GET)
 	public String showEditUserView(Model model) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();

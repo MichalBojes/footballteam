@@ -8,8 +8,8 @@
 
 <div id="menu">
     <div class="option"><a href="home" class="titlelink1">Strona główna</a></div>
-    <div class="option"><a href="squad" class="titlelink1">Skład</a></div>
-    <div class="option"><a href="fixtures" class="titlelink1">Terminarz</a></div>
+    <div class="option"><a href="squad" class="titlelink1">Zawodnicy</a></div>
+    <div class="option"><a href="fixtures" class="titlelink1">Mecze</a></div>
     <sec:authorize access="hasAnyAuthority('ROLE_TRAINER','ROLE_PLAYER')">
     <div class="option"><a href="trainings" class="titlelink1">Treningi</a></div>
     </sec:authorize>
