@@ -1,5 +1,6 @@
 package com.footballteam.chat.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -24,7 +25,7 @@ import org.hibernate.annotations.OnDeleteAction;
 @Data
 @NoArgsConstructor
 @Table(name = "Message")
-public class Message {
+public class Message implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
