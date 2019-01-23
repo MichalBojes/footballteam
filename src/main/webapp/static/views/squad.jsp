@@ -25,7 +25,7 @@
 
         <div id="content">
             
-            <span class="bigtitle">Skład</span>
+            <span class="bigtitle">Zawodnicy w klubie</span>
            
             <div class="dottedline"></div>
 

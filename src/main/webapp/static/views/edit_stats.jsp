@@ -30,30 +30,30 @@
          
 			<div id="player-add">
 			<form:form id="edit-stats-form" action="confirmEditStats" modelAttribute="playerDTO" method="post">
-					<form:input type="hidden" path="playerid" id="playerid"></form:input>
+					<form:input type="hidden" path="playerid"  id="playerid"></form:input>
 					<div class="part">
 						Pozycja:
 						<form:input class="input-class" path="position" id="position"></form:input>
 					</div>
 					<div class="part">
 						Rozegrane mecze:
-						<form:input class="input-class" path="matchesPlayed" id="matchesPlayed"></form:input>
+						<form:input class="input-class" type="number" path="matchesPlayed" id="matchesPlayed"></form:input>
 					</div>
 					<div class="part">
 						Gole:
-						<form:input class="input-class" path="goalScored" id="goalScored"></form:input>
+						<form:input class="input-class" type="number" path="goalScored" id="goalScored"></form:input>
 					</div>
 					<div class="part">
 						Preferowana prawa noga:
-						<form:checkbox class="checkbox-class" path="preferedFootRight" id="preferedFootRight"></form:checkbox>
+						<form:checkbox class="checkbox-class"  path="preferedFootRight" id="preferedFootRight"></form:checkbox>
 					</div>
 					<div class="part">
 						Numer koszulki:
-						<form:input class="input-class" path="shirtNumber" id="shirtNumber"></form:input>
+						<form:input class="input-class" type="number" path="shirtNumber" id="shirtNumber"></form:input>
 					</div>
 					<div class="part">
 						Kartki:
-						<form:input class="input-class" path="cardsReceived" id="cardsReceived"></form:input>
+						<form:input class="input-class" type="number" path="cardsReceived" id="cardsReceived"></form:input>
 					</div>
 					
 					<div id="cancel">

@@ -39,19 +39,19 @@
 			<form:input type="hidden" path="playerid" id="playerid"></form:input>
 		<div class="part">
 				Wartość:
-			<form:input class="input-class" path="value" id="value"></form:input>
+			<form:input class="input-class" path="value" type="number" id="value"></form:input>
 		</div>
 		<div class="part">
 				Data zawarcia:
 			<form:input class="input-class" path="startDate" id="startDate"></form:input>
 		</div>
 		<div class="part">
-				Czas trwania:
-			<form:input class="input-class" path="durationInMonths" id="durationInMonths"></form:input>
+				Czas trwania(miesiące):
+			<form:input class="input-class" type="number" path="durationInMonths" id="durationInMonths"></form:input>
 		</div>
 		<div class="part">
 			Pensja:
-			<form:input class="input-class" path="salary" id="salary"></form:input>
+			<form:input class="input-class" path="salary" type="number" id="salary"></form:input>
 		</div>
 		<div class="part">
 			Premie:

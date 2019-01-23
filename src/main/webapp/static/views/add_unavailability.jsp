@@ -2,9 +2,7 @@
 <%@ page session="false" isELIgnored="false" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 
 
-
 <%@ include file = "header.jsp" %>
-
 
 
 <body onload="start()">
@@ -37,7 +35,7 @@
 			<div class="dottedline"></div>
 			
 			<div class="fixtures-title" style="width:45px;">ID</div>
-			<div class="fixtures-title" style="width:95px;">Data</div>
+			<div class="fixtures-title" style="width:85px;">Data</div>
 			<div class="fixtures-title" style="width:45px;">Sezon</div>
 			<div class="fixtures-title" style="width:55px;">Runda</div>
 			<div class="fixtures-title" style="width:85px;">Stadion</div>
@@ -48,7 +46,7 @@
 
 			<c:forEach items="${fixturesList}" var="fixture" >
 	<div class="fixtures-tables" style="width:49px;">${fixture.fixtureid}</div>
-    <div class="fixtures-tables" style="width:99px;">${fixture.dataFormated}</div>
+    <div class="fixtures-tables" style="width:89px;">${fixture.dataFormated}</div>
 	<div class="fixtures-tables" style="width:49px;">${fixture.season}</div>
 	<div class="fixtures-tables" style="width:59px;">${fixture.round}</div>
 	<div class="fixtures-tables" style="width:89px;">${fixture.stadium.name}</div>
@@ -64,7 +62,7 @@
 		<form:input type="hidden" path="player.playerid" id="player.playerid"></form:input>
 		<div class="part">
 			ID meczu:
-			<form:input class="input-class" path="fixture.fixtureid" id="fixture.fixtureid"></form:input>
+			<form:input class="input-class" path="fixture.fixtureid" type="number" id="fixture.fixtureid"></form:input>
 		</div>
 		<div class="part">
 			Data wystąpienia:
@@ -72,7 +70,7 @@
 		</div>
 		<div class="part">
 			Długość trwania:
-			<form:input class="input-class" path="durationInDays" id="durationInDays"></form:input>
+			<form:input class="input-class" path="durationInDays" type="number" id="durationInDays"></form:input>
 		</div>
 		<div class="part">
 			Powód:

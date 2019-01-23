@@ -23,11 +23,13 @@ function odliczanie()
 
 var numer1 = Math.floor(Math.random()*5)+1;
 var numer2 = Math.floor(Math.random()*4)+1;
+var numer3 = Math.floor(Math.random()*3)+1;
 var timer1 = 0;
 var timer2 = 0;
 var timer3 = 0;
 var timer4 = 0;
-
+var timer5 = 0;
+var timer6 = 0;
 
 function schowaj1()
         {
@@ -36,6 +38,10 @@ function schowaj1()
 function schowaj2()
         {
             $("#team").fadeOut(500);
+        }
+function schowaj3()
+        {
+            $("#czat").fadeOut(500);
         }
 function zmienslajd1()
         {
@@ -71,13 +77,31 @@ function zmienslajd2()
 
         }
 
+function zmienslajd3()
+        {
+            numer3++; 
+            if(numer3>5) numer3=1;
+
+            var plik = "<img src=\"/images/pilkarz" + numer3 +".jpg\" width=260px height=660px />";
+
+            document.getElementById("czat").innerHTML = plik;
+            $("#czat").fadeIn(500)
+
+           
+
+            timer5 = setTimeout("zmienslajd3()", 9000);
+            timer6 = setTimeout("schowaj3()", 8500);
+
+        }
+
+
 
     function start()
     {
         odliczanie();
         zmienslajd1();
+        zmienslajd3();
         setTimeout("schowaj2()",2000);
         setTimeout("zmienslajd2()",2500);
-        
-
+      
     }

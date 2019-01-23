@@ -37,7 +37,8 @@
 								
 									<div id="admin-title">Nazwa użytkownika</div>
 									<div id="admin-title" style="width:296px;">Nadaj rolę</div>
-									<div id="admin-title" style="width:176px; margin-right:0px;">Usuń</div>
+									<!--
+									<div id="admin-title" style="width:176px; margin-right:0px;">Usuń</div>-->
 									<div style="clear:both"></div>
 								
 								
@@ -58,6 +59,7 @@
 										<a href="<c:url value='/changeRole/${user.username}/T' />" > <div class="admin-button">Trener</div></a>
 										</c:if>
 										</div>
+										<!--
 										<div id="admin-username" style="width:168px ; margin-left: 20px">
 										<c:choose>
 										<c:when  test = "${user.role == 'ROLE_TRAINER' || user.role == 'ROLE_PLAYER' || user.role == 'ROLE_FAN'}">
@@ -67,7 +69,7 @@
 										<div class="admin-button">Nie można usunąć</div>
 										</c:otherwise>
 									</c:choose>
-								</div>
+								</div>-->
 									<div style="clear:both"></div>
 									</c:forEach>
 							

@@ -46,11 +46,11 @@ body
     padding: 12px;
     text-align: center;
     border-right: 2px dotted yellow;    /* szerokosc, kropkowana(solid jesli ciagla), kolor)*/
-    opacity: 0.8; /* nieprzeÃƒâ€¦Ã‚ÂºroczystoÃƒâ€¦Ã¢â‚¬ÂºÃƒâ€žÃ¢â‚¬Â¡ */
+    opacity: 0.8; /* nieprzeĂ�Ć’Ă˘â‚¬Â¦Ă�â€šĂ‚ÂşroczystoĂ�Ć’Ă˘â‚¬Â¦Ă�Â˘Ă˘â€šÂ¬Ă‚ÂşĂ�Ć’Ă˘â‚¬ĹľĂ�Â˘Ă˘â€šÂ¬Ă‚Âˇ */
 
 }
 
-.option:hover   /* po najechaniu myszkÃƒâ€žÃ¢â‚¬Â¦ */
+.option:hover   /* po najechaniu myszkĂ�Ć’Ă˘â‚¬ĹľĂ�Â˘Ă˘â€šÂ¬Ă‚Â¦ */
 {
     background-color:rgb(119, 18, 18);
     cursor: pointer;
@@ -121,9 +121,9 @@ body
 
 #czat
 {
-	padding:10px;
+	
     width:240px;
-    height: 640px;
+    height:640px;
     background-color: #c7c67f;
     float: left;
     margin-left: 20px;
@@ -319,7 +319,7 @@ a.titlelink2
 
 .fixtures-title
 {
-    margin-right:1px;
+    margin-right:2px;
     font-size: 15px;
     padding:5px;
     float:left;
@@ -331,7 +331,7 @@ a.titlelink2
 
 .fixtures-tables
 {   
-    height: 20px;
+    min-height: 20px;
     margin-top:5px;
     font-size:15px;
     padding:5px;
@@ -339,12 +339,12 @@ a.titlelink2
     background-color: #cf8256;
     color:white;
     text-align:center;
-    margin-right:1px;
+    margin-right:2px;
 }
 
 .fixtures-tables2
 {
-    height: 20px;
+    min-height: 20px;
     margin-top:5px;
     font-size:15px;
     padding:5px;
@@ -352,7 +352,7 @@ a.titlelink2
     background-color: #a0623e;
     color:white;
     text-align:center;
-    margin-right:1px;
+    margin-right:2px;
 }
 
 .fixtures-tables2:hover
