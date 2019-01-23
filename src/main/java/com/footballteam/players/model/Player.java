@@ -10,6 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import com.footballteam.repository.model.Unavailability;
 import com.footballteam.users.model.User;
 
 import javax.validation.constraints.NotEmpty;

@@ -2,7 +2,10 @@ package com.footballteam.chat.controller;
 
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
+import com.footballteam.chat.ChatThread;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -24,6 +27,8 @@ public class ChatController {
 	@Autowired
 	UsersService userService;
 
+	final ExecutorService exec = Executors.newCachedThreadPool();
+
 	@RequestMapping("/chat")
 	public String showChatView(Model model, @RequestParam("page") int pageNumber) {
 		List<MessageDTO> messages = service.getMessages(pageNumber);
@@ -35,6 +40,9 @@ public class ChatController {
 		model.addAttribute("lastPageNumber", lastPageNumber);
 		model.addAttribute("next", pageNumber + 1);
 		model.addAttribute("previous", pageNumber - 1);
+
+		exec.execute(new ChatThread().getFt());
+
 		return "chat_view";
 	}
 
